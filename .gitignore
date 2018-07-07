@@ -7,4 +7,4 @@ node_modules/
 
 # Build
 _site
-_assets/*.css
+website/_assets/*.css

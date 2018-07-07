@@ -30,6 +30,9 @@ header_pages:
 
 permalink: /notes/:title:output_ext
 
+source: ./website
+destination: ./_site
+
 markdown: kramdown
 kramdown:
   syntax_highlighter_opts:

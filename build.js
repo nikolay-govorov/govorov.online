@@ -13,8 +13,8 @@ const { WATCH = false, NODE_ENV: env = 'development' } = process.env;
 
 const config = {
   paths: {
-    source: './_css/main.pcss',
-    destination: './_assets/main.css'
+    source: './website/_css/main.pcss',
+    destination: './website/_assets/main.css'
   }
 };
 
@@ -57,7 +57,7 @@ function compileCSS() {
 
 if (WATCH) {
   chokidar
-    .watch('./{_css,_includes,_layouts}/**/*.pcss')
+    .watch('./website/{_css,_includes,_layouts}/**/*.pcss')
     .on('all', compileCSS);
 } else {
   compileCSS();
