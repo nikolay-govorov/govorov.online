@@ -7,11 +7,15 @@ layout: compress
   {% include head.html %} 
 
   <body class="page">
+    <div class="page__header">
+      {% include header/header.html %}
+    </div>
+
     <main class="page__content">{{ content }}</main>
 
     <div class="page__footer">
       {% include footer/footer.html %}
-    </footer>
+    </div>
 
     {% include yandex-metrika/yandex-metrika.html %}    
   </body>

@@ -1,0 +1,24 @@
+{% assign default_paths = site.pages | map: "path" %}
+{% assign page_paths = site.header_pages | default: default_paths %}
+
+{% if page_paths %}
+<nav class="navigation" aria-label="Страницы сайта">
+  <ul class="navigation__list">
+    {% for path in page_paths %}
+      {% assign item = site.pages | where: "path", path | first %}
+
+      {% if item.menu_title or item.title %}
+        <li  class="navigation__item">
+          {% if item.url == page.url %}
+            <a href="{{ item.url | relative_url }}" class="link active" aria-current="page">
+          {% else %}
+            <a href="{{ item.url | relative_url }}">
+          {% endif %}
+              {{ item.menu_title | default: item.title | escape }}
+            </a>
+        </li>
+      {% endif  %}
+    {% endfor %}
+  </ul>
+</nav>
+{% endif %}

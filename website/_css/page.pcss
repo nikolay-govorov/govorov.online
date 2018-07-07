@@ -4,10 +4,15 @@
   padding: calc(1rem + 1vw);
   grid-gap: calc(1rem + 1vw);
   grid-template-areas:
+    "header"
     "content"
     "footer";
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: min-content 1fr auto;
+}
+
+.page__header {
+  grid-area: header;
 }
 
 .page__content {

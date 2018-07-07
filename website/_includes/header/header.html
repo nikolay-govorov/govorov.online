@@ -1,0 +1,19 @@
+<header class="header">
+  <picture>
+    <img class="header__avatar" src="https://s.gravatar.com/avatar/72cbf564ef7b21b730ec93a6e3abc9f2?s=120" alt="Avatar">
+  </picture>
+
+  <div class="header__content">
+    {% if page.url == '/' %}
+    <h1 class="header__logo">
+      {{ site.title | escape }}
+    </h1>
+    {% else %}
+    <p class="header__logo">
+      {{ site.title | escape }}
+    </p>
+    {% endif%}
+
+    {% include navigation/navigation.html %}
+  </div>
+</header>
