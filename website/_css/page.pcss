@@ -1,8 +1,9 @@
 .page {
   display: grid;
   min-height: 100vh;
-  padding: calc(1rem + 1vw);
-  grid-gap: calc(1rem + 1vw);
+  padding: 1rem calc(1rem + 1vw);
+  grid-row-gap: 1rem;
+  grid-column-gap: calc(1rem + 1vw);
   grid-template-areas:
     "header"
     "content"
@@ -13,6 +14,7 @@
 
 .page__header {
   grid-area: header;
+  padding-bottom: 2rem;
 }
 
 .page__content {
