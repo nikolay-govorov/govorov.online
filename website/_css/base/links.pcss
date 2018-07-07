@@ -1,12 +1,32 @@
-a,
-.link {
-  color: #005ea5;
-  text-decoration: underline;
+:root {
+  --link-color: rgb(1, 81, 186);
+
+  --border-color: rgb(126, 241, 249);
+  --border-height: 3px;
 }
 
-:matches(a, .link):matches(:hover, :focus, :active, .active) {
-  text-decoration: none;
-  background-color: #57a2db;
-  outline: 2px solid #57a2db;
-  color: #fff;
+a,
+.link {
+  position: relative;
+  color: var(--link-color);
+  border-bottom: var(--border-color) solid 3px;
+  text-decoration: solid var(--link-color) none;
+}
+
+:matches(a, .link)::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: var(--border-height);
+  bottom: calc(-1 * var(--border-height));
+  left: 0;
+  background-color: var(--link-color);
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.10s ease-in-out 0s;
+}
+
+:matches(a, .link):matches(:hover, :focus, :active, .active):before {
+  visibility: visible;
+  transform: scaleX(1);
 }
