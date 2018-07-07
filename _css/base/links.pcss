@@ -1,0 +1,12 @@
+a,
+.link {
+  color: #005ea5;
+  text-decoration: underline;
+}
+
+:matches(a, .link):matches(:hover, :focus, :active, .active) {
+  text-decoration: none;
+  background-color: #57a2db;
+  outline: 2px solid #57a2db;
+  color: #fff;
+}

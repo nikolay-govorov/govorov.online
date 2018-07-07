@@ -6,7 +6,13 @@ layout: compress
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   {% include head.html %} 
 
-  <body>
-    <main>{{ content }}</main>
+  <body class="page">
+    <main class="page__content">{{ content }}</main>
+
+    <div class="page__footer">
+      {% include footer/footer.html %}
+    </footer>
+
+    {% include yandex-metrika/yandex-metrika.html %}    
   </body>
 </html>

@@ -1,7 +1,15 @@
-.a {
-  color: red;
-}
+/* Configs */
+@import './config/colors.pcss';
+@import './config/typography.pcss';
 
-.b {
-  color: red;
-}
+/* Common */
+@import 'base/index.pcss';
+@import 'base/links.pcss';
+@import 'base/lists.pcss';
+@import 'base/typography.pcss';
+
+/* Base */
+@import 'page.pcss';
+
+/* Components */
+@import '../_includes/**/*.pcss';

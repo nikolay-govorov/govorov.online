@@ -1,0 +1,46 @@
+.paragraph {
+  max-width: var(--readable-text-width);
+  padding-bottom: 1em;
+}
+
+.h1,
+.h2,
+.h3 {
+  max-width: var(--readable-heading-width);
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.h1 {
+  font-size: var(--h1-size);
+}
+
+.h2 {
+  font-size: var(--h2-size);
+}
+
+.h3 {
+  font-size: var(--h3-size);
+}
+
+.caps {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.muted {
+  color: rgba(0, 0, 0, 0.2);
+  transition: color 0.2s;
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.small {
+  font-size: 0.85rem;
+}
+
+.nobr {
+  white-space: nowrap;
+}

@@ -13,6 +13,13 @@
   <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description }}">
 
+  <!-- Yandex verification -->
+  <meta name="yandex-verification" content="{{site.data.meta.yandex-verification-code}}" />
+
+  <!-- Disable auto detected phone links -->
+  <meta name="format-detection" content="telephone=no"> <!-- Safari -->
+  <meta http-equiv="x-rim-auto-match" content="none"> <!-- BlackBerry -->
+
   <link rel="stylesheet" href="/{% ministamp _assets/main.css assets/main.css %}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' | relative_url }}">

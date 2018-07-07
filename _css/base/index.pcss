@@ -1,0 +1,90 @@
+@import-normalize; /* stylelint-disable-line at-rule-no-unknown */
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: var(--base-font-family);
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+  background: var(--foreground-color);
+  overflow-x: hidden;
+  overscroll-behavior: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+
+  @media (prefers-reduced-motion: reduce) { /* stylelint-disable-line media-feature-name-no-unknown */
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+a {
+  color: inherit;
+
+  @media print {
+    text-decoration: underline !important;
+  }
+}
+
+img {
+  font-style: italic;
+  vertical-align: middle;
+}
+
+img,
+video,
+audio {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+label[for],
+select {
+  cursor: pointer;
+}
+
+abbr[title],
+acronym[title],
+dfn {
+  cursor: help;
+}
+
+textarea {
+  resize: vertical;
+}
+
+sub,
+sup {
+  line-height: 0;
+}
+
+[disabled] {
+  cursor: default;
+}
+
+[aria-disabled="true"] {
+  cursor: default;
+  pointer-events: none;
+}
+
+[href]:not([href^="#"])::after {
+  @media print {
+    content: ' ('attr(href)') '; /* stylelint-disable-line function-whitespace-after */
+  }
+}
