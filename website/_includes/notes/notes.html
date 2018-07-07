@@ -1,17 +1,19 @@
-<h1 class="visuallyhidden">Заметки</h1>
+<div class="notes">
+  <h1 class="visuallyhidden">Заметки</h1>
 
-{% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 
-{% for year in posts_by_year %}
-<section class="notes__section">
-  <h2 class="h2">{{ year.name }}</h2>
+  {% for year in posts_by_year %}
+  <section class="notes__section">
+    <h2 class="h2 notes__title">{{ year.name }}</h2>
 
-  <ul class="notes__list">
-    {% for post in year.items %}
-    <li class="notes__item">
-      <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-    </li>
-    {% endfor %}
-  </ul>
-</section>
-{% endfor %}
+    <ul class="notes__list">
+      {% for post in year.items %}
+        <li class="notes__item">
+          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+</div>
