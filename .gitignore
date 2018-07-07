@@ -1,3 +1,10 @@
-_site
+# Temp
 .sass-cache
 .jekyll-metadata
+
+# Dependencies
+node_modules/
+
+# Build
+_site
+_assets/*.css
