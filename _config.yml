@@ -37,6 +37,7 @@ kramdown:
 
 plugins:
   - jekyll-feed
+  - jekyll/minibundle
 
 exclude:
   - Gemfile
