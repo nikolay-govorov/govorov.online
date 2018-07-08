@@ -31,7 +31,7 @@ function compileCSS() {
     postcssPresetEnv({ stage: 0 }),
 
     postcssAssets({
-      loadPaths: [__dirname + '/website/_assets/images/']
+      loadPaths: [__dirname + '/website/_assets/']
     }),
 
     // Cross-browser
