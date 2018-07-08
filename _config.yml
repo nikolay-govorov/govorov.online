@@ -28,6 +28,9 @@ header_pages:
 - index.md
 - notes.md
 
+disqus:
+  shortname: govorov-online
+
 permalink: /notes/:title/index:output_ext
 
 source: ./website

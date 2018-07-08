@@ -12,12 +12,29 @@
   <div itemprop="articleBody">
     {{ content }}
   </div>
+
+  <div class="article__comments">
+    {% include disqus/disqus.html %}
+  </div>
 </article>
 
-<script>
-  const codeBlocs = document.querySelectorAll('pre code');
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+<script defer src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
-  for (const block of codeBlocs) {
-    hljs.highlightBlock(block);
+<script defer>
+  function installHighlight() {
+    const codeBlocs = document.querySelectorAll('pre code');
+
+    for (const block of codeBlocs) {
+      hljs.highlightBlock(block);
+    }
   }
+
+  let interval = setInterval(() => {
+    if (hljs) {
+      clearInterval(interval);
+      installHighlight();
+    }
+  }, 300);
 </script>
