@@ -1,7 +1,9 @@
-<ul class="contacts">
-  {% for contact in site.data.contacts %}
-    <li class="contacts_item">
-      <a class="contacts_link" target="_blank" rel="noopener noreferrer" href="{{contact.url}}">{{contact.title}}</a>
-    </li>
-  {% endfor %}
-</ul>
+<div class="contacts">
+  <ul class="contacts__list">
+    {% for contact in site.data.contacts %}
+      <li class="contacts_item">
+        <a class="contacts_link" target="_blank" rel="noopener noreferrer" href="{{contact.url}}">{{contact.title}}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

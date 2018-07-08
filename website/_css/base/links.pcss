@@ -27,3 +27,23 @@ a,
   visibility: visible;
   transform: scaleX(1);
 }
+
+.link--inverted {
+  color: #fff;
+
+  border: none;
+  width: 100%;
+  padding: 0.5rem;
+  line-height: 1;
+
+  background-color: var(--blue-color);
+}
+
+.link--inverted:matches(:hover, :focus, :active) {
+  background-color: var(--blue-lite-color);
+  color: var(--blue-color);
+}
+
+.link--inverted:before {
+  display: none;
+}

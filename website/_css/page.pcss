@@ -1,10 +1,11 @@
 .page {
   display: grid;
+  box-sizing: border-box;
   min-height: 100vh;
   margin: 0 auto;
   max-width: var(--max-screen-width);
-  padding: 1rem calc(1rem + 1vw);
-  grid-row-gap: 1rem;
+  padding: calc(1rem + 1vw);
+  grid-row-gap: 3rem;
   grid-column-gap: calc(1rem + 1vw);
   grid-template-areas:
     "header"
@@ -12,11 +13,18 @@
     "footer";
   grid-template-columns: 1fr;
   grid-template-rows: min-content 1fr auto;
+
+  @media (--screen-pc) {
+    grid-template-areas:
+      "header header"
+      "content footer";
+    grid-template-columns: 1fr 20em;
+    grid-template-rows: auto 1fr;
+  }
 }
 
 .page__header {
   grid-area: header;
-  padding-bottom: 2rem;
 }
 
 .page__content {

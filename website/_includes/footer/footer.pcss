@@ -1,3 +1,21 @@
 .footer {
+  display: grid;
+  grid-row-gap: 2rem;
   font-size: 0.85rem;
+
+  @media (--screen-pc) {
+    top: 1rem;
+    position: sticky;
+    margin-top: -1rem;
+    padding: 1rem 0 1rem 1rem;
+    border-left: 1px solid var(--blue-color);
+  }
+}
+
+.footer__nav {
+  display: none;
+
+  @media (--screen-pc) {
+    display: block;
+  }
 }
