@@ -4,6 +4,7 @@ const chokidar = require('chokidar');
 const csso = require('csso');
 const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
+const postcssAssets = require('postcss-assets');
 const postcssReporter = require('postcss-reporter');
 const postcssNormalize = require('postcss-normalize');
 const postcssPresetEnv = require('postcss-preset-env');
@@ -28,6 +29,10 @@ function compileCSS() {
       extensions: ['.css', '.pcss']
     }),
     postcssPresetEnv({ stage: 0 }),
+
+    postcssAssets({
+      loadPaths: [__dirname + '/website/_assets/images/']
+    }),
 
     // Cross-browser
     postcssNormalize(),
