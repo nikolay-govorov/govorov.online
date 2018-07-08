@@ -1,11 +1,13 @@
 <div class="notes">
   <h1 class="visuallyhidden">Заметки</h1>
 
+  <a href="{{ '/feed.xml' }}" class="button">Подписаться на блог</a>
+
   {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 
   {% for year in posts_by_year %}
   <section class="notes__section">
-    <h2 class="h2 notes__title">{{ year.name }}</h2>
+    <h2 class="h2">{{ year.name }}</h2>
 
     <ul class="notes__list">
       {% for post in year.items %}
