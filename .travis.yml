@@ -1,0 +1,13 @@
+language:
+  - ruby
+  - node_js
+
+rvm:
+  - 2.5.1
+
+install:
+  - bundle install
+  - npm install
+
+script:
+  - npm run build
