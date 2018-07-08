@@ -28,7 +28,7 @@ header_pages:
 - index.md
 - notes.md
 
-permalink: /notes/:title:output_ext
+permalink: /notes/:title/index:output_ext
 
 source: ./website
 destination: ./_site
