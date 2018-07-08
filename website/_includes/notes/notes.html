@@ -1,15 +1,13 @@
 <div class="notes">
   <h1 class="visuallyhidden">Заметки</h1>
 
-  <a href="{{ '/feed.xml' }}" class="button">Подписаться на блог</a>
-
   {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 
   {% for year in posts_by_year %}
   <section class="notes__section">
     <a name="{{ year.name }}" class="visuallyhidden" aria-hidden="true"></a>
 
-    <h2 class="h2 notes__section-title" >
+    <h2 class="h2 notes__section-title">
       <a class="link link--wide link--clean" href="#{{ year.name }}">{{ year.name }}</a>
     </h2>
 
