@@ -1,16 +1,13 @@
 :root {
-  --link-color: rgb(1, 81, 186);
-
-  --border-color: rgb(126, 241, 249);
   --border-height: 3px;
 }
 
 a,
 .link {
   position: relative;
-  color: var(--link-color);
-  border-bottom: var(--border-color) solid 3px;
-  text-decoration: solid var(--link-color) none;
+  color: var(--blue-color);
+  border-bottom: var(--blue-lite-color) solid 3px;
+  text-decoration: solid var(--blue-color) none;
 }
 
 :matches(a, .link)::before {
@@ -20,7 +17,7 @@ a,
   height: var(--border-height);
   bottom: calc(-1 * var(--border-height));
   left: 0;
-  background-color: var(--link-color);
+  background-color: var(--blue-color);
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.10s ease-in-out 0s;
