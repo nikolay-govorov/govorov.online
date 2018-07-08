@@ -1,0 +1,30 @@
+.article pre {
+  position: relative;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: #bbb;
+  background-color: #282C34;
+}
+
+.article pre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100vw;
+  right: -100vw;
+  bottom: 0;
+  background-color: #282C34;
+
+  @media (--screen-pc) {
+    right: 0;
+  }
+}
+
+.article pre code {
+  padding: 2em 2em 2em 0;
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow-x: scroll;
+  font-size: .75em;
+}

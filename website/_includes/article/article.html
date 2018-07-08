@@ -13,3 +13,11 @@
     {{ content }}
   </div>
 </article>
+
+<script>
+  const codeBlocs = document.querySelectorAll('pre code');
+
+  for (const block of codeBlocs) {
+    hljs.highlightBlock(block);
+  }
+</script>

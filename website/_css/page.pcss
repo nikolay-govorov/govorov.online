@@ -1,8 +1,8 @@
 .page {
   display: grid;
   box-sizing: border-box;
-  min-height: 100vh;
   margin: 0 auto;
+  min-height: 100vh;
   max-width: var(--max-screen-width);
   padding: calc(1rem + 1vw);
   grid-row-gap: 3rem;
@@ -18,7 +18,7 @@
     grid-template-areas:
       "header header"
       "content footer";
-    grid-template-columns: 1fr 20em;
+    grid-template-columns: calc(100% - 20em - 3rem) 20em;
     grid-template-rows: auto 1fr;
   }
 }

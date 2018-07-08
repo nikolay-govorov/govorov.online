@@ -1,0 +1,21 @@
+.article p + ul
+{
+  margin-top: -.75em;
+}
+
+.article ul
+{
+  @include readable-text-width();
+  margin: 0;
+  padding-left: 1em;
+
+  @media (min-width: 480px) {
+    padding-left: 2em;
+  }
+}
+
+.article ul li
+{
+  margin-bottom: .5em;
+  list-style: none;
+}

@@ -1,0 +1,25 @@
+.article .aside {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.article .aside p {
+  margin: 0;
+}
+
+.article .aside__paragraph,
+.article .aside__note {
+  margin: 0;
+  flex: 0 1 100%;
+}
+
+.article .aside__note {
+  max-width: var(--readable-heading-width);
+  margin-top: 1em;
+  padding-left: 3em;
+  padding-right: 3em;
+  font-size: .75em;
+}
