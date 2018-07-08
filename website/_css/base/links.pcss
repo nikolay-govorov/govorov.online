@@ -5,9 +5,14 @@
 a,
 .link {
   position: relative;
+  display: inline-block;
   color: var(--blue-color);
   border-bottom: var(--blue-lite-color) solid 3px;
   text-decoration: solid var(--blue-color) none;
+}
+
+.link--wide {
+  width: 100%;
 }
 
 :matches(a, .link)::before {
@@ -45,5 +50,15 @@ a,
 }
 
 .link--inverted:before {
+  display: none;
+}
+
+.link--clean {
+  cursor: text;
+  border: none;
+  color: #000;
+}
+
+.link--clean:before {
   display: none;
 }
