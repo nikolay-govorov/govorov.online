@@ -1,6 +1,12 @@
 <div class="notes">
   <h1 class="visuallyhidden">Заметки</h1>
 
+  {% if site.posts.size == 0 %}
+    <p class="h2">
+      Ещё ничего не написано
+    </p>
+  {% endif %}
+
   {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
 
   {% for year in posts_by_year %}
@@ -13,9 +19,9 @@
 
     <ul class="notes__list">
       {% for post in year.items %}
-        <li class="notes__item">
-          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        </li>
+      <li class="notes__item">
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </li>
       {% endfor %}
     </ul>
   </section>
