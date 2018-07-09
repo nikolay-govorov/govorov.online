@@ -2,13 +2,13 @@ job:
   - link: https://csgoroll.com
     title: csgoroll.com
 
-  - link: https://trout-bait.ru
+  - link: http://trout-bait.ru
     title: trout-bait.ru
 
   - link: https://qwood.info
     title: qwood.info
 
-  - link: https://1wine.me
+  - link: http://1wine.me
     title: 1wine.me
 
 opensource:
@@ -20,3 +20,6 @@ opensource:
 
   - link: https://github.com/nikolay-govorov/logux-vuex
     title: logux-vuex
+
+  - link: https://github.com/shower/cli
+    title: shower-cli

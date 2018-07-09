@@ -4,16 +4,12 @@
   </div>
 
   <div>
-    <a href="{{ '/feed.xml' }}" class="">Подписаться по RSS</a>
+    <a href="{{ '/feed.xml' | absolute_url }}">Подписаться по RSS</a>
   </div>
 
   {% include contacts/contacts.html %}
 
   <span class="small">
-    &copy; 2015-<span id="footer-current-year">2018</span> {{site.data.meta.name}}
+    &copy; 2015<script>document.write('-' + (new Date()).getFullYear());</script> {{site.data.meta.name}}
   </span>
-
-  <script>
-    document.getElementById('footer-current-year').textContent = (new Date()).getFullYear();
-  </script>
 </footer>
