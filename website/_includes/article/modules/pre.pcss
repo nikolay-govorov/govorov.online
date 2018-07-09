@@ -1,4 +1,5 @@
 .article pre {
+  //overflow: hidden;
   position: relative;
   margin-top: 1em;
   margin-bottom: 1em;
@@ -10,9 +11,10 @@
   content: '';
   position: absolute;
   top: 0;
-  left: -100vw;
-  right: -100vw;
   bottom: 0;
+  left: calc(-1 * (100vw - 100%) / 2);
+  right: calc(-1 * (100vw - 100%) / 2);
+  max-width: 100vw;
   background-color: #282C34;
 
   @media (--screen-pc) {
