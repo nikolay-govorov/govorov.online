@@ -11,6 +11,11 @@
   margin-bottom: 0.5em;
 }
 
+:matches(.h1, .h2, .h3):first-child,
+.visuallyhidden:first-child + :matches(.h1, .h2, .h3) {
+  margin-top: 0;
+}
+
 .h1 {
   font-size: var(--h1-size);
 }
