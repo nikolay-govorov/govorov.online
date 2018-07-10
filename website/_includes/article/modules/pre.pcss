@@ -1,10 +1,16 @@
 .article pre {
-  //overflow: hidden;
   position: relative;
   margin-top: 1em;
   margin-bottom: 1em;
   color: #bbb;
   background-color: #282C34;
+
+  @media (--screen-extra-large-pc) {
+    left: -2em;
+    padding-left: 2em;
+    overflow: hidden;
+    border-radius: 3px;
+  }
 }
 
 .article pre::before {
@@ -19,6 +25,10 @@
 
   @media (--screen-pc) {
     right: 0;
+  }
+
+  @media (--screen-extra-large-pc) {
+    left: 0;
   }
 }
 
