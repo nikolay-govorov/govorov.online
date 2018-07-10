@@ -1,7 +1,20 @@
-<div class="introduction">
+<div class="introduction" itemscope itemtype="https://schema.org/Person">
+  <meta itemprop="url" content="{{ site.url }}">
+  <meta itemprop="image" content="{{ site.avatar }}?s=120">
+  <meta itemprop="birthDate" content="{{ site.authorBirthDate }}">
+
+  {% for contact in site.data.contacts  %}
+    {% if contact.itemprop  %}
+    <meta itemprop="{{contact.itemprop}}" content="{{ contact.url }}">
+    {% endif  %}
+  {% endfor %}
+
   <p class="paragraph">
-    Привет! Меня зовут Николай Говоров. Мне <span id="age">18</span> лет,
-    живу в Санкт-Петербурге, разрабатываю фронтенд для <a href="{{site.data.meta.job.url}}">{{site.data.meta.job.name}}</a>.
+    Привет! Меня зовут
+    <span itemprop="givenName">Николай</span> <span itemprop="familyName">Говоров</span>.
+    Мне <span id="age">18</span> лет, живу в
+    <span class="nobr" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality">Санкт-Петербурге</span><meta itemprop="addressCountry" content="Россия"></span>,
+    разрабатываю фронтенд для <a href="{{site.data.meta.job.url}}">{{site.data.meta.job.name}}</a>.
   </p>
 
   <p class="paragraph">

@@ -1,8 +1,10 @@
 - title: 8 960 260-59-86
   url: tel:89602605986
+  itemprop: telephone
 
 - title: me@govorov.online
   url: mailto:me@govorov.online
+  itemprop: email
 
 - title: ВКонтакте
   url: https://vk.com/nikolay_govorov
