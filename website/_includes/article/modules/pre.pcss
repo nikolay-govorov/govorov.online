@@ -37,6 +37,10 @@
   position: relative;
   display: block;
   width: 100%;
-  overflow-x: scroll;
+  overflow: auto;
   font-size: .75em;
+
+  @media (--screen-pc) {
+    max-height: 50vh;
+  }
 }
