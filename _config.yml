@@ -30,10 +30,15 @@ date_format: "%d.%m.%Y"
 header_pages:
 - index.md
 - notes.md
-- lectures.md
+- presentations.md
 
 disqus:
   shortname: govorov-online
+
+collections:
+  presentations:
+    permalink: /presentations/:title/index:output_ext
+    output: true
 
 permalink: /notes/:title/index:output_ext
 

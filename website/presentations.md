@@ -4,4 +4,4 @@ title: Доклады
 permalink: /presentations/
 ---
 
-{% include pages/presentations-list/presentations.html %}
+{% include pages/presentations-list/presentations-list.html %}

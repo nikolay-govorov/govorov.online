@@ -1,5 +1,5 @@
-<article class="presentations__item">
-  {% capture slides %}https://nikolay-govorov.github.io/presentation__{{presentation.name}}/#{% endcapture %}
+<article class="one-presentation">
+  {% capture slides %}https://nikolay-govorov.github.io/presentation__{{page.name}}/#{% endcapture %}
 
   <h2 class="h2">{{page.title}}</h2>
 
@@ -7,9 +7,9 @@
     <a target="_blank" rel="noopener noreferrer" href="{{ slides }}">Слайды</a>
   </div>
 
-  <div class="presentations__frame-container">
+  <div class="one-presentation__frame-container">
     <iframe
-      class="presentations__frame"
+      class="one-presentation__frame"
       src="{{page.video}}"
       frameborder="0"
       allow="autoplay; encrypted-media"
