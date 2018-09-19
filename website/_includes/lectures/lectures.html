@@ -2,12 +2,12 @@
   {% for lecture in site.data.lectures %}
     <article class="lectures__item">
       {% capture link %}https://www.youtube.com/embed/{{ lecture.id }}\?rel=0{% endcapture %}
-      {% capture slides %}/assets/lectures/{{lecture.name}}/slides.pdf{% endcapture %}
+      {% capture slides %}https://nikolay-govorov.github.io/presentation__{{lecture.name}}/#{% endcapture %}
 
       <h2 class="h2">{{lecture.title}}</h2>
 
       <div class="paragraph">
-        <a target="_blank" rel="noopener noreferrer" href="{{ slides | absolute_url }}">Скачать слайды</a>
+        <a target="_blank" rel="noopener noreferrer" href="{{ slides }}">Слайды</a>
       </div>
 
       <div class="lectures__frame-container">
