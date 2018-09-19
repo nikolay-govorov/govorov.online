@@ -1,0 +1,19 @@
+<article class="presentations__item">
+  {% capture slides %}https://nikolay-govorov.github.io/presentation__{{presentation.name}}/#{% endcapture %}
+
+  <h2 class="h2">{{page.title}}</h2>
+
+  <div class="paragraph">
+    <a target="_blank" rel="noopener noreferrer" href="{{ slides }}">Слайды</a>
+  </div>
+
+  <div class="presentations__frame-container">
+    <iframe
+      class="presentations__frame"
+      src="{{page.video}}"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    ></iframe>
+  </div>
+</article>

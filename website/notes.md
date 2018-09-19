@@ -4,4 +4,4 @@ title: Заметки
 permalink: /notes/
 ---
 
-{% include notes/notes.html %}
+{% include pages/notes/notes.html %}

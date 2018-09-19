@@ -4,4 +4,4 @@ title: Обо мне
 permalink: /
 ---
 
-{% include introduction/introduction.html %}
+{% include pages/introduction/introduction.html %}

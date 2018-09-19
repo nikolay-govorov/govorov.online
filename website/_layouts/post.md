@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 ---
 
-{% include article/article.html %}
+{% include pages/article/article.html %}
