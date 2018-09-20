@@ -37,10 +37,10 @@ disqus:
 
 collections:
   presentations:
-    permalink: /presentations/:title/index:output_ext
+    permalink: /presentations/:title:output_ext
     output: true
 
-permalink: /notes/:title/index:output_ext
+permalink: /notes/:title:output_ext
 
 source: ./website
 destination: ./_site
