@@ -12,7 +12,7 @@
     "prestart": "node ./build.js",
     "start": "WATCH=true node ./build.js & bundle exec bundle exec \"jekyll serve\" & wait",
     "prebuild": "rm -rf ./_site && mkdir ./_site",
-    "build": "NODE_ENV=production node ./build.js && bundle exec \"jekyll build\" && echo \"govorov.online\" > _site/CNAME"
+    "build": "NODE_ENV=production node ./build.js && bundle exec \"jekyll build\""
   },
   "devDependencies": {
     "autoprefixer": "^8.6.5",
