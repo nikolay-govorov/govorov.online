@@ -3,7 +3,7 @@ import { styled, css } from 'astroturf';
 import Helmet from 'react-helmet';
 
 css`
-  @import '../design-system/main.css';
+  @import '../../design-system/main.css';
 `;
 
 const Container = styled('div')`
@@ -46,18 +46,26 @@ const Footer = styled('footer')`
 export default function BaseLayout({ children }) {
   return (
     <>
+      {/* Setup head */}
       <Helmet
         htmlAttributes={{ lang: 'ru' }}
       />
 
       <Container>
-        <Header>Header</Header>
+        <Header>
+          {/* Setup header */}
+          Header
+        </Header>
 
         <Content>
           {children}
         </Content>
 
-        <Footer>Footer</Footer>
+        <Footer>
+          {/* Setup header */}
+        </Footer>
+
+        {/* Setup yandex metrika */}
       </Container>
     </>
   )
