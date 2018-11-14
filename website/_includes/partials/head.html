@@ -2,37 +2,5 @@
 {% assign description = page.description | default: page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape %}
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="theme-color" content="#ffffff">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{{ title }}</title>
-  <meta name="description" content="{{ description }}">
-
-  {% feed_meta %}
-
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-  <link rel="icon" type="image/png" href="/{% ministamp _assets/favicon.png assets/favicon.png %}">
-
-  <meta property="og:url" content="{{ site.url | replace:'index.html','' | absolute_url  }}">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="{{ site.avatar }}?s=280">
-  <meta property="og:image:width" content="280" />
-  <meta property="og:image:height" content="280" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:title" content="{{ title }}">
-  <meta property="og:locale" content="{{ page.lang | default: site.lang | default: 'en' }}">
-  <meta property="og:site_name" content="{{ site.author }}" />
-  <meta property="og:description" content="{{ description }}">
-
-  <!-- Yandex verification -->
-  <meta name="yandex-verification" content="{{site.data.meta.yandex-verification-code}}" />
-
-  <!-- Disable auto detected phone links -->
-  <meta name="format-detection" content="telephone=no"> <!-- Safari -->
-  <meta http-equiv="x-rim-auto-match" content="none"> <!-- BlackBerry -->
-
-  <link rel="stylesheet" href="/assets/fonts/FiraCode/fira_code.css">
-  <link rel="stylesheet" href="/{% ministamp _assets/main.css assets/main.css %}">
 </head>

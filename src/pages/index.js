@@ -1,10 +1,7 @@
 import React from 'react';
-import { styled } from 'astroturf';
 
-const Message = styled('div')`
-  color: red;
-`;
+import Layout from '../layouts/base';
 
 export default () => (
-  <Message>Hello world!</Message>
+  <Layout>Index page</Layout>
 );

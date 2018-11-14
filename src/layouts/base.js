@@ -1,4 +1,12 @@
-.page {
+import React from 'react';
+import { styled, css } from 'astroturf';
+import Helmet from 'react-helmet';
+
+css`
+  @import '../design-system/main.css';
+`;
+
+const Container = styled('div')`
   display: grid;
   box-sizing: border-box;
   margin: 0 auto;
@@ -21,16 +29,36 @@
     grid-template-columns: calc(100% - 20em - 3rem) 20em;
     grid-template-rows: auto 1fr;
   }
-}
+`;
 
-.page__header {
+const Header = styled('header')`
   grid-area: header;
-}
+`;
 
-.page__content {
+const Content = styled('content')`
   grid-area: content;
-}
+`;
 
-.page__footer {
+const Footer = styled('footer')`
   grid-area: footer;
+`;
+
+export default function BaseLayout({ children }) {
+  return (
+    <>
+      <Helmet
+        htmlAttributes={{ lang: 'ru' }}
+      />
+
+      <Container>
+        <Header>Header</Header>
+
+        <Content>
+          {children}
+        </Content>
+
+        <Footer>Footer</Footer>
+      </Container>
+    </>
+  )
 }

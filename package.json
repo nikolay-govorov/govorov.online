@@ -25,8 +25,9 @@
     "astroturf": "^0.8.1",
     "gatsby": "^2.0.48",
     "gatsby-plugin-astroturf": "^0.2.0",
-    "gatsby-plugin-postcss": "^2.0.1",
+    "gatsby-plugin-react-helmet": "^3.0.2",
     "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react-dom": "^16.6.3",
+    "react-helmet": "^5.2.0"
   }
 }

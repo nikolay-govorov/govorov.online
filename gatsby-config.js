@@ -1,6 +1,6 @@
 module.exports = {
   plugins: [
     'gatsby-plugin-astroturf',
-    'gatsby-plugin-postcss',
+    'gatsby-plugin-react-helmet',
   ]
 };
