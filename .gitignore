@@ -5,6 +5,6 @@
 # Dependencies
 node_modules/
 
-# Build
-_site
-website/_assets/*.css
+# gatsby files
+.cache/
+public
