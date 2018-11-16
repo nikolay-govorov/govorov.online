@@ -1,5 +1,3 @@
-@import './assets/fonts/FiraCode/fira_code.css';
-
 @import './config/colors.css';
 @import './config/media.css';
 @import './config/typography.css';
@@ -9,3 +7,11 @@
 @import './base/button.css';
 @import './base/links.css';
 @import './base/lists.css';
+
+@import './page.css';
+
+/* Components */
+@import '../components/partials/contacts/index.css';
+@import '../components/partials/navigation/index.css';
+@import '../components/partials/header/index.css';
+@import '../components/partials/footer/index.css';

@@ -2,7 +2,7 @@ const autoprefixer = require('autoprefixer');
 const postcssAssets = require('postcss-assets');
 const postcssNormalize = require('postcss-normalize');
 const postcssPresetEnv = require('postcss-preset-env');
-const postcssEasyImport = require('postcss-easy-import');
+const postcssImport = require('postcss-import');
 
 const { NODE_ENV: env = 'development' } = process.env;
 
@@ -11,9 +11,7 @@ module.exports = {
 
   plugins: [
     // Features
-    postcssEasyImport({
-      extensions: ['.css', '.pcss']
-    }),
+    postcssImport(),
 
     postcssPresetEnv({ stage: 0 }),
 

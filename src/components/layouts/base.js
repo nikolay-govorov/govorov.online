@@ -1,49 +1,16 @@
-import React from 'react';
-import { styled, css } from 'astroturf';
+import React  from 'react';
 import Helmet from 'react-helmet';
+import { StaticQuery, graphql } from "gatsby";
 
-css`
-  @import '../../design-system/main.css';
-`;
+import Header from '../partials/header/index';
+import Footer from '../partials/footer/index';
+import YandexMetrika from '../partials/yandex-metrika/index';
 
-const Container = styled('div')`
-  display: grid;
-  box-sizing: border-box;
-  margin: 0 auto;
-  min-height: 100vh;
-  max-width: var(--max-screen-width);
-  padding: calc(1rem + 1vw);
-  grid-row-gap: 3rem;
-  grid-column-gap: calc(1rem + 1vw);
-  grid-template-areas:
-    "header"
-    "content"
-    "footer";
-  grid-template-columns: minmax(0%, 100%);
-  grid-template-rows: min-content 1fr auto;
+// TODO: move requires fonts in CSS
+import '../../design-system/assets/fonts/FiraCode/fira_code.css';
+import '../../design-system/main.css';
 
-  @media (--screen-pc) {
-    grid-template-areas:
-      "header header"
-      "content footer";
-    grid-template-columns: calc(100% - 20em - 3rem) 20em;
-    grid-template-rows: auto 1fr;
-  }
-`;
-
-const Header = styled('header')`
-  grid-area: header;
-`;
-
-const Content = styled('content')`
-  grid-area: content;
-`;
-
-const Footer = styled('footer')`
-  grid-area: footer;
-`;
-
-export default function BaseLayout({ children }) {
+function BaseLayout({ children, data }) {
   return (
     <>
       {/* Setup head */}
@@ -51,22 +18,41 @@ export default function BaseLayout({ children }) {
         htmlAttributes={{ lang: 'ru' }}
       />
 
-      <Container>
-        <Header>
-          {/* Setup header */}
-          Header
-        </Header>
+      <div className="page">
+        <div className="page__header">
+          <Header site={data.site.siteMetadata} />
+        </div>
 
-        <Content>
+        <div className="page__content">
           {children}
-        </Content>
+        </div>
 
-        <Footer>
-          {/* Setup header */}
-        </Footer>
+        <div className="page__footer">
+          <Footer site={data.site.siteMetadata} />
+        </div>
 
-        {/* Setup yandex metrika */}
-      </Container>
+        <YandexMetrika />
+      </div>
     </>
   )
+}
+
+export default function (props) {
+  return (
+    <StaticQuery
+      query={graphql`
+        query {
+          site {
+            siteMetadata {
+              title
+              author
+              avatar
+              yandexVerificationCode
+            }
+          }
+        }
+      `}
+      render={(data) => <BaseLayout {...props} data={data} />}
+    />
+  );
 }
