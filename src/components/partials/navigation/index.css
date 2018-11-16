@@ -14,7 +14,7 @@
 
 .navigation__item {
   display: inline-block;
-  padding-right: .5em;
+  padding-right: .75em;
 }
 
 .navigation--vertical .navigation__item {

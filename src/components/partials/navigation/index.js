@@ -3,9 +3,9 @@ import cx from 'classnames';
 import { Link } from "gatsby";
 
 const pages = [
-  { title: 'Обо мне', url: '/' },
-  { title: 'Заметки', url: '/notes' },
-  { title: 'Доклады', url: '/presentations' },
+  { title: ' Обо мне ', url: '/' },
+  { title: ' Заметки ', url: '/notes' },
+  { title: ' Доклады ', url: '/presentations' },
 ];
 
 export default function Navigation({ vertical }) {
@@ -17,6 +17,7 @@ export default function Navigation({ vertical }) {
             <Link
               to={url}
               className={cx('link', { 'link--inverted': vertical })}
+              activeClassName={'active'}
             >{title}</Link>
           </li>
         ))}

@@ -1,25 +1,34 @@
-job:
-  - link: https://csgoroll.com
-    title: csgoroll.com
+# Job
+- link: https://csgoroll.com
+  title: csgoroll.com
+  type: job
 
-  - link: http://trout-bait.ru
-    title: trout-bait.ru
+- link: http://trout-bait.ru
+  title: trout-bait.ru
+  type: job
 
-  - link: https://qwood.info
-    title: qwood.info
+- link: https://qwood.info
+  title: qwood.info
+  type: job
 
-  - link: http://1wine.me
-    title: 1wine.me
+- link: http://1wine.me
+  title: 1wine.me
+  type: job
 
-opensource:
-  - link: https://github.com/nikolay-govorov/nanomerge
-    title: nanomerge
+# Open source
 
-  - link: https://github.com/nikolay-govorov/nanoid
-    title: nanoid.rs
+- link: https://github.com/nikolay-govorov/nanomerge
+  title: nanomerge
+  type: opensource
 
-  - link: https://github.com/nikolay-govorov/logux-vuex
-    title: logux-vuex
+- link: https://github.com/nikolay-govorov/nanoid
+  title: nanoid.rs
+  type: opensource
 
-  - link: https://github.com/shower/cli
-    title: shower-cli
+- link: https://github.com/nikolay-govorov/logux-vuex
+  title: logux-vuex
+  type: opensource
+
+- link: https://github.com/shower/cli
+  title: shower-cli
+  type: opensource
