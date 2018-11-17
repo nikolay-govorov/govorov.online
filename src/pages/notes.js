@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from '../components/layouts/base';
+import Layout from '../components/layouts/base/index';
 import SectionQuery from "../components/utils/section-query";
 import ContentList from "../components/partials/content-list";
 

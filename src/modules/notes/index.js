@@ -1,7 +1,7 @@
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 
-import Layout from '../../components/layouts/base';
+import Layout from '../../components/layouts/base/index';
 
 async function installHighlight (container) {
   const [hljs] = await Promise.all([

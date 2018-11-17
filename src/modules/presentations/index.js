@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../../components/layouts/base';
+import Layout from '../../components/layouts/base/index';
 
 export default function Presentation({ data: { site, markdownRemark: presentation } }) {
   const meta = presentation.frontmatter;

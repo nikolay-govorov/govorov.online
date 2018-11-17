@@ -8,9 +8,9 @@
 @import './base/links.css';
 @import './base/lists.css';
 
-@import './page.css';
-
 /* Components */
+@import '../components/layouts/base/index.css';
+
 @import '../components/partials/contacts/index.css';
 @import '../components/partials/navigation/index.css';
 @import '../components/partials/header/index.css';

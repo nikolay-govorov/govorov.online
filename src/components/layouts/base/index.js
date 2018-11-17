@@ -2,12 +2,12 @@ import React  from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from "gatsby";
 
-import Header from '../partials/header/index';
-import Footer from '../partials/footer/index';
-import YandexMetrika from '../partials/yandex-metrika/index';
+import Header from '../../partials/header/index';
+import Footer from '../../partials/footer/index';
+import YandexMetrika from '../../partials/yandex-metrika/index';
 
 // TODO: move requires fonts in CSS
-import '../../design-system/assets/fonts/FiraCode/fira_code.css';
+import '../../../design-system/assets/fonts/FiraCode/fira_code.css';
 import '../../design-system/main.css';
 
 function BaseLayout({ children, data }) {
