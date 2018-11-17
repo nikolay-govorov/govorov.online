@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 
 import Layout from '../../components/layouts/base/index';
 
@@ -8,7 +9,7 @@ export default function Presentation({ data: { site, markdownRemark: presentatio
   const slides = `https://nikolay-govorov.github.io/presentation__${meta.name}/#`;
 
   return (
-    <Layout>
+    <Layout title={presentation.title}>
       <article className="one-presentation">
         <h2 className="h2">{meta.title}</h2>
 
@@ -20,6 +21,7 @@ export default function Presentation({ data: { site, markdownRemark: presentatio
           <iframe
             className="one-presentation__frame"
             src={meta.video}
+            title={meta.title}
             frameBorder="0"
             allow="autoplay; encrypted-media"
             allowFullScreen

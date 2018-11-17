@@ -5,6 +5,8 @@ module.exports = {
     lang: 'ru',
     url: 'https://govorov.online',
 
+    themeColor: '#ffffff',
+
     title: 'Николай Говоров',
     author: 'Николай Говоров',
     email: 'nikolay_govorov@bk.ru',

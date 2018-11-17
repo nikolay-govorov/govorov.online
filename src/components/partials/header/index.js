@@ -1,5 +1,4 @@
 import React from 'react';
-import { withPrefix }from 'gatsby';
 
 import Navigation from '../navigation/index';
 

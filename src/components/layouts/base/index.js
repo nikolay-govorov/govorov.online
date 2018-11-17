@@ -8,19 +8,52 @@ import YandexMetrika from '../../partials/yandex-metrika/index';
 
 // TODO: move requires fonts in CSS
 import '../../../design-system/assets/fonts/FiraCode/fira_code.css';
-import '../../design-system/main.css';
+import '../../../design-system/main.css';
 
-function BaseLayout({ children, data }) {
+import favicon from '../../../assets/favicon.png';
+
+function BaseLayout({ children, title, data }) {
+  const meta = data.site.siteMetadata;
+  const pageTitle = title || meta.title;
+
   return (
     <>
       {/* Setup head */}
-      <Helmet
-        htmlAttributes={{ lang: 'ru' }}
-      />
+      <Helmet>
+        <html lang={meta.lang} />
+
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="theme-color" content={meta.themeColor} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>{pageTitle}</title>
+        <meta name="description" content={meta.description} />
+
+        <link rel="canonical" href={meta.url} />
+        <link rel="icon" type="image/png" href={favicon} />
+
+        <meta property="og:url" content={meta.url} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`${meta.avatar}?s=280`} />
+        <meta property="og:image:width" content="280" />
+        <meta property="og:image:height" content="280" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:locale" content={meta.lang} />
+        <meta property="og:site_name" content={meta.author} />
+        <meta property="og:description" content={meta.description} />
+
+        {/* Yandex verification */}
+        <meta name="yandex-verification" content={meta.yandexVerificationCode} />
+
+        {/* Disable auto detected phone links */}
+        <meta name="format-detection" content="telephone=no" /> {/* Safari */}
+        <meta httpEquiv="x-rim-auto-match" content="none" /> {/* BlackBerry */}
+      </Helmet>
 
       <div className="page">
         <div className="page__header">
-          <Header site={data.site.siteMetadata} />
+          <Header site={meta} />
         </div>
 
         <div className="page__content">
@@ -44,9 +77,13 @@ export default function (props) {
         query {
           site {
             siteMetadata {
+              url
+              lang
               title
               author
               avatar
+              description
+              themeColor
               yandexVerificationCode
             }
           }
