@@ -1,6 +1,5 @@
 const autoprefixer = require('autoprefixer');
 const postcssAssets = require('postcss-assets');
-const postcssNormalize = require('postcss-normalize');
 const postcssPresetEnv = require('postcss-preset-env');
 const postcssImport = require('postcss-import');
 
@@ -15,10 +14,11 @@ module.exports = {
 
     postcssPresetEnv({ stage: 0 }),
 
-    postcssAssets(),
+    postcssAssets({
+      loadPaths: ['./src/assets']
+    }),
 
     // Cross-browser
-    postcssNormalize(),
     autoprefixer(),
   ],
 };
