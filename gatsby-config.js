@@ -40,7 +40,6 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: path.join(__dirname, 'src', 'pages'),
-        name: 'pages',
       },
     },
     'gatsby-transformer-remark',

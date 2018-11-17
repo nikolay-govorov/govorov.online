@@ -1,11 +1,15 @@
 import React from 'react';
 
-import BaseLayout from '../components/layouts/base';
+import Layout from '../components/layouts/base';
+import SectionQuery from '../components/utils/section-query';
+import ContentList from "../components/partials/content-list";
 
-export default function NotFoundPage() {
+export default function Presentations() {
   return (
-    <BaseLayout>
-      <p>Presentations</p>
-    </BaseLayout>
+    <Layout>
+      <SectionQuery section="presentations">
+        {(list) => <ContentList title="Доклады" items={list} />}
+      </SectionQuery>
+    </Layout>
   );
 }

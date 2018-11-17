@@ -9,6 +9,7 @@
   },
   "repository": "nikolay-govorov/govorov.online",
   "scripts": {
+    "clean": "rm -rf .cache public",
     "start": "NODE_ENV=development gatsby develop",
     "build": "NODE_ENV=production gatsby build",
     "serve": "gatsby serve"
@@ -30,6 +31,7 @@
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-transformer-remark": "^2.1.12",
     "gatsby-transformer-yaml": "^2.1.5",
+    "highlight.js": "^9.13.1",
     "postcss-import": "^12.0.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",

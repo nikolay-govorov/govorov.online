@@ -17,4 +17,5 @@
 @import '../components/partials/footer/index.css';
 @import '../components/partials/introduction/index.css';
 
-@import '../components/modules/notes/list/index.css';
+@import '../modules/notes/index.css';
+@import '../modules/presentations/index.css';

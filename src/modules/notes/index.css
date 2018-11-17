@@ -1,0 +1,24 @@
+@import './modules/abbr.css';
+@import './modules/aside.css';
+@import './modules/blockquote.css';
+@import './modules/figure.css';
+@import './modules/heading.css';
+@import './modules/iframe.css';
+@import './modules/image.css';
+@import './modules/paragraph.css';
+@import './modules/pre.css';
+@import './modules/spoiler.css';
+@import './modules/ul.css';
+
+.article {
+  font-size: calc(1em + .1vw);
+}
+
+.article__title {
+  margin-top: 0;
+  max-width: 20em;
+}
+
+.article__comments {
+  margin-top: 3rem;
+}
