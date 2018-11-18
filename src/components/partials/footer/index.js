@@ -15,7 +15,7 @@ export default function Footer({ site }) {
       </div>
 
       <div>
-        <Link to="/rss.xml">Подписаться по RSS</Link>
+        <a href="/rss.xml">Подписаться по RSS</a>
       </div>
 
       <Contacts />

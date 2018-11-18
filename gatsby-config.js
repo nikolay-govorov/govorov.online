@@ -45,10 +45,10 @@ module.exports = {
       },
     },
     'gatsby-transformer-remark',
+    'gatsby-plugin-feed',
+    'gatsby-plugin-sitemap',
+    'gatsby-plugin-robots-txt',
     'gatsby-plugin-netlify',
-    {
-      resolve: 'gatsby-plugin-feed',
-    },
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
