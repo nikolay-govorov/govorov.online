@@ -9,8 +9,6 @@ import Footer from '../../partials/footer/index';
 import '../../../design-system/assets/fonts/FiraCode/fira_code.css';
 import '../../../design-system/main.css';
 
-import favicon from '../../../assets/logo.png';
-
 function BaseLayout({
   children, location, title, data,
 }) {
@@ -31,7 +29,6 @@ function BaseLayout({
         <meta name="description" content={meta.description} />
 
         <link rel="canonical" href={meta.siteUrl} />
-        <link rel="icon" type="image/png" href={favicon} />
 
         <meta property="og:url" content={meta.siteUrl} />
         <meta property="og:type" content="website" />

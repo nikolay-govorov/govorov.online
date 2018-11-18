@@ -30,7 +30,9 @@ module.exports = {
   plugins: [
     'gatsby-plugin-astroturf',
     'gatsby-plugin-postcss',
+
     'gatsby-plugin-react-helmet',
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -38,6 +40,7 @@ module.exports = {
       },
     },
     'gatsby-transformer-yaml',
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -45,10 +48,31 @@ module.exports = {
       },
     },
     'gatsby-transformer-remark',
+
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: path.join(__dirname, 'src'),
+      },
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-favicon',
+      options: {
+        logo: './src/components/partials/logo/logo.png',
+        appName: 'govorov.online',
+        icons: {},
+      },
+    },
+
     'gatsby-plugin-feed',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
+
     'gatsby-plugin-netlify',
+
     {
       resolve: 'gatsby-plugin-eslint',
       options: {

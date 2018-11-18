@@ -1,28 +1,8 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { styled } from 'astroturf';
+import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import logoPhoto from '../../../assets/logo.png';
-
-const Picture = styled('picture')`
-  position: relative;
-  width: 5em;
-  height: 5em;
-  margin-right: 1.25em;
-  margin-bottom: 0.75em;
-  cursor: pointer;
-`;
-
-const Photo = styled('img')`
-  position: absolute;
-  width: 100%;
-  backface-visibility: hidden;
-
-  object-fit: cover;
-  border-radius: 100%;
-  transition: transform 1.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-`;
+import { Container, Mask, Photo } from './styled';
 
 const LEFT = 'left';
 const RIGHT = 'right';
@@ -35,6 +15,7 @@ const state = {
 class Logo extends Component {
   propTypes = {
     img: PropTypes.string.isRequired,
+    maskFixed: PropTypes.string.isRequired,
   };
 
   componentDidMount() {
@@ -77,29 +58,28 @@ class Logo extends Component {
   };
 
   render() {
-    const { img } = this.props;
+    const { img, maskFixed } = this.props;
     const { angle } = state;
 
     return (
-      <Picture
-        className="logo"
+      <Container
         onClick={this.onClick}
         ref={this.getContainerRef}
       >
-        <Photo
-          src={logoPhoto}
-          className="logo__mask"
+        <Mask
           aria-hidden
           style={{ transform: `rotateY(${angle}deg)` }}
+          fixed={maskFixed}
         />
 
         <Photo
-          className="logo__photo"
-          src={`${img}?s=120`}
+          width={80}
+          height={80}
+          src={`${img}?s=80`}
           alt="Фото Николая Говорова"
           style={{ transform: `rotateY(${angle + 180}deg)` }}
         />
-      </Picture>
+      </Container>
     );
   }
 }
@@ -114,9 +94,22 @@ export default function () {
               avatar
             }
           }
+
+          file(relativePath: { eq: "components/partials/logo/logo.png" }) {
+            childImageSharp {
+              fixed(width: 80, height: 80) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
         }
       `}
-      render={data => <Logo img={data.site.siteMetadata.avatar} />}
+      render={data => (
+        <Logo
+          img={data.site.siteMetadata.avatar}
+          maskFixed={data.file.childImageSharp.fixed}
+        />
+      )}
     />
   );
 }
