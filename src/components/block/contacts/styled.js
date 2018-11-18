@@ -1,16 +1,18 @@
-.contacts {
-  padding-bottom: 0.5rem;
-}
+import { styled } from 'astroturf';
 
-.contacts__list {
+export const Container = styled('div')`
+  padding-bottom: 0.5rem;
+`;
+
+export const List = styled('ul')`
   display: flex;
   flex-wrap: wrap;
   margin: -0.5em;
-}
+`;
 
-.contacts_item {
+export const Item = styled('li')`
   list-style: none;
   padding-top: 0.5em;
   padding-right: 0.5em;
   padding-left: 0.5em;
-}
+`;

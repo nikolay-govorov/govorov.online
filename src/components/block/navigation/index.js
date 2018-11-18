@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import { Container, List, Item } from './styled';
+
 const pages = [
   { title: ' Обо мне ', url: '/' },
   { title: ' Заметки ', url: '/notes/' },
@@ -9,14 +11,14 @@ const pages = [
 
 export default function Navigation() {
   return (
-    <nav className="navigation" aria-label="Страницы сайта">
-      <ul className="navigation__list">
+    <Container aria-label="Страницы сайта">
+      <List>
         {pages.map(({ title, url }) => (
-          <li key={url} className="navigation__item">
+          <Item key={url}>
             <Link to={url} className="link" activeClassName="link--active">{title}</Link>
-          </li>
+          </Item>
         ))}
-      </ul>
-    </nav>
+      </List>
+    </Container>
   );
 }

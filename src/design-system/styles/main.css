@@ -11,11 +11,6 @@
 /* Components */
 @import '../../components/partials/layout/index.css';
 
-@import '../../components/block/contacts/index.css';
-@import '../../components/block/navigation/index.css';
-@import '../../components/block/header/index.css';
-@import '../../components/block/footer/index.css';
-@import '../../components/block/introduction/index.css';
-
+/* Modules */
 @import '../../modules/notes/index.css';
 @import '../../modules/presentations/index.css';

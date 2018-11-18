@@ -2,17 +2,19 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
+import { Container, List, Item } from './styled';
+
 function Contacts({ contacts }) {
   return (
-    <div className="contacts">
-      <ul className="contacts__list">
+    <Container>
+      <List>
         {contacts.map(contact => (
-          <li className="contacts_item" key={contact.url}>
-            <a className="contacts_link" rel="me" href={contact.url}>{contact.title}</a>
-          </li>
+          <Item key={contact.url}>
+            <a rel="me" href={contact.url}>{contact.title}</a>
+          </Item>
         ))}
-      </ul>
-    </div>
+      </List>
+    </Container>
   );
 }
 
