@@ -53,8 +53,7 @@ async function createPages({ graphql, actions }) {
   }
 
   // Create blog posts pages.
-  const allPosts = result.data.allMarkdownRemark.edges.filter(post => post.node.fields.slug.startsWith('/pages'));
-  const postsBySection = sortBySections(allPosts);
+  const postsBySection = sortBySections(result.data.allMarkdownRemark.edges);
 
   Object.keys(postsBySection).forEach((section) => {
     const posts = postsBySection[section];
