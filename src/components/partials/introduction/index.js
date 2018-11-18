@@ -99,7 +99,7 @@ Introduction.propTypes = {
 
   contacts: PropTypes.arrayOf(PropTypes.shape({
     url: PropTypes.string.isRequired,
-    itemprop: PropTypes.string.isRequired,
+    itemprop: PropTypes.string,
   })).isRequired,
 
   projects: PropTypes.arrayOf(PropTypes.shape({

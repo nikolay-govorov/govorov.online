@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 import Layout from '../components/layouts/base/index';
@@ -40,9 +41,9 @@ const query = graphql`
   }
 `;
 
-export default function IndexPage() {
+export default function IndexPage({ location }) {
   return (
-    <Layout>
+    <Layout location={location}>
       <StaticQuery
         query={query}
         render={data => (
@@ -56,3 +57,7 @@ export default function IndexPage() {
     </Layout>
   );
 }
+
+IndexPage.propTypes = {
+  location: PropTypes.object.isRequired, /* eslint-disable-line react/forbid-prop-types */
+};

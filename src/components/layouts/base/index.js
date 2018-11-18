@@ -12,7 +12,7 @@ import '../../../design-system/main.css';
 
 import favicon from '../../../assets/favicon.png';
 
-function BaseLayout({ children, title, data }) {
+function BaseLayout({ children, location, title, data }) {
   const meta = data.site.siteMetadata;
   const pageTitle = title || meta.title;
 
@@ -57,7 +57,7 @@ function BaseLayout({ children, title, data }) {
 
       <div className="page">
         <div className="page__header">
-          <Header site={meta} />
+          <Header url={location.pathname} site={meta} />
         </div>
 
         <div className="page__content">

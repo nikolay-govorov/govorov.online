@@ -53,7 +53,10 @@ module.exports = {
       resolve: 'gatsby-plugin-eslint',
       options: {
         test: /\.js$/,
-        exclude: /(node_modules|\.cache|public)/
+        exclude: /(node_modules|\.cache|public)/,
+        options: {
+          emitWarning: true,
+        }
       }
     },
     {

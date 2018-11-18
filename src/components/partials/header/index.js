@@ -1,20 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { withPrefix } from 'gatsby';
+import { withPrefix } from 'gatsby';
 
 import Navigation from '../navigation/index';
 
-export default function Header({ site }) {
-  const url = ''; // withPrefix(location.pathname);
+export default function Header({ site, url }) {
+  const localUrl = withPrefix(url);
 
   return (
     <header className="header">
       <picture>
-        <img className="header__avatar" src={`${site.avatar}?s=120`} alt="Фото Николая Говорова" />
+        <img
+          width={120}
+          className="header__avatar"
+          src={`${site.avatar}?s=120`}
+          alt="Фото Николая Говорова"
+        />
       </picture>
 
       <div className="header__content">
-        {url === '/' ? (
+        {localUrl === '/' ? (
           <h1 className="header__logo">
             {site.title}
           </h1>
