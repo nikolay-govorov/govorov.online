@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withPrefix } from 'gatsby';
+// import { withPrefix } from 'gatsby';
 
 import Navigation from '../navigation/index';
 
 export default function Header({ site }) {
-  const url = withPrefix(window.location.pathname);
+  const url = ''; // withPrefix(location.pathname);
 
   return (
     <header className="header">

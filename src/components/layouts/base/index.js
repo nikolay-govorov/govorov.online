@@ -29,10 +29,10 @@ function BaseLayout({ children, title, data }) {
         <title>{pageTitle}</title>
         <meta name="description" content={meta.description} />
 
-        <link rel="canonical" href={meta.url} />
+        <link rel="canonical" href={meta.siteUrl} />
         <link rel="icon" type="image/png" href={favicon} />
 
-        <meta property="og:url" content={meta.url} />
+        <meta property="og:url" content={meta.siteUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={`${meta.avatar}?s=280`} />
         <meta property="og:image:width" content="280" />
@@ -81,7 +81,7 @@ export default function (props) {
         query {
           site {
             siteMetadata {
-              url
+              siteUrl
               lang
               title
               author

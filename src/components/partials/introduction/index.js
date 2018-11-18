@@ -19,7 +19,7 @@ const ProjectsList = ({ list, type }) => (
 export default function Introduction({ site, contacts, projects }) {
   return (
     <div className="introduction" itemScope itemType="https://schema.org/Person">
-      <link itemProp="url" href={site.url} />
+      <link itemProp="url" href={site.siteUrl} />
       <meta itemProp="image" content={`${site.avatar}?s=120`} />
       <meta itemProp="birthDate" content={site.authorBirthDate} />
 
@@ -88,7 +88,7 @@ export default function Introduction({ site, contacts, projects }) {
 
 Introduction.propTypes = {
   site: PropTypes.shape({
-    url: PropTypes.string.isRequired,
+    siteUrl: PropTypes.string.isRequired,
     avatar: PropTypes.string.isRequired,
     authorBirthDate: PropTypes.string.isRequired,
     job: PropTypes.shape({

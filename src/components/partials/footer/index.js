@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import Contacts from '../contacts/index';
@@ -14,7 +15,7 @@ export default function Footer({ site }) {
       </div>
 
       <div>
-        <a href="{{ '/feed.xml' | absolute_url }}">Подписаться по RSS</a>
+        <Link to="/rss.xml">Подписаться по RSS</Link>
       </div>
 
       <Contacts />

@@ -8,7 +8,7 @@ const query = graphql`
   query {
     site {
       siteMetadata {
-        url
+        siteUrl
         avatar
         authorBirthDate
         job {

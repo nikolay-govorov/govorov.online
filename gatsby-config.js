@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     lang: 'ru',
-    url: 'https://govorov.online',
+    siteUrl: 'https://govorov.online',
 
     themeColor: '#ffffff',
 
@@ -46,6 +46,9 @@ module.exports = {
     },
     'gatsby-transformer-remark',
     'gatsby-plugin-netlify',
+    {
+      resolve: 'gatsby-plugin-feed',
+    },
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
