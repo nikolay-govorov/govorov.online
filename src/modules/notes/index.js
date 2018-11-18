@@ -1,14 +1,19 @@
 import { graphql } from 'gatsby';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
-import PropTypes from 'prop-types';
+// langs
+import 'highlight.js/styles/androidstudio.css';
+import hljs from 'highlight.js/lib/highlight';
+
+import langCSS from 'highlight.js/lib/languages/css';
+import langJS from 'highlight.js/lib/languages/javascript';
+
 import Layout from '../../components/layouts/base/index';
 
 async function installHighlight(container) {
-  const [hljs] = await Promise.all([
-    import('highlight.js'),
-    import('highlight.js/styles/androidstudio.css'),
-  ]);
+  hljs.registerLanguage('css', langCSS);
+  hljs.registerLanguage('javascript', langJS);
 
   const codeBlocs = container.querySelectorAll('pre code');
 

@@ -55,6 +55,12 @@ module.exports = {
         test: /\.js$/,
         exclude: /(node_modules|\.cache|public)/
       }
+    },
+    {
+      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
+      options: {
+        production: true
+      }
     }
   ]
 };
