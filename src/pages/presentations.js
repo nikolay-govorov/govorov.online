@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Layout from '../components/layouts/base/index';
+import Layout from '../components/partials/layout/index';
 import SectionQuery from '../components/utils/section-query';
 import ContentList from '../components/partials/content-list';
 

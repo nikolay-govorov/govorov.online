@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import Layout from '../../components/layouts/base/index';
+import Layout from '../../components/partials/layout/index';
 
 export default function Presentation({ data: { markdownRemark: presentation }, location }) {
   const meta = presentation.frontmatter;

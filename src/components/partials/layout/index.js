@@ -2,12 +2,12 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
-import Header from '../../partials/header/index';
-import Footer from '../../partials/footer/index';
+import Header from '../../block/header/index';
+import Footer from '../../block/footer/index';
 
 // TODO: move requires fonts in CSS
 import '../../../design-system/assets/fonts/FiraCode/fira_code.css';
-import '../../../design-system/main.css';
+import '../../../design-system/styles/main.css';
 
 function BaseLayout({
   children, location, title, data,

@@ -63,7 +63,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-favicon',
       options: {
-        logo: './src/components/partials/logo/logo.png',
+        logo: './src/components/block/logo/images/logo.png',
         appName: 'govorov.online',
         icons: {},
       },

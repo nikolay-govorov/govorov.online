@@ -89,7 +89,7 @@ export default function () {
             }
           }
 
-          file(relativePath: { eq: "components/partials/logo/logo.png" }) {
+          file(relativePath: { eq: "components/block/logo/images/logo.png" }) {
             childImageSharp {
               fixed(width: 80, height: 80) {
                 ...GatsbyImageSharpFixed

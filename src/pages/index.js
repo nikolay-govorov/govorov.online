@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
-import Layout from '../components/layouts/base/index';
-import Introduction from '../components/partials/introduction/index';
+import Layout from '../components/partials/layout/index';
+import Introduction from '../components/block/introduction/index';
 
 const query = graphql`
   query {

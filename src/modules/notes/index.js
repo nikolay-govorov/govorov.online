@@ -12,7 +12,7 @@ import langCSS from 'highlight.js/lib/languages/css';
 import langHTML from 'highlight.js/lib/languages/xml';
 import langJS from 'highlight.js/lib/languages/javascript';
 
-import Layout from '../../components/layouts/base/index';
+import Layout from '../../components/partials/layout/index';
 
 async function installHighlight(container) {
   hljs.registerLanguage('css', langCSS);

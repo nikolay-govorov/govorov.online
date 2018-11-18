@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Layout from '../components/layouts/base';
+import Layout from '../components/partials/layout';
 
 export default function NotFoundPage({ location }) {
   return (
