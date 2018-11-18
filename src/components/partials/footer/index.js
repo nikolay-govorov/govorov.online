@@ -15,7 +15,10 @@ export default function Footer({ site }) {
       <Contacts />
 
       <span className="small">
-        &copy; 2015-{year} {site.author}
+        &copy; 2015-
+        {year}
+        {' '}
+        {site.author}
       </span>
     </footer>
   );

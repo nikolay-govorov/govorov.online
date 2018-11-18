@@ -12,7 +12,9 @@ import '../../../design-system/main.css';
 
 import favicon from '../../../assets/logo.png';
 
-function BaseLayout({ children, location, title, data }) {
+function BaseLayout({
+  children, location, title, data,
+}) {
   const meta = data.site.siteMetadata;
   const pageTitle = title || meta.title;
 

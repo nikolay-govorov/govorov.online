@@ -33,6 +33,8 @@ export default function Presentation({ data: { markdownRemark: presentation }, l
 }
 
 Presentation.propTypes = {
+  location: PropTypes.object.isRequired, /* eslint-disable-line react/forbid-prop-types */
+
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       id: PropTypes.string.isRequired,

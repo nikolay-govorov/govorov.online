@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import { StaticQuery, graphql } from 'gatsby';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { styled } from 'astroturf';
+import { StaticQuery, graphql } from 'gatsby';
 
 import logoPhoto from '../../../assets/logo.png';
 
@@ -32,8 +33,28 @@ const state = {
 };
 
 class Logo extends Component {
+  propTypes = {
+    img: PropTypes.string.isRequired,
+  };
+
+  componentDidMount() {
+    this.interval = setTimeout(() => {
+      if (state.manual) {
+        clearInterval(this.interval);
+
+        return;
+      }
+
+      this.rotate(RIGHT);
+    }, 3000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
   rotate = (directory) => {
-    state.angle = state.angle + (directory === LEFT ? -180 : 180);
+    state.angle += (directory === LEFT ? -180 : 180);
 
     this.setState({});
   };
@@ -55,22 +76,6 @@ class Logo extends Component {
     this.container = node;
   };
 
-  componentDidMount() {
-    this.interval = setTimeout(() => {
-      if (state.manual) {
-        clearInterval(this.interval);
-
-        return;
-      }
-
-      this.rotate(RIGHT);
-    }, 3000);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
   render() {
     const { img } = this.props;
     const { angle } = state;
@@ -84,7 +89,7 @@ class Logo extends Component {
         <Photo
           src={logoPhoto}
           className="logo__mask"
-          aria-hidden={true}
+          aria-hidden
           style={{ transform: `rotateY(${angle}deg)` }}
         />
 
@@ -111,7 +116,7 @@ export default function () {
           }
         }
       `}
-      render={(data) => <Logo img={data.site.siteMetadata.avatar} />}
+      render={data => <Logo img={data.site.siteMetadata.avatar} />}
     />
   );
 }

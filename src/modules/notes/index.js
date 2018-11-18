@@ -1,3 +1,5 @@
+/* eslint-disable react/no-danger */
+
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
@@ -26,6 +28,8 @@ async function installHighlight(container) {
 
 export default class Note extends Component {
   propTypes = {
+    location: PropTypes.object.isRequired, /* eslint-disable-line react/forbid-prop-types */
+
     data: PropTypes.shape({
       markdownRemark: PropTypes.shape({
         id: PropTypes.string.isRequired,
@@ -41,7 +45,7 @@ export default class Note extends Component {
 
   componentDidMount() {
     installHighlight(this.htmlContainer)
-      .catch(console.error); // Ignore error – this is not important
+      .catch(() => {}); // Ignore error – this is not important
   }
 
   getHTMLContainerRef = (node) => {

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 
 const pages = [
   { title: ' Обо мне ', url: '/' },
@@ -8,7 +7,7 @@ const pages = [
   { title: ' Доклады ', url: '/presentations/' },
 ];
 
-export default function Navigation({ vertical }) {
+export default function Navigation() {
   return (
     <nav className="navigation" aria-label="Страницы сайта">
       <ul className="navigation__list">
@@ -21,11 +20,3 @@ export default function Navigation({ vertical }) {
     </nav>
   );
 }
-
-Navigation.propTypes = {
-  vertical: PropTypes.bool,
-};
-
-Navigation.defaultProps = {
-  vertical: false,
-};
