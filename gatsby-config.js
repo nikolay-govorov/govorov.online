@@ -1,5 +1,7 @@
 const path = require('path');
 
+const { ANALYZE: analyze } = process.env;
+
 module.exports = {
   siteMetadata: {
     lang: 'ru',
@@ -86,7 +88,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyzer',
       options: {
-        production: true
+        production: analyze,
       }
     }
   ]

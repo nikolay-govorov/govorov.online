@@ -17,7 +17,6 @@ function BaseLayout({
 
   return (
     <>
-      {/* Setup head */}
       <Helmet>
         <html lang={meta.lang} />
 
