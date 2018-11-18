@@ -2,17 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Contacts from '../contacts/index';
-import Navigation from '../navigation/index';
 
 export default function Footer({ site }) {
   const year = (new Date()).getFullYear();
 
   return (
     <footer className="footer">
-      <div className="footer__nav">
-        <Navigation vertical />
-      </div>
-
       <div>
         <a href="/rss.xml">Подписаться по RSS</a>
       </div>
@@ -20,10 +15,7 @@ export default function Footer({ site }) {
       <Contacts />
 
       <span className="small">
-        &copy; 2015-
-        {year}
-        {' '}
-        {site.author}
+        &copy; 2015-{year} {site.author}
       </span>
     </footer>
   );

@@ -47,13 +47,13 @@ export default class Note extends Component {
   };
 
   render() {
-    const { data: { markdownRemark: post } } = this.props;
+    const { data: { markdownRemark: post }, location } = this.props;
 
     const meta = post.frontmatter;
     const created = (new Date(meta.date)).toUTCString();
 
     return (
-      <Layout title={meta.title}>
+      <Layout title={meta.title} location={location}>
         <article className="article" itemScope itemType="http://schema.org/BlogPosting">
           <header className="article__header">
             <time dateTime={created} itemProp="datePublished">

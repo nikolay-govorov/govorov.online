@@ -13,12 +13,6 @@
   "footer";
   grid-template-columns: minmax(0%, 100%);
   grid-template-rows: min-content 1fr auto;
-
-  @media (--screen-pc) {
-    grid-template-areas: "header header" "content footer";
-    grid-template-columns: calc(100% - 20em - 3rem) 20em;
-    grid-template-rows: auto 1fr;
-  }
 }
 
 .page__header {

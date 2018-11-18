@@ -28,28 +28,9 @@ a,
   transition: all 0.10s ease-in-out 0s;
 }
 
-:matches(a, .link):matches(:hover, :focus, :active, .active):before {
+:matches(a, .link):matches(:hover, :focus, :active, .link--active):before {
   visibility: visible;
   transform: scaleX(1);
-}
-
-.link--inverted {
-  color: #fff;
-  border: none;
-  width: 100%;
-  padding: 0.5rem;
-  line-height: 1;
-  border-radius: 3px;
-  background-color: var(--blue-color);
-}
-
-.link--inverted:matches(:hover, :focus, :active) {
-  background-color: var(--blue-lite-color);
-  color: var(--blue-color);
-}
-
-.link--inverted:before {
-  display: none;
 }
 
 .link--clean {

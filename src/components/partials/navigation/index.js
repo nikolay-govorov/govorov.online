@@ -1,5 +1,4 @@
 import React from 'react';
-import cx from 'classnames';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
@@ -11,17 +10,11 @@ const pages = [
 
 export default function Navigation({ vertical }) {
   return (
-    <nav className={cx('navigation', { 'navigation--vertical': vertical })} aria-label="Страницы сайта">
+    <nav className="navigation" aria-label="Страницы сайта">
       <ul className="navigation__list">
         {pages.map(({ title, url }) => (
           <li key={url} className="navigation__item">
-            <Link
-              to={url}
-              className={cx('link', { 'link--inverted': vertical })}
-              activeClassName="active"
-            >
-              {title}
-            </Link>
+            <Link to={url} className="link" activeClassName="link--active">{title}</Link>
           </li>
         ))}
       </ul>

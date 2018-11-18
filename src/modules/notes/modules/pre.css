@@ -5,11 +5,14 @@
   color: #bbb;
   background-color: #282C34;
 
-  @media (--screen-extra-large-pc) {
+  @media (--screen-tablet) {
+    max-width: calc((36em * 1.5) + 1vw);
+
+    border-radius: 3px;
+
+    overflow: hidden;
     left: -2em;
     padding-left: 2em;
-    overflow: hidden;
-    border-radius: 3px;
   }
 }
 

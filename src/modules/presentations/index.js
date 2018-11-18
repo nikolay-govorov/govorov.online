@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 
 import Layout from '../../components/layouts/base/index';
 
-export default function Presentation({ data: { markdownRemark: presentation } }) {
+export default function Presentation({ data: { markdownRemark: presentation }, location }) {
   const meta = presentation.frontmatter;
   const slides = `https://nikolay-govorov.github.io/presentation__${meta.name}/#`;
 
   return (
-    <Layout title={presentation.title}>
+    <Layout title={presentation.title} location={location}>
       <article className="one-presentation">
         <h2 className="h2">{meta.title}</h2>
 
