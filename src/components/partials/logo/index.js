@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import { Container, Mask, Photo } from './styled';
 
+const SIZE = 80;
 const LEFT = 'left';
 const RIGHT = 'right';
 
@@ -43,7 +44,7 @@ class Logo extends Component {
   onClick = (ev) => {
     state.manual = true;
 
-    const halfImage = this.container.offsetWidth / 2;
+    const halfImage = SIZE / 2;
     const inRightPart = ev.offsetX > halfImage;
 
     if (inRightPart) {
@@ -53,19 +54,12 @@ class Logo extends Component {
     }
   };
 
-  getContainerRef = (node) => {
-    this.container = node;
-  };
-
   render() {
     const { img, maskFixed } = this.props;
     const { angle } = state;
 
     return (
-      <Container
-        onClick={this.onClick}
-        ref={this.getContainerRef}
-      >
+      <Container onClick={this.onClick}>
         <Mask
           aria-hidden
           style={{ transform: `rotateY(${angle}deg)` }}
@@ -75,7 +69,7 @@ class Logo extends Component {
         <Photo
           width={80}
           height={80}
-          src={`${img}?s=80`}
+          src={`${img}?s=${SIZE}`}
           alt="Фото Николая Говорова"
           style={{ transform: `rotateY(${angle + 180}deg)` }}
         />
