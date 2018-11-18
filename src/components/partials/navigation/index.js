@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 
 const pages = [
   { title: ' Обо мне ', url: '/' },
-  { title: ' Заметки ', url: '/notes' },
-  { title: ' Доклады ', url: '/presentations' },
+  { title: ' Заметки ', url: '/notes/' },
+  { title: ' Доклады ', url: '/presentations/' },
 ];
 
 export default function Navigation({ vertical }) {
