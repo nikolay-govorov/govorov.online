@@ -9,12 +9,21 @@
   },
   "repository": "nikolay-govorov/govorov.online",
   "scripts": {
+    "lint": "eslint src/ --ext .js --fix",
+    "pretest": "npm run lint",
     "clean": "rm -rf .cache public",
     "start": "NODE_ENV=development gatsby develop",
     "build": "NODE_ENV=production gatsby build",
     "serve": "gatsby serve"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "gatsby-plugin-eslint": "^2.0.1",
     "postcss": "^6.0.23",
     "postcss-assets": "^5.0.0",
     "postcss-easy-import": "^3.0.0",
@@ -33,6 +42,7 @@
     "gatsby-transformer-yaml": "^2.1.5",
     "highlight.js": "^9.13.1",
     "postcss-import": "^12.0.1",
+    "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0"

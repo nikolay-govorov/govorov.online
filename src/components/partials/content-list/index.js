@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import './index.css';
 
@@ -25,7 +26,7 @@ export default function ContentList({ title, items }) {
           </h2>
 
           <ul className="content-list__list">
-            {notes.map((post) => (
+            {notes.map(post => (
               <li key={post.frontmatter.title} className="content-list__item">
                 <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
               </li>
@@ -36,3 +37,20 @@ export default function ContentList({ title, items }) {
     </div>
   );
 }
+
+ContentList.propTypes = {
+  title: PropTypes.string.isRequired,
+
+  items: PropTypes.arrayOf(PropTypes.shape({
+    html: PropTypes.string.isRequired,
+
+    fields: PropTypes.shape({
+      slug: PropTypes.string.isRequired,
+    }).isRequired,
+
+    frontmatter: PropTypes.shape({
+      date: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+    }).isRequired,
+  })).isRequired,
+};

@@ -1,6 +1,6 @@
-import React  from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql } from 'gatsby';
 
 import Header from '../../partials/header/index';
 import Footer from '../../partials/footer/index';
@@ -47,8 +47,12 @@ function BaseLayout({ children, title, data }) {
         <meta name="yandex-verification" content={meta.yandexVerificationCode} />
 
         {/* Disable auto detected phone links */}
-        <meta name="format-detection" content="telephone=no" /> {/* Safari */}
-        <meta httpEquiv="x-rim-auto-match" content="none" /> {/* BlackBerry */}
+        <meta name="format-detection" content="telephone=no" />
+        {' '}
+        {/* Safari */}
+        <meta httpEquiv="x-rim-auto-match" content="none" />
+        {' '}
+        {/* BlackBerry */}
       </Helmet>
 
       <div className="page">
@@ -67,7 +71,7 @@ function BaseLayout({ children, title, data }) {
         <YandexMetrika />
       </div>
     </>
-  )
+  );
 }
 
 export default function (props) {
@@ -89,7 +93,7 @@ export default function (props) {
           }
         }
       `}
-      render={(data) => <BaseLayout {...props} data={data} />}
+      render={data => <BaseLayout {...props} data={data} />}
     />
   );
 }

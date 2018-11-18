@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 const query = graphql`
@@ -20,17 +21,22 @@ const query = graphql`
   }
 `;
 
-export default function ({ children, section }) {
+export default function SectionQuery({ children, section }) {
   return (
     <StaticQuery
       query={query}
       render={(data) => {
         const list = data.allMarkdownRemark.edges
           .map(({ node }) => node)
-          .filter((el) => el.fields.slug.startsWith(`/${section}`));
+          .filter(el => el.fields.slug.startsWith(`/${section}`));
 
         return children(list);
       }}
     />
   );
 }
+
+SectionQuery.propTypes = {
+  children: PropTypes.func.isRequired,
+  section: PropTypes.string.isRequired,
+};

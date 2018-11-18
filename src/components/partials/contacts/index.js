@@ -1,11 +1,12 @@
 import React from 'react';
-import { StaticQuery, graphql } from "gatsby";
+import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
 
-function Contacts({ data: { contacts } }) {
+function Contacts({ contacts }) {
   return (
     <div className="contacts">
       <ul className="contacts__list">
-        {contacts.map((contact) => (
+        {contacts.map(contact => (
           <li className="contacts_item" key={contact.url}>
             <a className="contacts_link" rel="me" href={contact.url}>{contact.title}</a>
           </li>
@@ -15,7 +16,14 @@ function Contacts({ data: { contacts } }) {
   );
 }
 
-export default function (props) {
+Contacts.propTypes = {
+  contacts: PropTypes.arrayOf(PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  })).isRequired,
+};
+
+export default function () {
   return (
     <StaticQuery
       query={graphql`
@@ -30,9 +38,9 @@ export default function (props) {
           }
         }
       `}
-      render={(data) => <Contacts data={{
-        contacts: data.allContactsYaml.edges.map(({ node }) => node)
-      }} />}
+      render={data => (
+        <Contacts contacts={data.allContactsYaml.edges.map(({ node }) => node)} />
+      )}
     />
   );
 }

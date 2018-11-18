@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { withPrefix } from 'gatsby';
 
 import Navigation from '../navigation/index';
 
 export default function Header({ site }) {
-  const url = ''; // withPrefix(location.pathname);
+  const url = withPrefix(window.location.pathname);
 
   return (
     <header className="header">
@@ -27,3 +29,10 @@ export default function Header({ site }) {
     </header>
   );
 }
+
+Header.propTypes = {
+  site: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
+  }).isRequired,
+};

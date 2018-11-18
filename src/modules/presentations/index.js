@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
 
 import Layout from '../../components/layouts/base/index';
 
-export default function Presentation({ data: { site, markdownRemark: presentation } }) {
+export default function Presentation({ data: { markdownRemark: presentation } }) {
   const meta = presentation.frontmatter;
   const slides = `https://nikolay-govorov.github.io/presentation__${meta.name}/#`;
 
@@ -32,17 +32,25 @@ export default function Presentation({ data: { site, markdownRemark: presentatio
   );
 }
 
+Presentation.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      id: PropTypes.string.isRequired,
+
+      frontmatter: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        video: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired,
+  }).isRequired,
+};
+
 export const pageQuery = graphql`
   query PresentationBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-      excerpt
       frontmatter {
         name
         title

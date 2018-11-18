@@ -45,6 +45,13 @@ module.exports = {
       },
     },
     'gatsby-transformer-remark',
-    'gatsby-plugin-netlify'
+    'gatsby-plugin-netlify',
+    {
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        test: /\.js$/,
+        exclude: /(node_modules|\.cache|public)/
+      }
+    }
   ]
 };

@@ -1,9 +1,10 @@
 import { graphql } from 'gatsby';
 import React, { Component } from 'react';
 
+import PropTypes from 'prop-types';
 import Layout from '../../components/layouts/base/index';
 
-async function installHighlight (container) {
+async function installHighlight(container) {
   const [hljs] = await Promise.all([
     import('highlight.js'),
     import('highlight.js/styles/androidstudio.css'),
@@ -11,12 +12,26 @@ async function installHighlight (container) {
 
   const codeBlocs = container.querySelectorAll('pre code');
 
-  for (const block of codeBlocs) {
+  codeBlocs.forEach((block) => {
     hljs.highlightBlock(block);
-  }
+  });
 }
 
 export default class Note extends Component {
+  propTypes = {
+    data: PropTypes.shape({
+      markdownRemark: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        html: PropTypes.string.isRequired,
+
+        frontmatter: PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          date: PropTypes.string.isRequired,
+        }).isRequired,
+      }).isRequired,
+    }).isRequired,
+  };
+
   componentDidMount() {
     installHighlight(this.htmlContainer)
       .catch(() => {}); // Ignore error – this is not important
@@ -48,7 +63,7 @@ export default class Note extends Component {
           <div itemProp="articleBody" ref={this.getHTMLContainerRef} dangerouslySetInnerHTML={{ __html: post.html }} />
 
           <div className="article__comments">
-            {/*{% include partials/disqus/disqus.html %}*/}
+            {/* {% include partials/disqus/disqus.html %} */}
           </div>
         </article>
       </Layout>
@@ -58,15 +73,8 @@ export default class Note extends Component {
 
 export const pageQuery = graphql`
   query NoteBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-      excerpt
       html
       frontmatter {
         title

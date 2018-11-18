@@ -1,4 +1,5 @@
-export function prepareNotesList (list) {
+/* eslint-disable-next-line import/prefer-default-export */
+export function prepareNotesList(list) {
   const postsByYears = list.reduce((acc, note) => {
     const year = note.frontmatter.date;
 
@@ -11,5 +12,7 @@ export function prepareNotesList (list) {
     return acc;
   }, {});
 
-  return Object.keys(postsByYears).sort((a, b) => a > b ? -1 : 1).map(year => ({ year, notes: postsByYears[year] }));
+  return Object.keys(postsByYears)
+    .sort((a, b) => (a > b ? -1 : 1))
+    .map(year => ({ year, notes: postsByYears[year] }));
 }

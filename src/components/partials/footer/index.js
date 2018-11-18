@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Contacts from '../contacts/index';
 import Navigation from '../navigation/index';
@@ -9,7 +10,7 @@ export default function Footer({ site }) {
   return (
     <footer className="footer">
       <div className="footer__nav">
-        <Navigation vertical={true} />
+        <Navigation vertical />
       </div>
 
       <div>
@@ -19,8 +20,17 @@ export default function Footer({ site }) {
       <Contacts />
 
       <span className="small">
-        &copy; 2015-{year} {site.author}
+        &copy; 2015-
+        {year}
+        {' '}
+        {site.author}
       </span>
     </footer>
   );
 }
+
+Footer.propTypes = {
+  site: PropTypes.shape({
+    author: PropTypes.string.isRequired,
+  }).isRequired,
+};

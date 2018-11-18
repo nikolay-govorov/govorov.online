@@ -45,11 +45,13 @@ export default function IndexPage() {
     <Layout>
       <StaticQuery
         query={query}
-        render={(data) => <Introduction
-          site={data.site.siteMetadata}
-          contacts={data.allContactsYaml.edges.map(({ node }) => node)}
-          projects={data.allProjectsYaml.edges.map(({ node }) => node)}
-        />}
+        render={data => (
+          <Introduction
+            site={data.site.siteMetadata}
+            contacts={data.allContactsYaml.edges.map(({ node }) => node)}
+            projects={data.allProjectsYaml.edges.map(({ node }) => node)}
+          />
+        )}
       />
     </Layout>
   );

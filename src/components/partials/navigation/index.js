@@ -1,6 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
-import { Link } from "gatsby";
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 const pages = [
   { title: ' Обо мне ', url: '/' },
@@ -17,11 +18,21 @@ export default function Navigation({ vertical }) {
             <Link
               to={url}
               className={cx('link', { 'link--inverted': vertical })}
-              activeClassName={'active'}
-            >{title}</Link>
+              activeClassName="active"
+            >
+              {title}
+            </Link>
           </li>
         ))}
       </ul>
     </nav>
   );
 }
+
+Navigation.propTypes = {
+  vertical: PropTypes.bool,
+};
+
+Navigation.defaultProps = {
+  vertical: false,
+};
