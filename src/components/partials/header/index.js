@@ -3,28 +3,22 @@ import PropTypes from 'prop-types';
 import { withPrefix } from 'gatsby';
 
 import Navigation from '../navigation/index';
+import Logo from '../logo/index.js';
 
 export default function Header({ site, url }) {
   const localUrl = withPrefix(url);
 
   return (
     <header className="header">
-      <picture>
-        <img
-          width={120}
-          className="header__avatar"
-          src={`${site.avatar}?s=120`}
-          alt="Фото Николая Говорова"
-        />
-      </picture>
+      <Logo />
 
       <div className="header__content">
         {localUrl === '/' ? (
-          <h1 className="header__logo">
+          <h1 className="header__title">
             {site.title}
           </h1>
         ) : (
-          <p className="header__logo">
+          <p className="header__title">
             {site.title}
           </p>
         )}

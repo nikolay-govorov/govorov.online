@@ -7,12 +7,14 @@ import 'highlight.js/styles/androidstudio.css';
 import hljs from 'highlight.js/lib/highlight';
 
 import langCSS from 'highlight.js/lib/languages/css';
+import langHTML from 'highlight.js/lib/languages/xml';
 import langJS from 'highlight.js/lib/languages/javascript';
 
 import Layout from '../../components/layouts/base/index';
 
 async function installHighlight(container) {
   hljs.registerLanguage('css', langCSS);
+  hljs.registerLanguage('html', langHTML);
   hljs.registerLanguage('javascript', langJS);
 
   const codeBlocs = container.querySelectorAll('pre code');
@@ -39,7 +41,7 @@ export default class Note extends Component {
 
   componentDidMount() {
     installHighlight(this.htmlContainer)
-      .catch(() => {}); // Ignore error – this is not important
+      .catch(console.error); // Ignore error – this is not important
   }
 
   getHTMLContainerRef = (node) => {

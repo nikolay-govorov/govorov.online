@@ -10,7 +10,7 @@ import YandexMetrika from '../../partials/yandex-metrika/index';
 import '../../../design-system/assets/fonts/FiraCode/fira_code.css';
 import '../../../design-system/main.css';
 
-import favicon from '../../../assets/favicon.png';
+import favicon from '../../../assets/logo.png';
 
 function BaseLayout({ children, location, title, data }) {
   const meta = data.site.siteMetadata;
