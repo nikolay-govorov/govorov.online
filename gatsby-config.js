@@ -73,7 +73,26 @@ module.exports = {
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
 
-    'gatsby-plugin-netlify',
+    {
+      resolve: 'gatsby-plugin-netlify',
+      options: {
+        headers: (() => {
+          const cacheAll = (type, paths) => paths.reduce((acc, path) => ({
+            ...acc,
+
+            [path]: [`Cache-Control: ${type}`],
+          }), {});
+
+          return {
+            // Long-term cache by default.
+            ...cacheAll(`max-age=${10 * 365.25 * 24 * 60 * 60}`, ['/*']), // To cache for 10 years
+
+            // And here are the exceptions:
+            ...cacheAll('must-revalidate, max-age=3600', ['/', 'manifest.json', 'robots.txt', 'rss.xml, sitemap.xml']),
+          };
+        })(),
+      },
+    },
 
     {
       resolve: 'gatsby-plugin-eslint',
