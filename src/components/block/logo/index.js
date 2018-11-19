@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import { Container, Mask, Photo } from './styled';
+import logo from './images/logo.svg'; // eslint-disable-line import/no-unresolved
+import { Container, Photo } from './styled';
 
 const SIZE = 80;
 const LEFT = 'left';
@@ -16,7 +17,6 @@ const state = {
 class Logo extends Component {
   propTypes = {
     img: PropTypes.string.isRequired,
-    maskFixed: PropTypes.string.isRequired,
   };
 
   componentDidMount() {
@@ -55,15 +55,17 @@ class Logo extends Component {
   };
 
   render() {
-    const { img, maskFixed } = this.props;
+    const { img } = this.props;
     const { angle } = state;
 
     return (
       <Container onClick={this.onClick}>
-        <Mask
-          aria-hidden
+        <Photo
+          width={SIZE}
+          height={SIZE}
+          src={logo}
+          alt="Логотип Николая Говорова"
           style={{ transform: `rotateY(${angle}deg)` }}
-          fixed={maskFixed}
         />
 
         <Photo
@@ -88,21 +90,10 @@ export default function () {
               avatar
             }
           }
-
-          file(relativePath: { eq: "components/block/logo/images/logo.png" }) {
-            childImageSharp {
-              fixed(width: 80, height: 80) {
-                ...GatsbyImageSharpFixed
-              }
-            }
-          }
         }
       `}
       render={data => (
-        <Logo
-          img={data.site.siteMetadata.avatar}
-          maskFixed={data.file.childImageSharp.fixed}
-        />
+        <Logo img={data.site.siteMetadata.avatar} />
       )}
     />
   );
