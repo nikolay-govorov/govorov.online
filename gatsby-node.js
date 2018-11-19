@@ -91,4 +91,14 @@ function onCreateNode({ node, actions, getNode }) {
   }
 }
 
-module.exports = { createPages, onCreateNode };
+function onCreateWebpackConfig({ actions, stage }) {
+  // If production JavaScript and CSS build
+  if (stage === 'build-javascript') {
+    // Turn off source maps
+    actions.setWebpackConfig({
+      devtool: false,
+    })
+  }
+}
+
+module.exports = { createPages, onCreateNode, onCreateWebpackConfig };
