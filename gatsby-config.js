@@ -95,7 +95,7 @@ module.exports = {
             ...cacheAll(`max-age=${10 * 365.25 * 24 * 60 * 60}`, ['/*']), // To cache for 10 years
 
             // And here are the exceptions:
-            ...cacheAll('must-revalidate, max-age=3600', ['/', 'manifest.json', 'robots.txt', 'rss.xml, sitemap.xml']),
+            ...cacheAll('must-revalidate, max-age=3600', ['/', '/manifest.json', '/robots.txt', '/rss.xml, /sitemap.xml']),
           };
         })(),
       },
