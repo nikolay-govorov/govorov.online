@@ -33,6 +33,13 @@ module.exports = {
     'gatsby-plugin-astroturf',
     'gatsby-plugin-postcss',
 
+    {
+      resolve: 'gatsby-plugin-layout',
+      options: {
+        component: path.resolve('./src/components/partials/layout/index.js')
+      }
+    },
+
     'gatsby-plugin-react-helmet',
 
     {

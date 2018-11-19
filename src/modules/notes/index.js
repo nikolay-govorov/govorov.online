@@ -1,6 +1,7 @@
 /* eslint-disable react/no-danger */
 
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 
@@ -11,8 +12,6 @@ import hljs from 'highlight.js/lib/highlight';
 import langCSS from 'highlight.js/lib/languages/css';
 import langHTML from 'highlight.js/lib/languages/xml';
 import langJS from 'highlight.js/lib/languages/javascript';
-
-import Layout from '../../components/partials/layout/index';
 
 async function installHighlight(container) {
   hljs.registerLanguage('css', langCSS);
@@ -28,8 +27,6 @@ async function installHighlight(container) {
 
 export default class Note extends Component {
   propTypes = {
-    location: PropTypes.object.isRequired, /* eslint-disable-line react/forbid-prop-types */
-
     data: PropTypes.shape({
       markdownRemark: PropTypes.shape({
         id: PropTypes.string.isRequired,
@@ -53,31 +50,33 @@ export default class Note extends Component {
   };
 
   render() {
-    const { data: { markdownRemark: post }, location } = this.props;
+    const { data: { markdownRemark: post } } = this.props;
 
     const meta = post.frontmatter;
     const created = (new Date(meta.date)).toUTCString();
 
     return (
-      <Layout title={meta.title} location={location}>
-        <article className="article" itemScope itemType="http://schema.org/BlogPosting">
-          <header className="article__header">
-            <time dateTime={created} itemProp="datePublished">
-              {meta.date}
-            </time>
+      <article className="article" itemScope itemType="http://schema.org/BlogPosting">
+        <Helmet>
+          <title>{meta.title}</title>
+        </Helmet>
 
-            <h1 className="article__title h1" itemProp="name headline">
-              {meta.title}
-            </h1>
-          </header>
+        <header className="article__header">
+          <time dateTime={created} itemProp="datePublished">
+            {meta.date}
+          </time>
 
-          <div itemProp="articleBody" ref={this.getHTMLContainerRef} dangerouslySetInnerHTML={{ __html: post.html }} />
+          <h1 className="article__title h1" itemProp="name headline">
+            {meta.title}
+          </h1>
+        </header>
 
-          <div className="article__comments">
-            {/* {% include partials/disqus/disqus.html %} */}
-          </div>
-        </article>
-      </Layout>
+        <div itemProp="articleBody" ref={this.getHTMLContainerRef} dangerouslySetInnerHTML={{ __html: post.html }} />
+
+        <div className="article__comments">
+          {/* {% include partials/disqus/disqus.html %} */}
+        </div>
+      </article>
     );
   }
 }

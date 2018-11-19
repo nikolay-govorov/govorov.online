@@ -1,40 +1,39 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
-import Layout from '../../components/partials/layout/index';
-
-export default function Presentation({ data: { markdownRemark: presentation }, location }) {
+export default function Presentation({ data: { markdownRemark: presentation } }) {
   const meta = presentation.frontmatter;
   const slides = `https://nikolay-govorov.github.io/presentation__${meta.name}/#`;
 
   return (
-    <Layout title={presentation.title} location={location}>
-      <article className="one-presentation">
-        <h2 className="h2">{meta.title}</h2>
+    <article className="one-presentation">
+      <Helmet>
+        <title>{presentation.title}</title>
+      </Helmet>
 
-        <div className="paragraph">
-          <a target="_blank" rel="noopener noreferrer" href={slides}>Слайды</a>
-        </div>
+      <h2 className="h2">{meta.title}</h2>
 
-        <div className="one-presentation__frame-container">
-          <iframe
-            className="one-presentation__frame"
-            src={meta.video}
-            title={meta.title}
-            frameBorder="0"
-            allow="autoplay; encrypted-media"
-            allowFullScreen
-          />
-        </div>
-      </article>
-    </Layout>
+      <div className="paragraph">
+        <a target="_blank" rel="noopener noreferrer" href={slides}>Слайды</a>
+      </div>
+
+      <div className="one-presentation__frame-container">
+        <iframe
+          className="one-presentation__frame"
+          src={meta.video}
+          title={meta.title}
+          frameBorder="0"
+          allow="autoplay; encrypted-media"
+          allowFullScreen
+        />
+      </div>
+    </article>
   );
 }
 
 Presentation.propTypes = {
-  location: PropTypes.object.isRequired, /* eslint-disable-line react/forbid-prop-types */
-
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       id: PropTypes.string.isRequired,

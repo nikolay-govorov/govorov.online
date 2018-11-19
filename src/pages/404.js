@@ -1,18 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import Layout from '../components/partials/layout';
-
-export default function NotFoundPage({ location }) {
+export default function NotFoundPage() {
   return (
-    <Layout location={location}>
+    <div>
       <h1 className="h1">404</h1>
 
       <p>Страница не найдена</p>
-    </Layout>
+    </div>
   );
 }
-
-NotFoundPage.propTypes = {
-  location: PropTypes.object.isRequired, /* eslint-disable-line react/forbid-prop-types */
-};
