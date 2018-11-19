@@ -72,6 +72,7 @@ class Logo extends Component {
           width={80}
           height={80}
           src={`${img}?s=${SIZE}`}
+          srcset={`${img}?s=${SIZE * 2} 2x`}
           alt="Фото Николая Говорова"
           style={{ transform: `rotateY(${angle + 180}deg)` }}
         />
