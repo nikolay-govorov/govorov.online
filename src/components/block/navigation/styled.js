@@ -12,4 +12,5 @@ export const List = styled('ul')`
 export const Item = styled('li')`
   display: inline-block;
   padding-right: .75em;
+  padding-bottom: .25em;
 `;
