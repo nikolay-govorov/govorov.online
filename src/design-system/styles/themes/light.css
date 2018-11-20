@@ -1,0 +1,4 @@
+body[data-theme=light] {
+  --text-color: #000;
+  --background-color: #fff;
+}

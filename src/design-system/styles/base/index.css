@@ -14,7 +14,9 @@ body {
   font-family: var(--base-font-family);
   font-size: var(--base-font-size);
   line-height: var(--base-line-height);
-  background: var(--foreground-color);
+  color: var(--text-color);
+  background: var(--background-color);
+  transition: all 0.2s;
   overflow-x: hidden;
   overscroll-behavior: none;
 }

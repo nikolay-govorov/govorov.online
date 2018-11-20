@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import { Container, List, Item } from './styled';
+import ThemeToggler from './theme-toggler';
 
 const pages = [
   { title: ' Обо мне ', url: '/' },
@@ -19,6 +20,8 @@ export default function Navigation() {
           </Item>
         ))}
       </List>
+
+      <ThemeToggler />
     </Container>
   );
 }

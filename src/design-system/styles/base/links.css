@@ -36,7 +36,7 @@ a,
 .link--clean {
   cursor: text;
   border: none;
-  color: #000;
+  color: var(--text-color);
 }
 
 .link--clean:before {

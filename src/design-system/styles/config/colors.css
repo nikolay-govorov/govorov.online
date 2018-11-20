@@ -1,7 +1,5 @@
 :root {
-  --foreground-color: #fff;
-  --background-color: #000;
-
-  --blue-color: rgb(1, 81, 186);
+  --gray-color: #9caec0;
+  --blue-color: #00a1fe;
   --blue-lite-color: rgb(126, 241, 249);
 }
