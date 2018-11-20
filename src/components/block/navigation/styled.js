@@ -2,12 +2,13 @@ import { styled } from 'astroturf';
 
 export const Container = styled('nav')`
   display: flex;
-  padding-top: .5em;
+  flex-wrap: wrap;
 `;
 
 export const List = styled('ul')`
   list-style: none;
   margin-right: .75em;
+  padding: 0.5em 0;
 `;
 
 export const Item = styled('li')`

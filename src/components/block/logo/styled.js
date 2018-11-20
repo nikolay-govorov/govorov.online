@@ -7,6 +7,7 @@ export const Container = styled('div')`
   width: 80px;
   height: 80px;
   margin-right: 1.25em;
+  margin-bottom: 1.25em;
   cursor: pointer;
 `;
 

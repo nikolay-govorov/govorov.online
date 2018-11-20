@@ -4,6 +4,7 @@ import { styled, css } from 'astroturf';
 export const Container = styled('div')`
   display: flex;
   align-items: center;
+  padding: 0.5em 0;
 `;
 
 export const Icon = styled('label')`

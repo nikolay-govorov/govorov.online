@@ -2,7 +2,6 @@ import { styled, css } from 'astroturf';
 
 export const Container = styled('header')`
   display: flex;
-  align-items: center;
   flex-wrap: wrap;
 `;
 
