@@ -4,6 +4,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { THEME_LIGHT } from "./components/block/navigation/theme-toggler/utils";
+
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes}>
@@ -17,6 +19,10 @@ export default function HTML(props) {
         {props.headComponents}
       </head>
       <body {...props.bodyAttributes}>
+        <script
+          dangerouslySetInnerHTML={{ __html: `document.body.setAttribute("data-theme",localStorage.getItem('theme') || "${THEME_LIGHT}")` }}
+        />
+
         {props.preBodyComponents}
         <div
           key="body"
