@@ -4,7 +4,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { THEME_LIGHT } from "./components/block/navigation/theme-toggler/utils";
+import { THEME_LIGHT } from './components/block/navigation/theme-toggler/utils';
 
 export default function HTML(props) {
   return (
