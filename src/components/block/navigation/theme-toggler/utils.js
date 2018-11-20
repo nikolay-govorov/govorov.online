@@ -20,6 +20,5 @@ export function detectActualTheme() {
 }
 
 export function saveTheme(value) {
-  console.log(value);
   localStorage.setItem('theme', value);
 }

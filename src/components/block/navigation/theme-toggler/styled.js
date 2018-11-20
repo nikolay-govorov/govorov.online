@@ -74,6 +74,8 @@ const buttonStyles = css`
   }
 `;
 
-export const Checkbox = (props) => <input className={buttonStyles.input} {...props} />
+/* eslint-disable-next-line jsx-a11y/label-has-associated-control */
+export const Checkbox = props => <input className={buttonStyles.input} {...props} />;
 
-export const Button = (props) => <label className={buttonStyles.label} {...props} />
+/* eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control */
+export const Button = props => <label className={buttonStyles.label} {...props} />;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 
 import {
-  Container, Icon, Button, Checkbox
+  Container, Icon, Button, Checkbox,
 } from './styled';
 import {
   THEME_LIGHT, THEME_DARK, detectActualTheme, saveTheme,
