@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
 import logo from './images/logo.svg'; // eslint-disable-line import/no-unresolved
-import { Container, Photo } from './styled';
+import { Container, Image } from './styled';
 
 const SIZE = 80;
 const LEFT = 'left';
@@ -58,23 +58,27 @@ class Logo extends Component {
     const { img } = this.props;
     const { angle } = state;
 
+    const setupImage = (imgAngle, alt) => ({
+      alt,
+      width: SIZE,
+      height: SIZE,
+      style: { transform: `rotateY(${imgAngle}deg)` },
+    });
+
     return (
       <Container onClick={this.onClick}>
-        <Photo
-          width={SIZE}
-          height={SIZE}
+        <Image
           src={logo}
-          alt="Логотип Николая Говорова"
-          style={{ transform: `rotateY(${angle}deg)` }}
+
+          {...setupImage(angle, 'Логотип Николая Говорова')}
         />
 
-        <Photo
-          width={80}
-          height={80}
+        <Image
+          round
           src={`${img}?s=${SIZE}`}
-          srcset={`${img}?s=${SIZE * 2} 2x`}
-          alt="Фото Николая Говорова"
-          style={{ transform: `rotateY(${angle + 180}deg)` }}
+          srcSet={`${img}?s=${SIZE * 2} 2x`}
+
+          {...setupImage(angle + 180, 'Фото Николая Говорова')}
         />
       </Container>
     );
