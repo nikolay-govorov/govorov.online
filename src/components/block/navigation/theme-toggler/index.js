@@ -16,14 +16,14 @@ export default class ThemeToggler extends Component {
     theme: detectActualTheme(),
   };
 
-  toggleTheme = ({ target }) => {
-    this.setState(() => ({
-      theme: target.checked ? THEME_DARK : THEME_LIGHT,
-    }), () => {
-      const { theme } = this.state;
+  componentDidMount() {
+    this.setState({ theme: detectActualTheme() });
+  }
 
-      toggleTheme(theme);
-    });
+  toggleTheme = ({ target }) => {
+    const theme = target.checked ? THEME_DARK : THEME_LIGHT;
+
+    this.setState({ theme }, () => toggleTheme(theme));
   };
 
   render() {
