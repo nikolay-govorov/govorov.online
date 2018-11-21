@@ -21,8 +21,8 @@ module.exports = {
     },
 
     disqus: {
-      shortname: 'govorov-online'
-    }
+      shortname: 'govorov-online',
+    },
   },
   plugins: [
     'gatsby-plugin-astroturf',
@@ -31,8 +31,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-layout',
       options: {
-        component: path.resolve('./src/components/partials/layout/index.js')
-      }
+        component: path.resolve('./src/components/partials/layout/index.js'),
+      },
     },
 
     'gatsby-plugin-react-helmet',
@@ -79,10 +79,10 @@ module.exports = {
       resolve: 'gatsby-plugin-netlify',
       options: {
         headers: (() => {
-          const cacheAll = (type, paths) => paths.reduce((acc, path) => ({
+          const cacheAll = (type, paths) => paths.reduce((acc, url) => ({
             ...acc,
 
-            [path]: [`Cache-Control: ${type}`],
+            [url]: [`Cache-Control: ${type}`],
           }), {});
 
           return {
@@ -103,14 +103,14 @@ module.exports = {
         exclude: /(node_modules|\.cache|public)/,
         options: {
           emitWarning: true,
-        }
-      }
+        },
+      },
     },
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyzer',
       options: {
         production: analyze,
-      }
-    }
-  ]
+      },
+    },
+  ],
 };
