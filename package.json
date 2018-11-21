@@ -10,11 +10,11 @@
   "repository": "nikolay-govorov/govorov.online",
   "scripts": {
     "lint": "eslint src/ --ext .js --fix",
-    "pretest": "npm run lint",
     "clean": "rm -rf .cache public",
     "start": "NODE_ENV=development gatsby develop",
     "build": "NODE_ENV=production gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "test": "npm run lint && npm run build"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
