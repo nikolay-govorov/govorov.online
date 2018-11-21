@@ -16,7 +16,5 @@ layout: compress
     <div class="page__footer">
       {% include partials/footer/footer.html %}
     </div>
-
-    {% include partials/yandex-metrika/yandex-metrika.html %}    
   </body>
 </html>
