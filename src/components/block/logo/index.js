@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
 import logo from './images/logo.svg'; // eslint-disable-line import/no-unresolved
-import { Container, Image } from './styled';
+import { Container, Image, Avatar } from './styled';
 
 const SIZE = 80;
 const LEFT = 'left';
@@ -16,7 +16,8 @@ const state = {
 
 class Logo extends Component {
   propTypes = {
-    img: PropTypes.string.isRequired,
+    /* eslint-disable-next-line */
+    avatar: PropTypes.object.isRequired,
   };
 
   componentDidMount() {
@@ -55,7 +56,7 @@ class Logo extends Component {
   };
 
   render() {
-    const { img } = this.props;
+    const { avatar } = this.props;
     const { angle } = state;
 
     const setupImage = (imgAngle, alt) => ({
@@ -70,15 +71,13 @@ class Logo extends Component {
         <Image
           src={logo}
 
-          {...setupImage(angle, 'Логотип Николая Говорова')}
+          {...setupImage(angle - 180, 'Логотип Николая Говорова')}
         />
 
-        <Image
-          round
-          src={`${img}?s=${SIZE}`}
-          srcSet={`${img}?s=${SIZE * 2} 2x`}
+        <Avatar
+          fixed={avatar}
 
-          {...setupImage(angle + 180, 'Фото Николая Говорова')}
+          {...setupImage(angle, 'Фото Николая Говорова')}
         />
       </Container>
     );
@@ -90,15 +89,20 @@ export default function () {
     <StaticQuery
       query={graphql`
         query {
-          site {
-            siteMetadata {
-              avatar
+          file(relativePath: { eq: "components/block/logo/images/avatar.jpg" }) {
+            childImageSharp {
+              # Specify the image processing specifications right in the query.
+              # Makes it trivial to update as your page's design changes.
+              fixed(width: 80, height: 80) {
+                ...GatsbyImageSharpFixed_withWebp_noBase64
+              }
             }
           }
         }
       `}
+
       render={data => (
-        <Logo img={data.site.siteMetadata.avatar} />
+        <Logo avatar={data.file.childImageSharp.fixed} />
       )}
     />
   );
