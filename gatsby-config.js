@@ -15,8 +15,6 @@ module.exports = {
     description: 'Живу в Питере, работаю фронтенд-разработчиком для ВКонтакте',
     authorBirthDate: '1999-09-24',
 
-    avatar: 'https://s.gravatar.com/avatar/72cbf564ef7b21b730ec93a6e3abc9f2',
-
     job: {
       name: 'ВКонтакте',
       url: 'https://vk.com',

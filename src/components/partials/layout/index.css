@@ -5,7 +5,7 @@
   min-height: 100vh;
   max-width: var(--max-screen-width);
   padding: calc(1rem + 1vw);
-  grid-row-gap: 3rem;
+  grid-row-gap: 1.5rem;
   grid-column-gap: calc(1rem + 1vw);
   grid-template-areas:
   "header"

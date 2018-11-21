@@ -12,9 +12,11 @@ export default function Header({ site, url }) {
 
   return (
     <Container>
-      <Logo />
+      <div className={styles.logo}>
+        <Logo />
+      </div>
 
-      <div className="header__content">
+      <div className={styles.navigation}>
         {localUrl === '/' ? (
           <h1 className={styles.title}>
             {site.title}
@@ -36,6 +38,5 @@ Header.propTypes = {
 
   site: PropTypes.shape({
     title: PropTypes.string.isRequired,
-    avatar: PropTypes.string.isRequired,
   }).isRequired,
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
+import avatar from '../logo/images/avatar.jpg';
 import { Container, Link as IntroLink } from './styled';
 
 const getCurrentAge = (date) => {
@@ -22,7 +23,7 @@ export default function Introduction({ site, contacts, projects }) {
   return (
     <Container itemScope itemType="https://schema.org/Person">
       <link itemProp="url" href={site.siteUrl} />
-      <meta itemProp="image" content={`${site.avatar}?s=120`} />
+      <meta itemProp="image" content={`${avatar}?s=280`} />
       <meta itemProp="birthDate" content={site.authorBirthDate} />
 
       {contacts.filter(({ itemprop }) => itemprop).map(contact => (
@@ -91,7 +92,6 @@ export default function Introduction({ site, contacts, projects }) {
 Introduction.propTypes = {
   site: PropTypes.shape({
     siteUrl: PropTypes.string.isRequired,
-    avatar: PropTypes.string.isRequired,
     authorBirthDate: PropTypes.string.isRequired,
     job: PropTypes.shape({
       url: PropTypes.string.isRequired,

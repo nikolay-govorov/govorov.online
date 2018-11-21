@@ -4,6 +4,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import Header from '../../block/header/index';
 import Footer from '../../block/footer/index';
+import avatar from '../../block/logo/images/avatar.jpg';
 
 // TODO: move requires fonts in CSS
 import '../../../design-system/assets/fonts/FiraCode/fira_code.css';
@@ -31,7 +32,7 @@ function BaseLayout({
 
         <meta property="og:url" content={meta.siteUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${meta.avatar}?s=280`} />
+        <meta property="og:image" content={`${avatar}?s=280`} />
         <meta property="og:image:width" content="280" />
         <meta property="og:image:height" content="280" />
         <meta property="og:image:type" content="image/jpeg" />
@@ -77,7 +78,6 @@ export default function (props) {
               lang
               title
               author
-              avatar
               description
               themeColor
             }
