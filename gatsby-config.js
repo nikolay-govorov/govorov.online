@@ -22,9 +22,6 @@ module.exports = {
       url: 'https://vk.com',
     },
 
-    // TODO: Перенести в переменную окружения
-    yandexVerificationCode: 'a85fbaade3d4ec4d',
-
     disqus: {
       shortname: 'govorov-online'
     }

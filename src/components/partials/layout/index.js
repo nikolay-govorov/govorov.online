@@ -40,9 +40,6 @@ function BaseLayout({
         <meta property="og:site_name" content={meta.author} />
         <meta property="og:description" content={meta.description} />
 
-        {/* Yandex verification */}
-        <meta name="yandex-verification" content={meta.yandexVerificationCode} />
-
         {/* Disable auto detected phone links */}
         <meta name="format-detection" content="telephone=no" />
         {' '}
@@ -83,7 +80,6 @@ export default function (props) {
               avatar
               description
               themeColor
-              yandexVerificationCode
             }
           }
         }

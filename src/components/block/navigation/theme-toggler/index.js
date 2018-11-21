@@ -10,6 +10,10 @@ import {
 
 const INPUT_ID = 'toggler';
 
+if (typeof window !== 'undefined') {
+  document.body.setAttribute('data-theme', localStorage.getItem('theme') || THEME_LIGHT);
+}
+
 export default class ThemeToggler extends Component {
   state = {
     theme: detectActualTheme(),
