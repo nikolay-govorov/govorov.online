@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-import Helmet from 'react-helmet';
 
 import {
   Container, Icon, Button, Checkbox,
 } from './styled';
 import {
-  THEME_LIGHT, THEME_DARK, detectActualTheme, saveTheme,
+  THEME_LIGHT, THEME_DARK, detectActualTheme, toggleTheme,
 } from './utils';
 
 const INPUT_ID = 'toggler';
 
-if (typeof window !== 'undefined') {
-  document.body.setAttribute('data-theme', localStorage.getItem('theme') || THEME_LIGHT);
-}
+toggleTheme(detectActualTheme());
 
 export default class ThemeToggler extends Component {
   state = {
@@ -25,7 +22,7 @@ export default class ThemeToggler extends Component {
     }), () => {
       const { theme } = this.state;
 
-      saveTheme(theme);
+      toggleTheme(theme);
     });
   };
 
@@ -34,10 +31,6 @@ export default class ThemeToggler extends Component {
 
     return (
       <Container>
-        <Helmet>
-          <body data-theme={theme} />
-        </Helmet>
-
         <Icon
           sun
           htmlFor={INPUT_ID}

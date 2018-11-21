@@ -22,7 +22,6 @@ function BaseLayout({
         <html lang={meta.lang} />
 
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="theme-color" content={meta.themeColor} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <title>{pageTitle}</title>
@@ -79,7 +78,6 @@ export default function (props) {
               title
               author
               description
-              themeColor
             }
           }
         }
