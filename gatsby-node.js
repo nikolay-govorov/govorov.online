@@ -72,9 +72,9 @@ async function createPages({ graphql, actions }) {
           previous,
           next,
         },
-      })
+      });
     });
-  })
+  });
 }
 
 function onCreateNode({ node, actions, getNode }) {
@@ -87,7 +87,7 @@ function onCreateNode({ node, actions, getNode }) {
       name: 'slug',
       node,
       value,
-    })
+    });
   }
 }
 
@@ -97,7 +97,7 @@ function onCreateWebpackConfig({ actions, stage }) {
     // Turn off source maps
     actions.setWebpackConfig({
       devtool: false,
-    })
+    });
   }
 }
 

@@ -51,7 +51,23 @@ module.exports = {
         path: path.join(__dirname, 'src', 'pages'),
       },
     },
-    'gatsby-transformer-remark',
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-copy-linked-files',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1024,
+              quality: 100,
+              withWebp: true,
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
 
     {
       resolve: 'gatsby-source-filesystem',
