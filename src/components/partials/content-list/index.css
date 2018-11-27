@@ -1,0 +1,21 @@
+.content-list {}
+
+.content-list__section {
+  margin-bottom: 2.5em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.content-list__section-title {
+  position: relative;
+}
+
+.content-list__list {
+  list-style: none;
+}
+
+.content-list__item {
+  padding-bottom: .5em;
+}
