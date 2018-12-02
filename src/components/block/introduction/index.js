@@ -55,14 +55,14 @@ export default function Introduction({ site, contacts, projects }) {
       </p>
 
       <p className="paragraph">
-        С 2015 года разрабатывал фронтенды на фрилансе, в том числе для
+        С 2015 года разрабатывал интерфейсы на фрилансе, в том числе для
         {' '}
         <ProjectsList list={projects} type="job" />
 .
       </p>
 
       <p className="paragraph">
-        Учавствую в разработке open-source проектов, поддерживаю
+        Разрабатываю open-source проекты, поддерживаю
         {' '}
         <ProjectsList list={projects} type="opensource" />
 .
