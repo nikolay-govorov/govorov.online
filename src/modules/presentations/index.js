@@ -3,6 +3,8 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
+import Video from '../../components/partials/Video/index';
+
 export default function Presentation({ data: { markdownRemark: presentation } }) {
   const meta = presentation.frontmatter;
   const slides = `https://nikolay-govorov.github.io/presentation__${meta.name}/#`;
@@ -19,16 +21,10 @@ export default function Presentation({ data: { markdownRemark: presentation } })
         <a target="_blank" rel="noopener noreferrer" href={slides}>Слайды</a>
       </div>
 
-      <div className="one-presentation__frame-container">
-        <iframe
-          className="one-presentation__frame"
-          src={meta.video}
-          title={meta.title}
-          frameBorder="0"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-        />
-      </div>
+      <Video
+        url={meta.video}
+        title={meta.title}
+      />
     </article>
   );
 }
