@@ -16,8 +16,8 @@ module.exports = {
     authorBirthDate: '1999-09-24',
 
     job: {
-      name: 'ВКонтакте',
-      url: 'https://vk.com',
+      name: 'SEMrush',
+      url: 'https://semrush.com',
     },
 
     disqus: {
