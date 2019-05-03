@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/nikolay_govorov
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://govorov.online
+  * I am nikolay_govorov (https://keybase.io/nikolay_govorov) on keybase.
+  * I have a public key ASA_Xpm12EEj49tzO2xB0oYkkKuc0iHPEcUHHAbM1MoR0Qo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01203f5e99b5d84123e3db733b6c41d2862490ab9cd221cf11c5071c06ccd4ca11d10a",
+      "host": "keybase.io",
+      "kid": "01203f5e99b5d84123e3db733b6c41d2862490ab9cd221cf11c5071c06ccd4ca11d10a",
+      "uid": "c605360c83d7c5cba62a3f059c13fb19",
+      "username": "nikolay_govorov"
+    },
+    "merkle_root": {
+      "ctime": 1556903969,
+      "hash": "f97c611cf2b75b8868f0fa77cb2f256a82b169d336c537d4f543ff39342bbaee32bf540aed2cdf6940c78025d0e494abb84b638117b28e5185cd1131ed024eff",
+      "hash_meta": "55cc509b1464eb6ef6798602eb0a574a39b5ae83eca9dd350945e75902918d7d",
+      "seqno": 5291511
+    },
+    "service": {
+      "entropy": "nTrT4uyJZ3T8gsBO4BgqULCT",
+      "hostname": "govorov.online",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "3.2.2"
+  },
+  "ctime": 1556903975,
+  "expire_in": 504576000,
+  "prev": "c899e9fb8d11c8653dee5eb4feca96cb5f84f1fa7de1211045c36183538705cd",
+  "seqno": 7,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgP16ZtdhBI+PbcztsQdKGJJCrnNIhzxHFBxwGzNTKEdEKp3BheWxvYWTESpcCB8QgyJnp+40RyGU97l60/sqWy1+E8fp94SEQRcNhg1OHBc3EINua9MGM2clGc61/NFtCXa0+KC4ChMHE3j6cRn87rlLHAgHCo3NpZ8RAMJkhBq48PvrC1YmjAkOrLOE1ZWbWefRGDV1NAaXFsqhN27xDfoiy3x834yTkAbEHH9noYQX1fI9RwDRqaWX+BqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIAkIMXsUpp22IOCrK5jy73LyB5U/e3m7ZbTeWx/LgU0Jo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nikolay_govorov
+
+==================================================================
