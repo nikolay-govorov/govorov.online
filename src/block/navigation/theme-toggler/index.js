@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+/* eslint-disable jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for */
 
-import {
-  Container, Icon, Button, Checkbox,
-} from './styled';
+import React, { Component } from 'react';
+import cx from 'classnames';
+
+import { styles } from './styled';
 import {
   THEME_LIGHT, THEME_DARK, detectActualTheme, toggleTheme,
 } from './utils';
@@ -30,20 +31,32 @@ export default class ThemeToggler extends Component {
     const { theme } = this.state;
 
     return (
-      <Container>
-        <Icon
-          sun
+      <div className={styles.container}>
+        <label
           htmlFor={INPUT_ID}
+          className={cx(styles.icon, styles.sun)}
+          aria-hidden
         />
 
-        <Checkbox onChange={this.toggleTheme} checked={theme === THEME_DARK} type="checkbox" id={INPUT_ID} />
-        <Button htmlFor={INPUT_ID} aria-label="Переключить тему">Переключить тему</Button>
-
-        <Icon
-          crescent
-          htmlFor={INPUT_ID}
+        <input
+          id={INPUT_ID}
+          type="checkbox"
+          onChange={this.toggleTheme}
+          checked={theme === THEME_DARK}
+          className={styles.input}
         />
-      </Container>
+        <label
+          className={styles.label}
+          htmlFor={INPUT_ID}
+          aria-label="Переключить тему"
+        />
+
+        <label
+          htmlFor={INPUT_ID}
+          className={cx(styles.icon, styles.crescent)}
+          aria-hidden
+        />
+      </div>
     );
   }
 }

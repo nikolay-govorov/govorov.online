@@ -1,35 +1,39 @@
-import React from 'react';
-import { styled, css } from 'astroturf';
+import { css } from 'astroturf';
 
-export const Container = styled('div')`
-  display: flex;
-  align-items: center;
-`;
+/* eslint-disable-next-line import/prefer-default-export */
+export const styles = css`
+  .container {
+    display: flex;
+    align-items: center;
+  }
 
-export const Icon = styled('label')`
-  color: var(--text-color);
-  display: flex;
-  align-items: center;
-  cursor: pointer;
+  body:not([data-theme]) .container {
+    display: none;
+  }
+
+  .icon {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
   
-  &::before {
-    content: '';
-    width: 18px;
-    height: 18px;
+    &::before {
+      content: '';
+      width: 18px;
+      height: 18px;
+    }
+  
+    &.sun::before {
+      margin-right: 7px;
+      background: url(./images/sun.svg);
+    }
+  
+    &.crescent::before {
+      margin-left: 7px;
+      background: url(./images/crescent.svg);
+    }
   }
 
-  &.sun::before {
-    margin-right: 7px;
-    background: url(./images/sun.svg);
-  }
-
-  &.crescent::before {
-    margin-left: 7px;
-    background: url(./images/crescent.svg);
-  }
-`;
-
-const buttonStyles = css`
   .input {
     position: absolute;
     width: 1px;
@@ -73,9 +77,3 @@ const buttonStyles = css`
     outline: auto;
   }
 `;
-
-/* eslint-disable-next-line jsx-a11y/label-has-associated-control */
-export const Checkbox = props => <input className={buttonStyles.input} {...props} />;
-
-/* eslint-disable-next-line jsx-a11y/label-has-for, jsx-a11y/label-has-associated-control */
-export const Button = props => <label className={buttonStyles.label} {...props} />;
