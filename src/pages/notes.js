@@ -1,7 +1,7 @@
 import React from 'react';
 
-import SectionQuery from '../components/utils/section-query';
-import ContentList from '../components/partials/content-list';
+import SectionQuery from '../partials/section-query';
+import ContentList from '../partials/content-list';
 
 export default function NotesPage() {
   return (

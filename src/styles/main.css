@@ -12,8 +12,8 @@
 @import './base/lists.css';
 
 /* Components */
-@import '../../components/partials/layout/index.css';
+@import '../partials/layout/index.css';
 
 /* Modules */
-@import '../../modules/notes/index.css';
-@import '../../modules/presentations/index.css';
+@import '../modules/notes/index.css';
+@import '../modules/presentations/index.css';

@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
-import Video from '../../components/partials/Video/index';
+import Video from '../../partials/video/index';
 
 export default function Presentation({ data: { markdownRemark: presentation } }) {
   const meta = presentation.frontmatter;

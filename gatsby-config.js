@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-layout',
       options: {
-        component: path.resolve('./src/components/partials/layout/index.js'),
+        component: path.resolve('./src/partials/layout/index.js'),
       },
     },
 
@@ -81,7 +81,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-favicon',
       options: {
-        logo: './src/components/block/logo/images/logo.png',
+        logo: './src/block/logo/images/logo.png',
         appName: 'govorov.online',
         icons: {},
       },
