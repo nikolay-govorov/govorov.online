@@ -1,5 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
 import Header from '../../block/header/index';
@@ -65,6 +66,23 @@ function BaseLayout({
     </>
   );
 }
+
+BaseLayout.propTypes = {
+  data: PropTypes.shape({
+    site: PropTypes.shape({
+      siteMetadata: PropTypes.shape({
+        siteUrl: PropTypes.string.isRequired,
+        lang: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        author: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+      }),
+    }).isRequired,
+  }).isRequired,
+  title: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
+  location: PropTypes.string.isRequired,
+};
 
 export default function (props) {
   return (
