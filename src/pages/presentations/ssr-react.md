@@ -1,7 +1,7 @@
 ---
-templateKey: blog-post
+name: ssr-react
 title: Серверный рендеринг React
-date: 2019-04-26T16:00:00.000Z
+date: 2019-04-26
 video: 'https://www.youtube.com/embed/MueYSY2ZO4Y?rel=0&t=849'
 ---
 React — библиотека построения интерфейсов, которую чаще всего используют для создания SPA, но можно больше.
