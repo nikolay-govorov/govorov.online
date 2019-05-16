@@ -4,6 +4,8 @@ import React, { useRef, useEffect, useMemo } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
+import './fonts/FiraCode/index.css';
+
 // langs
 import 'highlight.js/styles/androidstudio.css';
 import hljs from 'highlight.js/lib/highlight';

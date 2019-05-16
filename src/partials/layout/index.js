@@ -8,7 +8,6 @@ import Footer from '../../block/footer/index';
 import avatar from '../../block/logo/images/avatar.jpg';
 
 // TODO: move requires fonts in CSS
-import '../../assets/fonts/FiraCode/fira_code.css';
 import '../../styles/main.css';
 
 function BaseLayout({
