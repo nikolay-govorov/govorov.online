@@ -12,7 +12,7 @@ function Video({ url, title }) {
         scrolling="no"
         frameBorder="0"
         allow="autoplay; encrypted-media"
-        allowTransparency="true"
+        allowtransparency="true"
         allowFullScreen
       />
     </Wrapper>
