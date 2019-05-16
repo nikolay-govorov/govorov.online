@@ -7929,6 +7929,11 @@ jpeg-js@^0.3.4:
   resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.3.5.tgz#6fbd6cd0e49627c5a0341796c9e50c70a2aa3673"
   integrity sha512-hvaExqwmQDS8O9qnZAVDXGWU43Tbu1V0wMZmjROjT11jloSgGICZpscG+P6Nyi1BVAvyu2ARRx8qmEW30sxgdQ==
 
+jquery@>=1.10.2:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
+  integrity sha512-36+AdBzCL+y6qjw5Tx7HgzeGCzC81MDDgaUP8ld2zhx58HdqXGoBd+tHdrBMiyjGQs0Hxs/MLZTu/eHNJJuWPw==
+
 js-base64@^2.5.1:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.5.1.tgz#1efa39ef2c5f7980bb1784ade4a8af2de3291121"
@@ -9230,6 +9235,19 @@ netlify-cms-lib-util@^2.3.2:
     js-sha256 "^0.9.0"
     localforage "^1.7.3"
 
+netlify-cms-media-library-cloudinary@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/netlify-cms-media-library-cloudinary/-/netlify-cms-media-library-cloudinary-1.3.2.tgz#da667a3404c93db9a41c8d65291a0d8c0aba6191"
+  integrity sha512-DAnhJ44JIXR5ORxK4B/Tx/ify76f9vMot5cTvSWlCoQtSdoZdv8y4yWStJapHyKhbpPoT3aSVFSeM7KJkKF9YA==
+
+netlify-cms-media-library-uploadcare@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/netlify-cms-media-library-uploadcare/-/netlify-cms-media-library-uploadcare-0.5.2.tgz#b8cf169739d360a312cb43c2aa80438c9649fc0d"
+  integrity sha512-qz1pnpU5IkCnDW87yK2C+6j63umHnQ0JhTnoR4UrSsoYVjQsSQrcLmvyx8ZgeaTJHdeEbH+dgl3BdWb1lkzXGA==
+  dependencies:
+    uploadcare-widget "^3.7.0"
+    uploadcare-widget-tab-effects "^1.4.0"
+
 netlify-cms-ui-default@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/netlify-cms-ui-default/-/netlify-cms-ui-default-2.6.2.tgz#04d428f11590f58db00ea464503a2139a2bec059"
@@ -9341,6 +9359,17 @@ netlify-cms-widget-text@^2.2.2:
   integrity sha512-DJYg7NvRHRG4bA4VNTDytRIZDRv5m5ahy1SMM/nxr2+PhHUk1cRVq75IYakJGYF2nk278kuNUDUqgPjfpHsIVQ==
   dependencies:
     react-textarea-autosize "^7.1.0"
+
+netlify-cms@^2.9.1:
+  version "2.9.1"
+  resolved "https://registry.yarnpkg.com/netlify-cms/-/netlify-cms-2.9.1.tgz#11e82b0ee74ea69bf7d80b702df94426a606c976"
+  integrity sha512-NYdpSZo4jUs0nRlsA3aqneZrCYaeU+S4hs2v7uZdcnKhTKkoTP20A7NdPbmqtVKAkr/sJUS/D7iExiQ5znWOZg==
+  dependencies:
+    netlify-cms-app "^2.9.1"
+    netlify-cms-media-library-cloudinary "^1.3.2"
+    netlify-cms-media-library-uploadcare "^0.5.2"
+    react "^16.8.4"
+    react-dom "^16.8.4"
 
 netlify-identity-widget@^1.4.11:
   version "1.5.2"
@@ -14259,6 +14288,18 @@ update-notifier@^2.3.0:
     latest-version "^3.0.0"
     semver-diff "^2.0.0"
     xdg-basedir "^3.0.0"
+
+uploadcare-widget-tab-effects@^1.4.0:
+  version "1.4.5"
+  resolved "https://registry.yarnpkg.com/uploadcare-widget-tab-effects/-/uploadcare-widget-tab-effects-1.4.5.tgz#18647671b77c914e8b9bc058a2f41b39fa749afd"
+  integrity sha512-IFyoXv7w0ppvynTehn1Ko/26dZPs9+hZNvgAAIqHw24UpPCvFdPDC1il9afs9C396gvxBLItReVjbYuDJ4CkXw==
+
+uploadcare-widget@^3.7.0:
+  version "3.7.5"
+  resolved "https://registry.yarnpkg.com/uploadcare-widget/-/uploadcare-widget-3.7.5.tgz#2d3962e6d8061f51c8f9f76fafa1df681d7eaee1"
+  integrity sha512-ZGmKl1VMq7xnikVR5diy3OVMPbJXsl+lExn087Lrk+Zlx+sE/6AlKoKYHuf9C3uSCwcOgsccjxGEvUUEWNxeVQ==
+  dependencies:
+    jquery ">=1.10.2"
 
 upper-case@^1.1.1:
   version "1.1.3"
