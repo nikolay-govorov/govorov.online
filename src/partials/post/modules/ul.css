@@ -1,9 +1,9 @@
-.article p + ul
+.post p + ul
 {
   margin-top: -.75em;
 }
 
-.article ul
+.post ul
 {
   max-width: var(--readable-text-width);
   margin: 0;
@@ -14,7 +14,7 @@
   }
 }
 
-.article ul li
+.post ul li
 {
   margin-bottom: .5em;
   list-style: none;

@@ -1,4 +1,4 @@
-.article .aside {
+.post .aside {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -6,17 +6,17 @@
   margin-bottom: 1em;
 }
 
-.article .aside p {
+.post .aside p {
   margin: 0;
 }
 
-.article .aside__paragraph,
-.article .aside__note {
+.post .aside__paragraph,
+.post .aside__note {
   margin: 0;
   flex: 0 1 100%;
 }
 
-.article .aside__note {
+.post .aside__note {
   max-width: var(--readable-heading-width);
   margin-top: 1em;
   padding-left: 3em;

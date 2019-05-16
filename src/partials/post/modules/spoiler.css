@@ -1,12 +1,12 @@
-.article .spoiler {
+.post .spoiler {
   background-color: currentColor;
 }
 
-.article .spoiler:hover {
+.post .spoiler:hover {
   background-color: transparent;
 }
 
-.article .spoiler:not(:hover)::selection {
+.post .spoiler:not(:hover)::selection {
   color: inherit;
   background-color: currentColor;
 }

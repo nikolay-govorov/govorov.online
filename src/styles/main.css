@@ -13,7 +13,4 @@
 
 /* Components */
 @import '../partials/layout/index.css';
-
-/* Modules */
-@import '../modules/notes/index.css';
-@import '../modules/presentations/index.css';
+@import '../partials/post/index.css';

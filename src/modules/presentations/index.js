@@ -1,31 +1,35 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
+import Post from '../../partials/post/index';
 import Video from '../../partials/video/index';
 
-export default function Presentation({ data: { markdownRemark: presentation } }) {
-  const meta = presentation.frontmatter;
+export default function Presentation({
+  data: {
+    markdownRemark: { frontmatter: meta, html },
+  },
+}) {
   const slides = `https://nikolay-govorov.github.io/presentation__${meta.name}/#`;
 
   return (
-    <article className="one-presentation">
-      <Helmet>
-        <title>{presentation.title}</title>
-      </Helmet>
+    <Post
+      title={meta.title}
+      date={meta.date}
+      preview={(
+        <>
+          <div className="paragraph">
+            <a target="_blank" rel="noopener noreferrer" href={slides}>Слайды</a>
+          </div>
 
-      <h2 className="h2">{meta.title}</h2>
-
-      <div className="paragraph">
-        <a target="_blank" rel="noopener noreferrer" href={slides}>Слайды</a>
-      </div>
-
-      <Video
-        url={meta.video}
-        title={meta.title}
-      />
-    </article>
+          <Video
+            url={meta.video}
+            title={meta.title}
+          />
+        </>
+      )}
+      content={html}
+    />
   );
 }
 
@@ -48,6 +52,7 @@ export const pageQuery = graphql`
   query PresentationBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
+      html
       frontmatter {
         name
         title
