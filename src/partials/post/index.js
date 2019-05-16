@@ -1,3 +1,5 @@
+/* eslint-disable react/no-danger */
+
 import React, { useRef, useEffect, useMemo } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
@@ -25,7 +27,7 @@ async function installHighlight(container) {
 export default function Post({
   title, date, preview, content,
 }) {
-  const htmlContainerRef = useRef();
+  const htmlContainerRef = useRef(null);
   const created = useMemo(() => (new Date(date)).toUTCString(), [date]);
 
   useEffect(() => {
