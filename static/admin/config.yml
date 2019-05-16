@@ -1,0 +1,57 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/images
+public_folder: /images
+
+collections:
+  - name: "notes"
+    label: "Notes"
+    folder: "src/pages/notes"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Template Key"
+        name: "templateKey"
+        widget: "hidden"
+        default: "blog-post"
+
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
+
+  - name: "presentations"
+    label: "Presentations"
+    folder: "src/pages/presentations"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Template Key"
+        name: "templateKey"
+        widget: "hidden"
+        default: "blog-post"
+
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Publish Date"
+        name: "date"
+        widget: "datetime"
+
+      - label: "Video"
+        name: "video"
+        widget: "string"
+
+      - label: "Body"
+        name: "body"
+        widget: "markdown"
