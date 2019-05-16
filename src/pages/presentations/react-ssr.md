@@ -1,5 +1,5 @@
 ---
-name: ssr-react
+name: react-ssr
 title: Серверный рендеринг React
 date: 2019-04-26
 video: 'https://www.youtube.com/embed/MueYSY2ZO4Y?rel=0&t=849'
