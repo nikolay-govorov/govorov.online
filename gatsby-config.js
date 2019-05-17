@@ -21,10 +21,6 @@ module.exports = {
       name: 'SEMrush',
       url: 'https://semrush.com',
     },
-
-    disqus: {
-      shortname: 'govorov-online',
-    },
   },
   plugins: [
     'gatsby-plugin-astroturf',
