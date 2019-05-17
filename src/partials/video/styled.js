@@ -1,7 +1,13 @@
-import { styled } from 'astroturf';
+import { css } from 'astroturf';
 
-export const Wrapper = styled('div')`
-  --aspect-ratio: 315 / 560;
+export default css`
+.wrapper {
+  width: 100%;
+  max-width: var(--readable-heading-width);
+}
+
+.container {
+  --aspect-ratio: 1 / (480 / 360);
 
   position: relative;
 
@@ -10,16 +16,70 @@ export const Wrapper = styled('div')`
   justify-content: stretch;
 
   width: 100%;
-  padding-top: calc(100% * var(--aspect-ratio));
+  height: 0;
+  padding-bottom: calc(100% * var(--aspect-ratio));
+}
 
-  &:before {
-    display: block;
-    content: "";
-    width: 100%;
+.link {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.container .img {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.img.error {
+  width: 100%;
+  height: 100%;
+  background: #000;
+}
+
+.button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  padding: 0;
+  width: 68px;
+  height: 48px;
+  display: none;
+  border: none;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  
+  &:focus {
+    outline: none;
   }
-`;
+}
 
-export const VideoFrame = styled('iframe')`
+.enabled .button {
+  display: block;
+}
+
+.buttonShape {
+  fill: #212121;
+  fill-opacity: 0.8;
+}
+
+.buttonIcon {
+  fill: #ffffff;
+}
+
+.wrapper:hover .buttonShape,
+.button:focus .buttonShape {
+  fill: #ff0000;
+  fill-opacity: 1;
+}
+
+.video {
   position: absolute;
 
   top: 0;
@@ -29,7 +89,8 @@ export const VideoFrame = styled('iframe')`
 
   width: 100%;
   height: 100%;
-  
-  border:none;
-  overflow:hidden;
+
+  border: none;
+  overflow: hidden;
+}
 `;
