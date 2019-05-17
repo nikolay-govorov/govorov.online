@@ -4,17 +4,30 @@ import React, { useRef, useEffect, useMemo } from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
+import { isSaveData } from '../../lib';
+
 import './fonts/FiraCode/index.css';
 
-// langs
-import 'highlight.js/styles/androidstudio.css';
-import hljs from 'highlight.js/lib/highlight';
-
-import langCSS from 'highlight.js/lib/languages/css';
-import langHTML from 'highlight.js/lib/languages/xml';
-import langJS from 'highlight.js/lib/languages/javascript';
-
 async function installHighlight(container) {
+  if (isSaveData()) {
+    return;
+  }
+
+  await import('highlight.js/styles/androidstudio.css');
+
+  const [
+    { default: hljs },
+    { default: langCSS },
+    { default: langHTML },
+    { default: langJS },
+  ] = await Promise.all([
+    import('highlight.js/lib/highlight'),
+
+    import('highlight.js/lib/languages/css'),
+    import('highlight.js/lib/languages/xml'),
+    import('highlight.js/lib/languages/javascript'),
+  ]);
+
   hljs.registerLanguage('css', langCSS);
   hljs.registerLanguage('html', langHTML);
   hljs.registerLanguage('javascript', langJS);
@@ -33,8 +46,12 @@ export default function Post({
   const created = useMemo(() => (new Date(date)).toUTCString(), [date]);
 
   useEffect(() => {
-    installHighlight(htmlContainerRef.current)
-      .catch(() => {}); // Ignore error – this is not important
+    const container = htmlContainerRef.current;
+
+    if (container) {
+      installHighlight(htmlContainerRef.current)
+        .catch(() => {}); // Ignore error – this is not important
+    }
   }, [content]);
 
   return (
@@ -49,13 +66,11 @@ export default function Post({
         <h1 className="post__title h1" itemProp="name headline">{title}</h1>
       </header>
 
-      <main
-        itemProp="articleBody"
-        ref={htmlContainerRef}
-      >
+      <main itemProp="articleBody">
         {preview}
 
         <div
+          ref={htmlContainerRef}
           dangerouslySetInnerHTML={{ __html: content }}
         />
       </main>
