@@ -1,4 +1,4 @@
-.page {
+.container {
   display: grid;
   box-sizing: border-box;
   margin: 0 auto;
@@ -15,14 +15,14 @@
   grid-template-rows: min-content 1fr auto;
 }
 
-.page__header {
+.header {
   grid-area: header;
 }
 
-.page__content {
+.content {
   grid-area: content;
 }
 
-.page__footer {
+.footer {
   grid-area: footer;
 }

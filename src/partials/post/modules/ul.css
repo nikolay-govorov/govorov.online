@@ -1,21 +1,22 @@
-.post p + ul
-{
+@import '../../../styles/config/media.css';
+
+.post p + ul {
   margin-top: -.75em;
 }
 
-.post ul
-{
+.post ul {
   max-width: var(--readable-text-width);
   margin: 0;
   padding-left: 1em;
+}
 
-  @media (min-width: 480px) {
+@media (--screen-tablet) {
+  .post ul {
     padding-left: 2em;
   }
 }
 
-.post ul li
-{
+.post ul li {
   margin-bottom: .5em;
   list-style: none;
 }

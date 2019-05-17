@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import GastbyImage from 'gatsby-image';
 import React, { Component } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import logo from './images/logo.svg'; // eslint-disable-line import/no-unresolved
-import { Container, Image, Avatar } from './styled';
+import logo from '../../assets/images/logo.svg';
+import styles from './logo.module.css';
 
 const SIZE = 80;
 const LEFT = 'left';
@@ -13,6 +14,14 @@ const state = {
   angle: -180,
   manual: false,
 };
+
+function setupImage(imgAngle) {
+  return {
+    width: SIZE,
+    height: SIZE,
+    style: { transform: `rotateY(${imgAngle}deg)` },
+  };
+}
 
 class Logo extends Component {
   propTypes = {
@@ -59,27 +68,24 @@ class Logo extends Component {
     const { avatar } = this.props;
     const { angle } = state;
 
-    const setupImage = (imgAngle, alt) => ({
-      alt,
-      width: SIZE,
-      height: SIZE,
-      style: { transform: `rotateY(${imgAngle}deg)` },
-    });
-
     return (
-      <Container onClick={this.onClick}>
-        <Image
+      <div className={styles.container} onClick={this.onClick}>
+        <img
+          className={styles.logo}
           src={logo}
+          alt="Логотип Николая Говорова"
 
-          {...setupImage(angle - 180, 'Логотип Николая Говорова')}
+          {...setupImage(angle - 180)}
         />
 
-        <Avatar
+        <GastbyImage
+          className={styles.avatar}
           fixed={avatar}
+          alt="Фото Николая Говорова"
 
-          {...setupImage(angle, 'Фото Николая Говорова')}
+          {...setupImage(angle)}
         />
-      </Container>
+      </div>
     );
   }
 }
@@ -89,7 +95,7 @@ export default function () {
     <StaticQuery
       query={graphql`
         query {
-          file(relativePath: { eq: "block/logo/images/avatar.jpg" }) {
+          file(relativePath: { eq: "assets/images/avatar.jpg" }) {
             childImageSharp {
               # Specify the image processing specifications right in the query.
               # Makes it trivial to update as your page's design changes.

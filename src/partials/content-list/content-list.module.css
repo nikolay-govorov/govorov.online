@@ -1,6 +1,4 @@
-.content-list {}
-
-.content-list__section {
+.section {
   margin-bottom: 2.5em;
 
   &:last-child {
@@ -8,14 +6,14 @@
   }
 }
 
-.content-list__section-title {
+.sectionTitle {
   position: relative;
 }
 
-.content-list__list {
+.list {
   list-style: none;
 }
 
-.content-list__item {
+.listItem {
   padding-bottom: .5em;
 }

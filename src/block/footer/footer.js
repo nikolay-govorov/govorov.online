@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Container } from './styled';
-import Contacts from '../contacts/index';
+import styles from './footer.module.css';
+
+import Contacts from '../contacts/contacts';
 
 export default function Footer({ site }) {
   const year = (new Date()).getFullYear();
 
   return (
-    <Container>
+    <footer className={styles.container}>
       <div>
         <a href="/rss.xml">Подписаться по RSS</a>
       </div>
@@ -21,7 +22,7 @@ export default function Footer({ site }) {
         {' '}
         {site.author}
       </span>
-    </Container>
+    </footer>
   );
 }
 

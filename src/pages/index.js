@@ -1,7 +1,7 @@
 import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 
-import Introduction from '../block/introduction/index';
+import Introduction from '../block/introduction/introduction';
 
 const query = graphql`
   query {

@@ -62,7 +62,7 @@ async function createPages({ graphql, actions }) {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node;
       const next = index === 0 ? null : posts[index - 1].node;
 
-      const blogPost = path.resolve(`./src/modules/${section}/index.js`);
+      const blogPost = path.resolve(`./src/modules/${section}.js`);
 
       createPage({
         path: path.resolve(section, post.node.fields.slug),

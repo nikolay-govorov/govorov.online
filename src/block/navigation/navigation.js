@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import { Container, List, Item } from './styled';
-import ThemeToggler from './theme-toggler';
+import styles from './navigation.module.css';
+import ThemeToggler from './theme-toggler/theme-toggler';
 
 const pages = [
   { title: ' Обо мне ', url: '/' },
@@ -12,16 +12,16 @@ const pages = [
 
 export default function Navigation() {
   return (
-    <Container aria-label="Страницы сайта">
-      <List>
+    <div className={styles.container} aria-label="Страницы сайта">
+      <ul className={styles.list}>
         {pages.map(({ title, url }) => (
-          <Item key={url}>
+          <li className={styles.list__item} key={url}>
             <Link to={url} className="link" activeClassName="link--active">{title}</Link>
-          </Item>
+          </li>
         ))}
-      </List>
+      </ul>
 
       <ThemeToggler />
-    </Container>
+    </div>
   );
 }

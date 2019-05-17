@@ -1,13 +1,10 @@
-import { css } from 'astroturf';
-
-export default css`
 .wrapper {
   width: 100%;
   max-width: var(--readable-heading-width);
 }
 
 .container {
-  --aspect-ratio: 1 / (480 / 360);
+  --aspect-ratio: calc(1 / (480 / 360));
 
   position: relative;
 
@@ -54,7 +51,7 @@ export default css`
   background-color: transparent;
   transform: translate(-50%, -50%);
   cursor: pointer;
-  
+
   &:focus {
     outline: none;
   }
@@ -93,4 +90,3 @@ export default css`
   border: none;
   overflow: hidden;
 }
-`;

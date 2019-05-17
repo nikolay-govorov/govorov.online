@@ -23,13 +23,12 @@ module.exports = {
     },
   },
   plugins: [
-    'gatsby-plugin-astroturf',
     'gatsby-plugin-postcss',
 
     {
       resolve: 'gatsby-plugin-layout',
       options: {
-        component: path.resolve('./src/partials/layout/index.js'),
+        component: path.resolve('./src/partials/layout/layout.js'),
       },
     },
 
@@ -79,7 +78,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-favicon',
       options: {
-        logo: './src/block/logo/images/logo.png',
+        logo: './src/assets/images/logo.png',
         appName: 'govorov.online',
         icons: {},
       },

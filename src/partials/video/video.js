@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { URL } from 'universal-url';
 
-import styles from './styled';
+import styles from './video.module.css';
 
 function parseUrl(urlStr) {
   const url = new URL(urlStr);

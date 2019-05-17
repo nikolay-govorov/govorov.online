@@ -1,8 +1,9 @@
 import React from 'react';
+import cx from 'classnames';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import './index.css';
+import styles from './content-list.module.css';
 
 import { prepareNotesList } from './utils';
 
@@ -10,7 +11,7 @@ export default function ContentList({ title, items }) {
   const itemsByYear = prepareNotesList(items);
 
   return (
-    <div className="content-list">
+    <div>
       <h1 className="visuallyhidden">{title}</h1>
 
       {items.length === 0 ? (
@@ -20,14 +21,14 @@ export default function ContentList({ title, items }) {
       ) : null}
 
       {itemsByYear.map(({ year, notes }) => (
-        <section key={year} className="content-list__section">
-          <h2 className="h2 content-list__section-title">
+        <section key={year} className={styles.section}>
+          <h2 className={cx('h2', styles.sectionTitle)}>
             <a className="link link--wide link--clean" href={`#${year}`}>{year}</a>
           </h2>
 
-          <ul className="content-list__list">
+          <ul className={styles.list}>
             {notes.map(post => (
-              <li key={post.frontmatter.title} className="content-list__item">
+              <li key={post.frontmatter.title} className={styles.listItem}>
                 <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
               </li>
             ))}

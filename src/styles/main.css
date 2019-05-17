@@ -10,7 +10,3 @@
 @import './base/button.css';
 @import './base/links.css';
 @import './base/lists.css';
-
-/* Components */
-@import '../partials/layout/index.css';
-@import '../partials/post/index.css';

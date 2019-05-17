@@ -1,3 +1,5 @@
+@import '../../../styles/config/media.css';
+
 :root {
   --border-radius: 15px;
 }
@@ -8,8 +10,10 @@
   margin-bottom: 1em;
   color: #bbb;
   background-color: #282C34;
+}
 
-  @media (--screen-tablet) {
+@media (--screen-tablet) {
+  .post pre {
     max-width: calc((36em * 1.5) + 1vw);
 
     border-radius: var(--border-radius);
@@ -31,14 +35,18 @@
   border-color: var(--gray-color);
   border-style: solid;
   border-width: 1px 0 1px 0;
+}
 
-  @media (--screen-tablet) {
+@media (--screen-tablet) {
+  .post pre::before {
     right: -1px;
     border-width: 1px;
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
   }
+}
 
-  @media (--screen-extra-large-pc) {
+@media (--screen-extra-large-pc) {
+  .post pre::before {
     border-radius: var(--border-radius);
     left: -1px;
   }
@@ -52,8 +60,10 @@
   overflow: auto;
   font-size: .75em;
   border-radius: var(--border-radius);
+}
 
-  @media (--screen-pc) {
+@media (--screen-pc) {
+  .post pre code {
     max-height: 50vh;
   }
 }

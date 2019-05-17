@@ -3,12 +3,13 @@ import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
 
-import Header from '../../block/header/index';
-import Footer from '../../block/footer/index';
-import avatar from '../../block/logo/images/avatar.jpg';
+import Header from '../../block/header/header';
+import Footer from '../../block/footer/footer';
+import avatar from '../../assets/images/avatar.jpg';
 
 // TODO: move requires fonts in CSS
 import '../../styles/main.css';
+import styles from './layout.module.css';
 
 function BaseLayout({
   children, location, title, data,
@@ -49,16 +50,16 @@ function BaseLayout({
         {/* BlackBerry */}
       </Helmet>
 
-      <div className="page">
-        <div className="page__header">
+      <div className={styles.container}>
+        <div className={styles.header}>
           <Header url={location.pathname} site={meta} />
         </div>
 
-        <div className="page__content">
+        <div className={styles.content}>
           {children}
         </div>
 
-        <div className="page__footer">
+        <div className={styles.footer}>
           <Footer site={data.site.siteMetadata} />
         </div>
       </div>

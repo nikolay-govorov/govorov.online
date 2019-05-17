@@ -1,12 +1,14 @@
 /* eslint-disable react/no-danger */
 
 import React, { useRef, useEffect, useMemo } from 'react';
+import cx from 'classnames';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
 import { isSaveData } from '../../lib';
 
 import './fonts/FiraCode/index.css';
+import styles from './post.module.css';
 
 async function installHighlight(container) {
   if (isSaveData()) {
@@ -55,15 +57,15 @@ export default function Post({
   }, [content]);
 
   return (
-    <article className="post" itemScope itemType="http://schema.org/BlogPosting">
+    <article className={styles.post} itemScope itemType="http://schema.org/BlogPosting">
       <Helmet>
         <title>{title}</title>
       </Helmet>
 
-      <header className="post__header">
+      <header>
         <time dateTime={created} itemProp="datePublished">{date}</time>
 
-        <h1 className="post__title h1" itemProp="name headline">{title}</h1>
+        <h1 className={cx('h1', styles.title)} itemProp="name headline">{title}</h1>
       </header>
 
       <main itemProp="articleBody">

@@ -15,7 +15,7 @@ module.exports = {
     postcssPresetEnv({ stage: 0 }),
 
     postcssAssets({
-      loadPaths: ['./src/assets']
+      loadPaths: ['./src/assets'],
     }),
 
     // Cross-browser

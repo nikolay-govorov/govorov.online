@@ -14,7 +14,7 @@
   font-size: calc(1em + .1vw);
 }
 
-.post__title {
+.title {
   margin-top: 0;
   max-width: 20em;
 }

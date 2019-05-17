@@ -1,17 +1,15 @@
-import { styled } from 'astroturf';
-
-export const Container = styled('nav')`
+.container {
   display: flex;
   flex-wrap: wrap;
-`;
+}
 
-export const List = styled('ul')`
+.list {
   list-style: none;
   margin-right: .75em;
-`;
+}
 
-export const Item = styled('li')`
+.list__item {
   display: inline-block;
   padding-right: .75em;
   padding-bottom: .25em;
-`;
+}

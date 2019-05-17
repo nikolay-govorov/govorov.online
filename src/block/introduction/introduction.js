@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import avatar from '../logo/images/avatar.jpg';
-import { Container, Link as IntroLink } from './styled';
+import avatar from '../../assets/images/avatar.jpg';
+import styles from './introduction.module.css';
 
 const getCurrentAge = (date) => {
   const secs = 24 * 3600 * 365.25 * 1000;
@@ -16,12 +16,15 @@ const ProjectsList = ({ list, type }) => (
   list
     .filter(el => el.type === type)
     .map(project => (
-      <IntroLink key={project.link}><a href={project.link}>{project.title}</a></IntroLink>))
+      <span className={styles.link} key={project.link}>
+        <a href={project.link}>{project.title}</a>
+      </span>
+    ))
 );
 
 export default function Introduction({ site, contacts, projects }) {
   return (
-    <Container itemScope itemType="https://schema.org/Person">
+    <div className={styles.container} itemScope itemType="https://schema.org/Person">
       <link itemProp="url" href={site.siteUrl} />
       <meta itemProp="image" content={`${avatar}?s=280`} />
       <meta itemProp="birthDate" content={site.authorBirthDate} />
@@ -85,7 +88,7 @@ export default function Introduction({ site, contacts, projects }) {
         <a href="https://twitter.com/govorov_n" rel="me">Твитере</a>
 .
       </p>
-    </Container>
+    </div>
   );
 }
 

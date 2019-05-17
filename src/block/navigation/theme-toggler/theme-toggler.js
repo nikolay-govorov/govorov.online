@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import cx from 'classnames';
 
-import { styles } from './styled';
+import styles from './theme-toggler.module.css';
 import {
   THEME_LIGHT, THEME_DARK, detectActualTheme, toggleTheme,
 } from './utils';

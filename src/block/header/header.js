@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withPrefix } from 'gatsby';
 
-import { Container, styles } from './styled';
+import styles from './header.module.css';
 
-import Logo from '../logo/index';
-import Navigation from '../navigation/index';
+import Logo from '../logo/logo';
+import Navigation from '../navigation/navigation';
 
 export default function Header({ site, url }) {
   const localUrl = withPrefix(url);
 
   return (
-    <Container>
+    <header className={styles.header}>
       <div className={styles.logo}>
         <Logo />
       </div>
@@ -29,7 +29,7 @@ export default function Header({ site, url }) {
 
         <Navigation />
       </div>
-    </Container>
+    </header>
   );
 }
 
