@@ -1,10 +1,9 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
 
 import styles from './contacts.module.css';
+import contacts from '../../../data/contacts.json';
 
-function Contacts({ contacts }) {
+export default function Contacts() {
   return (
     <div className={styles.container}>
       <ul className={styles.list}>
@@ -15,34 +14,5 @@ function Contacts({ contacts }) {
         ))}
       </ul>
     </div>
-  );
-}
-
-Contacts.propTypes = {
-  contacts: PropTypes.arrayOf(PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  })).isRequired,
-};
-
-export default function () {
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          allContactsYaml {
-            edges {
-              node {
-                title
-                url
-              }
-            }
-          }
-        }
-      `}
-      render={data => (
-        <Contacts contacts={data.allContactsYaml.edges.map(({ node }) => node)} />
-      )}
-    />
   );
 }

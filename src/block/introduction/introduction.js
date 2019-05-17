@@ -5,6 +5,9 @@ import PropTypes from 'prop-types';
 import avatar from '../../assets/images/avatar.jpg';
 import styles from './introduction.module.css';
 
+import contacts from '../../../data/contacts.json';
+import projects from '../../../data/projects.json';
+
 const getCurrentAge = (date) => {
   const secs = 24 * 3600 * 365.25 * 1000;
 
@@ -22,7 +25,7 @@ const ProjectsList = ({ list, type }) => (
     ))
 );
 
-export default function Introduction({ site, contacts, projects }) {
+export default function Introduction({ site }) {
   return (
     <div className={styles.container} itemScope itemType="https://schema.org/Person">
       <link itemProp="url" href={site.siteUrl} />
@@ -101,11 +104,6 @@ Introduction.propTypes = {
       name: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
-
-  contacts: PropTypes.arrayOf(PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    itemprop: PropTypes.string,
-  })).isRequired,
 
   projects: PropTypes.arrayOf(PropTypes.shape({
     link: PropTypes.string.isRequired,

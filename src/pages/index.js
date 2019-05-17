@@ -15,26 +15,6 @@ const query = graphql`
         }
       }
     }
-
-    allProjectsYaml {
-      edges {
-        node {
-          link
-          title
-          type
-        }
-      }
-    }
-
-    allContactsYaml {
-      edges {
-        node {
-          title
-          url
-          itemprop
-        }
-      }
-    }
   }
 `;
 
@@ -45,8 +25,6 @@ export default function IndexPage() {
       render={data => (
         <Introduction
           site={data.site.siteMetadata}
-          contacts={data.allContactsYaml.edges.map(({ node }) => node)}
-          projects={data.allProjectsYaml.edges.map(({ node }) => node)}
         />
       )}
     />
