@@ -10,7 +10,7 @@ const LEFT = 'left';
 const RIGHT = 'right';
 
 const state = {
-  angle: 0,
+  angle: -180,
   manual: false,
 };
 
