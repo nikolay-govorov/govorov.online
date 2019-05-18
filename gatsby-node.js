@@ -15,16 +15,8 @@ function sortBySections(items) {
   }, {});
 }
 
-const redirects = [
-  ['/feed.xml', '/rss.xml'],
-];
-
 async function createPages({ graphql, actions }) {
-  const { createPage, createRedirect } = actions;
-
-  redirects.forEach(([fromPath, toPath]) => {
-    createRedirect({ fromPath, toPath });
-  });
+  const { createPage } = actions;
 
   const result = await graphql(`
     query {

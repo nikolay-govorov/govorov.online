@@ -1,3 +1,19 @@
 [build]
   publish = "public"
   command = "npm run build"
+
+[[redirects]]
+  from = "https://govorov-online.netlify.com/*"
+  to = "https://govorov.online/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/feed.xml"
+  to = "/rss.xml"
+  status = 301
+
+[[redirects]]
+  from = "/*/index.html"
+  to = "/:splat/"
+  status = 302
