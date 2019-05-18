@@ -35,22 +35,18 @@ function BaseLayout({
 
         <meta property="og:url" content={meta.siteUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${avatar}?s=280`} />
-        <meta property="og:image:width" content="280" />
-        <meta property="og:image:height" content="280" />
+        <meta property="og:image" content={avatar} />
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="300" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:locale" content={meta.lang} />
         <meta property="og:site_name" content={meta.author} />
         <meta property="og:description" content={meta.description} />
 
-        {/* Disable auto detected phone links */}
+        {/* Disable auto detected phone links for Safari and BlackBerry */}
         <meta name="format-detection" content="telephone=no" />
-        {' '}
-        {/* Safari */}
         <meta httpEquiv="x-rim-auto-match" content="none" />
-        {' '}
-        {/* BlackBerry */}
       </Helmet>
 
       <div className={styles.container}>

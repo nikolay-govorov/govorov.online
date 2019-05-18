@@ -29,7 +29,8 @@ export default function Introduction({ site }) {
   return (
     <div className={styles.container} itemScope itemType="https://schema.org/Person">
       <link itemProp="url" href={site.siteUrl} />
-      <meta itemProp="image" content={`${avatar}?s=280`} />
+      <meta itemProp="image" content={avatar} />
+      <meta itemProp="gender" content="male" />
       <meta itemProp="birthDate" content={site.authorBirthDate} />
 
       {contacts.filter(({ itemprop }) => itemprop).map(contact => (
