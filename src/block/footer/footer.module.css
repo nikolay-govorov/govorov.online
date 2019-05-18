@@ -2,4 +2,5 @@
   display: grid;
   grid-row-gap: 1rem;
   font-size: 0.85rem;
+  padding-top: calc(3rem + 1vw);
 }
