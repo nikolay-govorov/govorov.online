@@ -105,10 +105,4 @@ Introduction.propTypes = {
       name: PropTypes.string.isRequired,
     }).isRequired,
   }).isRequired,
-
-  projects: PropTypes.arrayOf(PropTypes.shape({
-    link: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-  })).isRequired,
 };
