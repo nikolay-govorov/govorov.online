@@ -50,6 +50,7 @@ module.exports = {
     'gatsby-plugin-feed',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
+    'gatsby-plugin-csp',
 
     {
       resolve: 'gatsby-plugin-netlify',
@@ -57,7 +58,6 @@ module.exports = {
         allPageHeaders: [
           `Strict-Transport-Security: max-age=${CACHE_MAX_AGE}; includeSubDomains; preload`,
           'X-Content-Type-Options: nosniff',
-          'Content-Security-Policy: connect-src \'self\'; object-src \'none\'; frame-ancestors \'none\'; form-action \'none\'; base-uri \'none\'',
         ],
         headers: (() => {
           const cacheAll = (type, paths) => paths.reduce((acc, url) => ({
