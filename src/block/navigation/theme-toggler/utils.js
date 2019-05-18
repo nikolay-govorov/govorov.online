@@ -1,10 +1,7 @@
+import meta from '../../../../data/meta';
+
 export const THEME_LIGHT = 'light';
 export const THEME_DARK = 'dark';
-
-const themeColors = {
-  [THEME_LIGHT]: '#fff',
-  [THEME_DARK]: '#282a36',
-};
 
 export function detectActualTheme() {
   if (typeof window !== 'undefined') {
@@ -38,6 +35,7 @@ export function toggleTheme(value) {
   const themeColor = document.querySelector('[name="theme-color"]');
 
   if (themeColor) {
-    document.querySelector('[name="theme-color"]').setAttribute('content', themeColors[value]);
+    document.querySelector('[name="theme-color"]')
+      .setAttribute('content', meta.site.themes[value]);
   }
 }

@@ -1,12 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { useMemo } from 'react';
 
 import styles from './footer.module.css';
 
+import meta from '../../../data/meta';
+
 import Contacts from '../contacts/contacts';
 
-export default function Footer({ site }) {
-  const year = (new Date()).getFullYear();
+export default function Footer() {
+  const year = useMemo(() => new Date().getFullYear(), []);
 
   return (
     <footer className={styles.container}>
@@ -20,14 +21,8 @@ export default function Footer({ site }) {
         &copy; 2015-
         {year}
         {' '}
-        {site.author}
+        {meta.author.name}
       </span>
     </footer>
   );
 }
-
-Footer.propTypes = {
-  site: PropTypes.shape({
-    author: PropTypes.string.isRequired,
-  }).isRequired,
-};

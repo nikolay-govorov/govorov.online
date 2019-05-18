@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 
 import avatar from '../../assets/images/avatar.jpg';
 import styles from './introduction.module.css';
 
+import meta from '../../../data/meta.json';
 import contacts from '../../../data/contacts.json';
 import projects from '../../../data/projects.json';
 
@@ -25,13 +25,13 @@ const ProjectsList = ({ list, type }) => (
     ))
 );
 
-export default function Introduction({ site }) {
+export default function Introduction() {
   return (
     <div className={styles.container} itemScope itemType="https://schema.org/Person">
-      <link itemProp="url" href={site.siteUrl} />
+      <link itemProp="url" href={meta.site.url} />
       <meta itemProp="image" content={avatar} />
       <meta itemProp="gender" content="male" />
-      <meta itemProp="birthDate" content={site.authorBirthDate} />
+      <meta itemProp="birthDate" content={meta.author.birthDate} />
 
       {contacts.filter(({ itemprop }) => itemprop).map(contact => (
         <meta key={contact.url} itemProp={contact.itemprop} content={contact.url} />
@@ -46,7 +46,7 @@ export default function Introduction({ site }) {
 .
         Мне
         {' '}
-        <span id="age">{getCurrentAge(site.authorBirthDate)}</span>
+        <span id="age">{getCurrentAge(meta.author.birthDate)}</span>
         {' '}
 лет, живу в
         {' '}
@@ -57,7 +57,7 @@ export default function Introduction({ site }) {
 ,
         разрабатываю фронтенд для
         {' '}
-        <a href={site.job.url}>{site.job.name}</a>
+        <a href={meta.author.job.url}>{meta.author.job.name}</a>
 .
       </p>
 
@@ -95,14 +95,3 @@ export default function Introduction({ site }) {
     </div>
   );
 }
-
-Introduction.propTypes = {
-  site: PropTypes.shape({
-    siteUrl: PropTypes.string.isRequired,
-    authorBirthDate: PropTypes.string.isRequired,
-    job: PropTypes.shape({
-      url: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-    }).isRequired,
-  }).isRequired,
-};

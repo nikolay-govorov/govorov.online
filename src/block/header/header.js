@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import { withPrefix } from 'gatsby';
 
 import styles from './header.module.css';
+import meta from '../../../data/meta';
 
 import Logo from '../logo/logo';
 import Navigation from '../navigation/navigation';
 
-export default function Header({ site, url }) {
+export default function Header({ url }) {
   const localUrl = withPrefix(url);
 
   return (
@@ -19,11 +20,11 @@ export default function Header({ site, url }) {
       <div className={styles.navigation}>
         {localUrl === '/' ? (
           <h1 className={styles.title}>
-            {site.title}
+            {meta.site.name}
           </h1>
         ) : (
           <p className={styles.title}>
-            {site.title}
+            {meta.site.name}
           </p>
         )}
 
@@ -35,8 +36,4 @@ export default function Header({ site, url }) {
 
 Header.propTypes = {
   url: PropTypes.string.isRequired,
-
-  site: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-  }).isRequired,
 };

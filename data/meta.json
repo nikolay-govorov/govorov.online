@@ -1,0 +1,23 @@
+{
+  "site": {
+    "lang": "ru",
+    "url": "https://govorov.online",
+    "description": "Живу в Питере, разрабатываю фронтенд в SEMrush",
+    "name": "Говоров Николай",
+    "themes": {
+      "light": "#fff",
+      "dark": "#282a36"
+    }
+  },
+
+  "author": {
+    "name": "Николай Говоров",
+    "email": "nikolay_govorov@bk.ru",
+    "birthDate": "1999-09-24",
+
+    "job": {
+      "name": "SEMrush",
+      "url": "https://semrush.com"
+    }
+  }
+}

@@ -1,4 +1,5 @@
 const path = require('path');
+const meta = require('./data/meta.json');
 
 const { ANALYZE: analyze } = process.env;
 
@@ -6,20 +7,19 @@ const CACHE_MAX_AGE = 10 * 365.25 * 24 * 60 * 60;
 
 module.exports = {
   siteMetadata: {
-    lang: 'ru',
-    siteUrl: 'https://govorov.online',
+    title: meta.site.name,
+    lang: meta.site.lang,
+    siteUrl: meta.site.url,
+    themeColor: meta.site.themes.light,
+    description: meta.site.description,
 
-    themeColor: '#ffffff',
-
-    title: 'Николай Говоров',
-    author: 'Николай Говоров',
-    email: 'nikolay_govorov@bk.ru',
-    description: 'Живу в Питере, работаю фронтенд-разработчиком для ВКонтакте',
-    authorBirthDate: '1999-09-24',
+    author: meta.author.name,
+    email: meta.author.email,
+    authorBirthDate: meta.author.birthDate,
 
     job: {
-      name: 'SEMrush',
-      url: 'https://semrush.com',
+      name: meta.author.job.name,
+      url: meta.author.job.url,
     },
   },
   plugins: [
