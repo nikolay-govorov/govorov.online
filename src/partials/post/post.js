@@ -1,60 +1,22 @@
 /* eslint-disable react/no-danger */
 
-import React, { useRef, useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import cx from 'classnames';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
-import { isSaveData } from '../../lib';
+import 'prismjs/themes/prism-tomorrow.css';
 
 import './fonts/FiraCode/index.css';
 import styles from './post.module.css';
 
-async function installHighlight(container) {
-  if (isSaveData()) {
-    return;
-  }
-
-  await import('highlight.js/styles/androidstudio.css');
-
-  const [
-    { default: hljs },
-    { default: langCSS },
-    { default: langHTML },
-    { default: langJS },
-  ] = await Promise.all([
-    import('highlight.js/lib/highlight'),
-
-    import('highlight.js/lib/languages/css'),
-    import('highlight.js/lib/languages/xml'),
-    import('highlight.js/lib/languages/javascript'),
-  ]);
-
-  hljs.registerLanguage('css', langCSS);
-  hljs.registerLanguage('html', langHTML);
-  hljs.registerLanguage('javascript', langJS);
-
-  const codeBlocs = container.querySelectorAll('pre code');
-
-  codeBlocs.forEach((block) => {
-    hljs.highlightBlock(block);
-  });
-}
-
 export default function Post({
   title, date, preview, content,
 }) {
-  const htmlContainerRef = useRef(null);
   const created = useMemo(() => (new Date(date)).toUTCString(), [date]);
-
-  useEffect(() => {
-    const container = htmlContainerRef.current;
-
-    if (container) {
-      installHighlight(htmlContainerRef.current)
-        .catch(() => {}); // Ignore error – this is not important
-    }
-  }, [content]);
+  const html = useMemo(() => (
+    content.replace(/(<code.*\sclass=".*\s?)language-text(.*".*>)/ig, '$1$2')
+  ), [content]);
 
   return (
     <article className={styles.post} itemScope itemType="http://schema.org/BlogPosting">
@@ -71,10 +33,7 @@ export default function Post({
       <main itemProp="articleBody">
         {preview}
 
-        <div
-          ref={htmlContainerRef}
-          dangerouslySetInnerHTML={{ __html: content }}
-        />
+        <div dangerouslySetInnerHTML={{ __html: html }} />
       </main>
     </article>
   );
