@@ -1,11 +1,13 @@
 import React from 'react';
 
-export default function NotFoundPage() {
+import Layout from '../partials/layout/layout';
+
+export default function NotFoundPage(props) {
   return (
-    <div>
+    <Layout {...props}>
       <h1 className="h1">404</h1>
 
       <p>Страница не найдена</p>
-    </div>
+    </Layout>
   );
 }

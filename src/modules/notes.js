@@ -4,19 +4,23 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
+import Layout from '../partials/layout/layout';
 import Post from '../partials/post/post';
 
 export default function Note({
   data: {
     markdownRemark: { frontmatter: meta, html },
   },
+  ...props
 }) {
   return (
-    <Post
-      title={meta.title}
-      date={meta.date}
-      content={html}
-    />
+    <Layout {...props}>
+      <Post
+        title={meta.title}
+        date={meta.date}
+        content={html}
+      />
+    </Layout>
   );
 }
 

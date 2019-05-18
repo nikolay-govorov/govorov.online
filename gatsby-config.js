@@ -24,14 +24,6 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-postcss',
-
-    {
-      resolve: 'gatsby-plugin-layout',
-      options: {
-        component: path.resolve('./src/partials/layout/layout.js'),
-      },
-    },
-
     'gatsby-plugin-react-helmet',
 
     {

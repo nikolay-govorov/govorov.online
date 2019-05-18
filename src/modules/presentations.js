@@ -4,32 +4,36 @@ import PropTypes from 'prop-types';
 
 import Post from '../partials/post/post';
 import Video from '../partials/video/video';
+import Layout from '../partials/layout/layout';
 
 export default function Presentation({
   data: {
     markdownRemark: { frontmatter: meta, html },
   },
+  ...props
 }) {
   const slides = `https://nikolay-govorov.github.io/presentation__${meta.name}/#`;
 
   return (
-    <Post
-      title={meta.title}
-      date={meta.date}
-      preview={(
-        <>
-          <div className="paragraph">
-            <a target="_blank" rel="noopener noreferrer" href={slides}>Слайды</a>
-          </div>
+    <Layout {...props}>
+      <Post
+        title={meta.title}
+        date={meta.date}
+        preview={(
+          <>
+            <div className="paragraph">
+              <a target="_blank" rel="noopener noreferrer" href={slides}>Слайды</a>
+            </div>
 
-          <Video
-            url={meta.video}
-            title={meta.title}
-          />
-        </>
-      )}
-      content={html}
-    />
+            <Video
+              url={meta.video}
+              title={meta.title}
+            />
+          </>
+        )}
+        content={html}
+      />
+    </Layout>
   );
 }
 
