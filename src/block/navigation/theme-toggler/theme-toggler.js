@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control, jsx-a11y/label-has-for */
 
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import cx from 'classnames';
 
 import styles from './theme-toggler.module.css';
@@ -12,51 +12,42 @@ const INPUT_ID = 'toggler';
 
 toggleTheme(detectActualTheme());
 
-export default class ThemeToggler extends Component {
-  state = {
-    theme: detectActualTheme(),
-  };
+export default function ThemeToggler() {
+  const [theme, set] = useState(detectActualTheme());
 
-  componentDidMount() {
-    this.setState({ theme: detectActualTheme() });
-  }
+  useEffect(() => toggleTheme(theme), [theme]);
 
-  toggleTheme = ({ target }) => {
-    const theme = target.checked ? THEME_DARK : THEME_LIGHT;
+  useEffect(() => {
+    set(detectActualTheme());
+  }, []);
 
-    this.setState({ theme }, () => toggleTheme(theme));
-  };
+  return (
+    <div className={styles.container}>
+      <label
+        htmlFor={INPUT_ID}
+        className={cx(styles.icon, styles.sun)}
+        aria-hidden
+      />
 
-  render() {
-    const { theme } = this.state;
+      <input
+        className={styles.input}
+        id={INPUT_ID}
+        type="checkbox"
+        aria-label="Переключить тему"
+        checked={theme === THEME_DARK}
+        onChange={({ target }) => set(target.checked ? THEME_DARK : THEME_LIGHT)}
+      />
+      <label
+        className={styles.label}
+        htmlFor={INPUT_ID}
+        aria-hidden
+      />
 
-    return (
-      <div className={styles.container}>
-        <label
-          htmlFor={INPUT_ID}
-          className={cx(styles.icon, styles.sun)}
-          aria-hidden
-        />
-
-        <input
-          id={INPUT_ID}
-          type="checkbox"
-          onChange={this.toggleTheme}
-          checked={theme === THEME_DARK}
-          className={styles.input}
-        />
-        <label
-          className={styles.label}
-          htmlFor={INPUT_ID}
-          aria-label="Переключить тему"
-        />
-
-        <label
-          htmlFor={INPUT_ID}
-          className={cx(styles.icon, styles.crescent)}
-          aria-hidden
-        />
-      </div>
-    );
-  }
+      <label
+        htmlFor={INPUT_ID}
+        className={cx(styles.icon, styles.crescent)}
+        aria-hidden
+      />
+    </div>
+  );
 }
