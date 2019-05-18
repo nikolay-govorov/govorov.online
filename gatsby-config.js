@@ -45,34 +45,7 @@ module.exports = {
       options: {
         plugins: [
           'gatsby-remark-copy-linked-files',
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 1024,
-              quality: 100,
-              withWebp: true,
-              linkImagesToOriginal: false,
-            },
-          },
         ],
-      },
-    },
-
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: path.join(__dirname, 'src'),
-      },
-    },
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
-    {
-      resolve: 'gatsby-plugin-favicon',
-      options: {
-        logo: './src/assets/images/logo.png',
-        appName: 'govorov.online',
-        icons: {},
       },
     },
 

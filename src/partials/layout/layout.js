@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import Header from '../../block/header/header';
 import Footer from '../../block/footer/footer';
+import logo from '../../assets/images/logo.png';
 import avatar from '../../assets/images/avatar.jpg';
 
 // TODO: move requires fonts in CSS
@@ -26,8 +27,10 @@ function BaseLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <title>{pageTitle}</title>
+        <meta name="theme-color" content={meta.themeColor} />
         <meta name="description" content={meta.description} />
 
+        <link rel="icon" type="image/png" href={logo} />
         <link rel="canonical" href={meta.siteUrl} />
 
         <meta property="og:url" content={meta.siteUrl} />
@@ -96,6 +99,7 @@ export default function (props) {
               title
               author
               description
+              themeColor
             }
           }
         }

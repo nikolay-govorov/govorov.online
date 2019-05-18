@@ -34,5 +34,10 @@ export function toggleTheme(value) {
   localStorage.setItem('theme', value);
 
   document.body.setAttribute('data-theme', value);
-  document.querySelector('[name="theme-color"]').setAttribute('content', themeColors[value]);
+
+  const themeColor = document.querySelector('[name="theme-color"]');
+
+  if (themeColor) {
+    document.querySelector('[name="theme-color"]').setAttribute('content', themeColors[value]);
+  }
 }
