@@ -12,10 +12,17 @@ import meta from '../../../data/meta';
 import '../../styles/main.css';
 import styles from './layout.module.css';
 
+function getCanonical(domain, path, protocol = 'https') {
+  const url = path.replace(/index\.html$/ig, '');
+
+  return `${protocol}://${domain}${url}`;
+}
+
 export default function BaseLayout({
   children, location, title,
 }) {
   const pageTitle = title || meta.site.name;
+  const canonical = getCanonical(meta.site.url, location.pathname);
 
   return (
     <>
@@ -30,7 +37,7 @@ export default function BaseLayout({
         <meta name="description" content={meta.site.description} />
 
         <link rel="icon" type="image/png" href={logo} />
-        <link rel="canonical" href={meta.site.url} />
+        <link rel="canonical" href={canonical} />
 
         <meta property="og:url" content={meta.site.url} />
         <meta property="og:type" content="website" />
