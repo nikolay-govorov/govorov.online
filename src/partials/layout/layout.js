@@ -12,10 +12,10 @@ import meta from '../../../data/meta';
 import '../../styles/main.css';
 import styles from './layout.module.css';
 
-function getCanonical(domain, path, protocol = 'https') {
+function getCanonical(domain, path) {
   const url = path.replace(/index\.html$/ig, '');
 
-  return `${protocol}://${domain}${url}`;
+  return `${domain}${url}`;
 }
 
 export default function BaseLayout({

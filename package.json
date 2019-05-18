@@ -14,7 +14,7 @@
     "start": "NODE_ENV=development gatsby develop",
     "build": "NODE_ENV=production gatsby build",
     "serve": "gatsby serve",
-    "test": "npm run lint && npm run build"
+    "test": "yarn lint && yarn build"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
