@@ -15,7 +15,7 @@ export default function Post({
 }) {
   const created = useMemo(() => (new Date(date)).toUTCString(), [date]);
   const html = useMemo(() => (
-    content.replace(/(<code.*\sclass=".*\s?)language-text(.*".*>)/ig, '$1$2')
+    content.replace(/(<.*\sclass=".*\s?)language-text(.*".*>)/ig, '$1$2')
   ), [content]);
 
   return (
