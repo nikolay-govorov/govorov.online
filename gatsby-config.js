@@ -77,7 +77,7 @@ module.exports = {
           return {
             // Long-term cache by default.
             ...cacheAll(`max-age=${CACHE_MAX_AGE}`, [ // To cache for 10 years
-              '/*.js', '/*.css', '/*.png', '/*.jpg', '/*.webp', 'woff2',
+              '/*.js', '/*.css', '/*.png', '/*.jpg', '/*.webp', '/*.woff2',
             ]),
 
             // And here are the exceptions:
