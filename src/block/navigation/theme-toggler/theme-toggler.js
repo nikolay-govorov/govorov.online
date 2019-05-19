@@ -22,7 +22,10 @@ export default function ThemeToggler() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{ display: 'none' }} // Don't show, if CSS isn't load
+    >
       <label
         htmlFor={INPUT_ID}
         className={cx(styles.icon, styles.sun)}

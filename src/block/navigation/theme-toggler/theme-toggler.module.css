@@ -1,5 +1,5 @@
 .container {
-  display: flex;
+  display: flex !important; /* HTML displays `display:none;`. Show if CSS is loaded */
   align-items: center;
 }
 
