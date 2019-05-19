@@ -5,12 +5,14 @@ import PropTypes from 'prop-types';
 import Header from '../../block/header/header';
 import Footer from '../../block/footer/footer';
 import logo from '../../assets/images/logo.png';
-import avatar from '../../assets/images/avatar.jpg';
+import avatar from '../../assets/images/nikolay_govorov.jpg';
 
 import meta from '../../../data/meta';
 
 import '../../styles/main.css';
 import styles from './layout.module.css';
+
+const AVATAR_SIZE = 1416;
 
 function getCanonical(domain, path) {
   const url = path.replace(/index\.html$/ig, '');
@@ -42,8 +44,8 @@ export default function BaseLayout({
         <meta property="og:url" content={meta.site.url} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={avatar} />
-        <meta property="og:image:width" content="300" />
-        <meta property="og:image:height" content="300" />
+        <meta property="og:image:width" content={AVATAR_SIZE} />
+        <meta property="og:image:height" content={AVATAR_SIZE} />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:locale" content={meta.site.lang} />
