@@ -50,7 +50,7 @@ module.exports = {
     'gatsby-plugin-feed',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
-    'gatsby-plugin-csp',
+    // 'gatsby-plugin-csp',
 
     {
       resolve: 'gatsby-plugin-netlify',
