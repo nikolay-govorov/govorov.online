@@ -2,8 +2,7 @@
   --border-height: 3px;
 }
 
-a,
-.link {
+:matches(a, .link):not(.link--clean) {
   position: relative;
   display: inline-block;
   color: var(--blue-color);
@@ -15,7 +14,7 @@ a,
   width: 100%;
 }
 
-:matches(a, .link)::before {
+:matches(a, .link):not(.link--clean)::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -28,17 +27,7 @@ a,
   transition: all 0.10s ease-in-out 0s;
 }
 
-:matches(a, .link):matches(:hover, :focus, :active, .link--active):before {
+:matches(a, .link):not(.link--clean):matches(:hover, :focus, :active, .link--active):before {
   visibility: visible;
   transform: scaleX(1);
-}
-
-.link--clean {
-  cursor: text;
-  border: none;
-  color: var(--text-color);
-}
-
-.link--clean:before {
-  display: none;
 }
