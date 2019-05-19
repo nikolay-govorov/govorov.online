@@ -17,7 +17,7 @@ export default function Logo() {
       rel="nofollow noopener noreferrer"
       target="_blank"
     >
-      <picture>
+      <picture className={styles.avatar}>
         <source srcSet={avatarWEBP} type="image/webp" />
 
         <img
