@@ -4,4 +4,5 @@ body[data-theme=dark] {
 
   --blue-color: #00a1fe;
   --blue-lite-color: rgb(126, 241, 249);
+  --blue-dark-color: #b41eff;
 }

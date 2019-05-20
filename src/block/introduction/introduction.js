@@ -1,4 +1,5 @@
 import React from 'react';
+import cx from 'classnames';
 import { Link } from 'gatsby';
 
 import avatar from '../../assets/images/avatar.jpg';
@@ -15,15 +16,40 @@ const getCurrentAge = (date) => {
   return ((new Date().getTime() - new Date(date)) / secs) | 0;
 };
 
-const ProjectsList = ({ list, type }) => (
-  list
-    .filter(el => el.type === type)
-    .map(project => (
-      <span className={styles.link} key={project.link}>
-        <a href={project.link}>{project.title}</a>
-      </span>
-    ))
-);
+function LinksList({ list, separator, upcomingClassName }) {
+  return list.map((project, index, { length }) => (
+    <span className="nobr">
+      <a
+        key={project.url}
+        href={project.url}
+        className={cx(styles.link, { [upcomingClassName]: index !== length - 1 })}
+      >
+        {project.name}
+      </a>
+
+      {index !== length - 1 ? separator : null}
+    </span>
+  ));
+}
+
+function JobsList({ list }) {
+  return (
+    <LinksList
+      list={list}
+      separator="&nbsp;→ "
+      upcomingClassName={cx('link', 'link--through')}
+    />
+  );
+}
+
+function ProjectsList({ list, type }) {
+  return (
+    <LinksList
+      list={list.filter(el => el.type === type)}
+      separator=", "
+    />
+  );
+}
 
 export default function Introduction() {
   return (
@@ -38,31 +64,28 @@ export default function Introduction() {
       ))}
 
       <p className="paragraph">
-        Привет! Меня зовут
+        Привет. Меня зовут
         {' '}
         <span itemProp="givenName">Николай</span>
         {' '}
         <span itemProp="familyName">Говоров</span>
-.
-        Мне
+. Мне
         {' '}
         <span id="age">{getCurrentAge(meta.author.birthDate)}</span>
-        {' '}
-лет, живу в
+, живу в
         {' '}
         <span className="nobr" itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
           <span itemProp="addressLocality">Санкт-Петербурге</span>
           <meta itemProp="addressCountry" content="Россия" />
         </span>
-,
-        разрабатываю фронтенд для
+, разрабатываю фронтенд в
         {' '}
-        <a href={meta.author.job.url}>{meta.author.job.name}</a>
+        <JobsList list={meta.author.jobs} />
 .
       </p>
 
       <p className="paragraph">
-        С 2015 года разрабатывал интерфейсы на фрилансе, в том числе для
+        С 2014 года разрабатывал интерфейсы на фрилансе, в том числе для
         {' '}
         <ProjectsList list={projects} type="job" />
 .
@@ -76,20 +99,20 @@ export default function Introduction() {
       </p>
 
       <p className="paragraph">
-        Пробую выступать на
+        Выступать на
         {' '}
         <Link to="/presentations">митапах</Link>
 ,
         веду
         {' '}
         <Link to="/notes">блог</Link>
-, временами пишу забавные посты
+, пишу забавные посты в
         {' '}
-        <a href="https://vk.com/nikolay_govorov" rel="me">ВКонтакте</a>
+        <a href="https://twitter.com/govorov_n" rel="me">Твитере</a>
         {' '}
 и
         {' '}
-        <a href="https://twitter.com/govorov_n" rel="me">Твитере</a>
+        <a href="https://vk.com/nikolay_govorov" rel="me">ВКонтакте</a>
 .
       </p>
     </div>

@@ -16,7 +16,7 @@ export default function Navigation() {
       <ul className={styles.list}>
         {pages.map(({ title, url }) => (
           <li className={styles.list__item} key={url}>
-            <Link to={url} className="link" activeClassName="link--active">{title}</Link>
+            <Link to={url} className="link link--not-visited" activeClassName="link--active">{title}</Link>
           </li>
         ))}
       </ul>

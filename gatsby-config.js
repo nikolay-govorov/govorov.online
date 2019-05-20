@@ -5,6 +5,10 @@ const { ANALYZE: analyze } = process.env;
 
 const CACHE_MAX_AGE = 10 * 365.25 * 24 * 60 * 60;
 
+function getLast(list) {
+  return list[list.length - 1];
+}
+
 module.exports = {
   siteMetadata: {
     title: meta.site.name,
@@ -17,10 +21,7 @@ module.exports = {
     email: meta.author.email,
     authorBirthDate: meta.author.birthDate,
 
-    job: {
-      name: meta.author.job.name,
-      url: meta.author.job.url,
-    },
+    job: getLast(meta.author.jobs),
   },
   plugins: [
     'gatsby-plugin-postcss',

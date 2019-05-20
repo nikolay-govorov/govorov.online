@@ -1,43 +1,43 @@
 [
   {
-    "link": "https://csgoroll.com",
-    "title": "csgoroll.com",
+    "url": "https://csgoroll.com",
+    "name": "csgoroll.com",
     "type": "job"
   },
   {
-    "link": "http://trout-bait.ru",
-    "title": "trout-bait.ru",
+    "url": "http://trout-bait.ru",
+    "name": "trout-bait.ru",
     "type": "job"
   },
   {
-    "link": "https://qwood.info",
-    "title": "qwood.info",
+    "url": "https://qwood.info",
+    "name": "qwood.info",
     "type": "job"
   },
   {
-    "link": "http://1wine.me",
-    "title": "1wine.me",
+    "url": "http://1wine.me",
+    "name": "1wine.me",
     "type": "job"
   },
 
   {
-    "link": "https://github.com/nikolay-govorov/nanomerge",
-    "title": "nanomerge",
+    "url": "https://github.com/nikolay-govorov/nanomerge",
+    "name": "nanomerge",
     "type": "opensource"
   },
   {
-    "link": "https://github.com/nikolay-govorov/nanoid",
-    "title": "nanoid.rs",
+    "url": "https://github.com/nikolay-govorov/nanoid",
+    "name": "nanoid.rs",
     "type": "opensource"
   },
   {
-    "link": "https://github.com/nikolay-govorov/logux-vuex",
-    "title": "logux-vuex",
+    "url": "https://github.com/nikolay-govorov/logux-vuex",
+    "name": "logux-vuex",
     "type": "opensource"
   },
   {
-    "link": "https://github.com/shower/cli",
-    "title": "shower-cli",
+    "url": "https://github.com/shower/cli",
+    "name": "shower-cli",
     "type": "opensource"
   }
 ]

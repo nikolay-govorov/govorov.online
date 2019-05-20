@@ -6,14 +6,5 @@
 
 .link:not(:last-child) {
   display: inline-block;
-  margin-right: 10px;
-
-  &::after {
-    content: ", ";
-  }
-}
-
-.link:not(:last-child)::after {
-  content: ", ";
 }
 

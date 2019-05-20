@@ -23,7 +23,7 @@ export default function ContentList({ title, items }) {
       {itemsByYear.map(({ year, notes }) => (
         <section key={year} className={styles.section}>
           <h2 className={cx('h2', styles.sectionTitle)}>
-            <a className="link link--wide link--clean" href={`#${year}`}>{year}</a>
+            <a className={cx('link', 'link--wide', 'link--clean', styles.title)} href={`#${year}`}>{year}</a>
           </h2>
 
           <ul className={styles.list}>

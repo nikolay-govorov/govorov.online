@@ -5,4 +5,5 @@ body[data-theme=light] {
 
   --blue-color: rgb(1, 81, 186);
   --blue-lite-color: rgb(126, 241, 249);
+  --blue-dark-color: #6e00fe;
 }

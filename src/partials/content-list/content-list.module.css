@@ -17,3 +17,7 @@
 .listItem {
   padding-bottom: .5em;
 }
+
+.title {
+  text-decoration: none;
+}
