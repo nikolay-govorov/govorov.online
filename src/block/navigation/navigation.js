@@ -8,6 +8,7 @@ const pages = [
   { title: ' Обо мне ', url: '/' },
   { title: ' Заметки ', url: '/notes/' },
   { title: ' Доклады ', url: '/presentations/' },
+  { title: ' Желания ', url: '/wish-list/' },
 ];
 
 export default function Navigation() {
