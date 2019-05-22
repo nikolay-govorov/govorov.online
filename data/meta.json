@@ -10,6 +10,10 @@
     }
   },
 
+  "access": {
+    "yandex": "a85fbaade3d4ec4d"
+  },
+
   "author": {
     "name": "Николай Говоров",
     "email": "nikolay_govorov@bk.ru",

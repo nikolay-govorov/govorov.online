@@ -31,6 +31,8 @@ export default function BaseLayout({
       <Helmet>
         <html lang={meta.site.lang} />
 
+        <meta name="yandex-verification" content={meta.access.yandex} />
+
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
