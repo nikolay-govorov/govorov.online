@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import { Link } from 'gatsby';
 
@@ -42,6 +43,13 @@ function JobsList({ list }) {
   );
 }
 
+JobsList.propTypes = {
+  list: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+  })).isRequired,
+};
+
 function ProjectsList({ list, type }) {
   return (
     <LinksList
@@ -50,6 +58,15 @@ function ProjectsList({ list, type }) {
     />
   );
 }
+
+ProjectsList.propTypes = {
+  type: PropTypes.string.isRequired,
+  list: PropTypes.arrayOf(PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+  })).isRequired,
+};
 
 export default function Introduction() {
   return (
