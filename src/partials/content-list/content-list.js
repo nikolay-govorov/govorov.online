@@ -1,13 +1,44 @@
 import React from 'react';
 import cx from 'classnames';
-import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import { Link, StaticQuery, graphql } from 'gatsby';
 
 import styles from './content-list.module.css';
 
-import { prepareNotesList } from './utils';
+function prepareNotesList(list) {
+  const postsByYears = list.reduce((acc, note) => {
+    const year = note.date;
 
-export default function ContentList({ items }) {
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+
+    acc[year].push(note);
+
+    return acc;
+  }, {});
+
+  return Object.keys(postsByYears)
+    .sort((a, b) => (a > b ? -1 : 1))
+    .map(year => ({ year, notes: postsByYears[year] }));
+}
+
+function formatQuery(data, section) {
+  return data.allMarkdownRemark.edges
+    .reduce((list, { node: item }) => {
+      if (item.fields.slug.startsWith(`/${section}`)) {
+        list.push({
+          slug: item.fields.slug,
+          date: item.frontmatter.date,
+          title: item.frontmatter.title,
+        });
+      }
+
+      return list;
+    }, []);
+}
+
+function ContentList({ items }) {
   const itemsByYear = prepareNotesList(items);
 
   return (
@@ -26,8 +57,8 @@ export default function ContentList({ items }) {
 
           <ul className={styles.list}>
             {notes.map(post => (
-              <li key={post.frontmatter.title} className={styles.listItem}>
-                <Link to={post.fields.slug}>{post.frontmatter.title}</Link>
+              <li key={post.title} className={styles.listItem}>
+                <Link to={post.slug}>{post.title}</Link>
               </li>
             ))}
           </ul>
@@ -39,15 +70,40 @@ export default function ContentList({ items }) {
 
 ContentList.propTypes = {
   items: PropTypes.arrayOf(PropTypes.shape({
-    html: PropTypes.string.isRequired,
-
-    fields: PropTypes.shape({
-      slug: PropTypes.string.isRequired,
-    }).isRequired,
-
-    frontmatter: PropTypes.shape({
-      date: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-    }).isRequired,
+    slug: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
   })).isRequired,
+};
+
+export default function List({ title, section }) {
+  return (
+    <>
+      <h1 className="visuallyhidden">{title}</h1>
+
+      <StaticQuery
+        query={graphql`query {
+          allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+            edges {
+              node {
+                fields { slug }
+                frontmatter {
+                  title
+                  date(formatString: "YYYY")
+                }
+              }
+            }
+          }
+        }`}
+        render={data => (
+          <ContentList items={formatQuery(data, section)} />
+        )}
+      />
+    </>
+  );
+}
+
+List.propTypes = {
+  title: PropTypes.string.isRequired,
+  section: PropTypes.string.isRequired,
 };
