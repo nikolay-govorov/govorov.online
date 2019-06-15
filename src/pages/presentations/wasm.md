@@ -2,6 +2,7 @@
 name: wasm
 title: Применение WebAssembly
 date: 2018-09-18
+event: SPB Frontend
 video: https://www.youtube.com/embed/8DhCXTiP-Aw?rel=0
 ---
 

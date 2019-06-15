@@ -2,6 +2,7 @@
 name: wasm-new-hero
 title: WebAssembly — новый герой
 date: 2018-12-22
+event: AstanaJS
 video: https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FBTSDigital%2Fvideos%2F279066159632468%2F&show_text=0&width=560
 ---
 
