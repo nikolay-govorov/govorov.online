@@ -7,13 +7,11 @@ import styles from './content-list.module.css';
 
 import { prepareNotesList } from './utils';
 
-export default function ContentList({ title, items }) {
+export default function ContentList({ items }) {
   const itemsByYear = prepareNotesList(items);
 
   return (
     <div>
-      <h1 className="visuallyhidden">{title}</h1>
-
       {items.length === 0 ? (
         <p className="h2">
           Ещё ничего не написано
@@ -40,8 +38,6 @@ export default function ContentList({ title, items }) {
 }
 
 ContentList.propTypes = {
-  title: PropTypes.string.isRequired,
-
   items: PropTypes.arrayOf(PropTypes.shape({
     html: PropTypes.string.isRequired,
 

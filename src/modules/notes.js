@@ -14,7 +14,7 @@ export default function Note({
   ...props
 }) {
   return (
-    <Layout {...props}>
+    <Layout {...props} title={meta.title}>
       <Post
         title={meta.title}
         date={meta.date}

@@ -6,9 +6,11 @@ import ContentList from '../partials/content-list/content-list';
 
 export default function PresentationsPage(props) {
   return (
-    <Layout {...props}>
+    <Layout {...props} title="Доклады">
+      <h1 className="visuallyhidden">Доклады</h1>
+
       <SectionQuery section="presentations">
-        {list => <ContentList title="Доклады" items={list} />}
+        {list => <ContentList items={list} />}
       </SectionQuery>
     </Layout>
   );

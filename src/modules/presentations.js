@@ -15,7 +15,7 @@ export default function Presentation({
   const slides = `https://nikolay-govorov.github.io/presentation__${meta.name}/#`;
 
   return (
-    <Layout {...props}>
+    <Layout {...props} title={meta.title}>
       <Post
         title={meta.title}
         date={meta.date}

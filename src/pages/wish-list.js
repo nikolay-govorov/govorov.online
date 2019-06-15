@@ -28,8 +28,8 @@ export default function WishListPage(props) {
   const list = useMemo(() => prepareList(wishList), []);
 
   return (
-    <Layout {...props}>
-      <h1 className="h1">Желания</h1>
+    <Layout {...props} title="Желания">
+      <h1 className="h1 visuallyhidden">Желания</h1>
 
       <p className="paragraph">
         Ведётся для друзей (что тебе подарить?) и для себя.
