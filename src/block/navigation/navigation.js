@@ -3,21 +3,42 @@ import { Link } from 'gatsby';
 
 import styles from './navigation.module.css';
 import ThemeToggler from './theme-toggler/theme-toggler';
+import linkExternal from '../../assets/images/linkExternal.svg';
 
 const pages = [
   { title: ' Обо мне ', url: '/' },
   { title: ' Заметки ', url: '/notes/' },
   { title: ' Доклады ', url: '/presentations/' },
-  { title: ' Желания ', url: '/wish-list/' },
+  { title: ' Желания ', url: 'https://www.notion.so/96248504c9234191ad037b66f02fafbd', external: true },
 ];
 
 export default function Navigation() {
   return (
     <div className={styles.container} aria-label="Страницы сайта">
       <ul className={styles.list}>
-        {pages.map(({ title, url }) => (
+        {pages.map(({ title, url, external }) => (
           <li className={styles.list__item} key={url}>
-            <Link to={url} className="link link--not-visited" activeClassName="link--active">{title}</Link>
+            {external ? (
+              <a
+                href={url}
+                title={url}
+                target="_blank"
+                rel="noopener noreferrer nofollow"
+                className="link link--not-visited link--external"
+              >
+                {title}
+
+                <img src={linkExternal} alt="" aria-label="Ссылка будет открыта в отдельной вкладке" />
+              </a>
+            ) : (
+              <Link
+                to={url}
+                className="link link--not-visited"
+                activeClassName="link--active"
+              >
+                {title}
+              </Link>
+            )}
           </li>
         ))}
       </ul>

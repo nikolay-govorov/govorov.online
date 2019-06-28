@@ -17,3 +17,9 @@
   from = "/*/index.html"
   to = "/:splat/"
   status = 302
+
+[[redirects]]
+  from = "/wish-list/"
+  to = "https://www.notion.so/96248504c9234191ad037b66f02fafbd"
+  status = 301
+  force = true
