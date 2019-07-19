@@ -101,3 +101,13 @@ sup {
     content: ' ('attr(href)') '; /* stylelint-disable-line function-whitespace-after */
   }
 }
+
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation-play-state: paused !important;
+  }
+}
