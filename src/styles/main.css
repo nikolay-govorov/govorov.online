@@ -2,9 +2,6 @@
 @import './config/colors.css';
 @import './config/typography.css';
 
-@import './themes/light.css';
-@import './themes/dark.css';
-
 @import './base/index.css';
 @import './base/typography.css';
 @import './base/button.css';

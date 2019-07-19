@@ -2,14 +2,13 @@ import React from 'react';
 import { Link } from 'gatsby';
 
 import styles from './navigation.module.css';
-import ThemeToggler from './theme-toggler/theme-toggler';
 import linkExternal from '../../assets/images/linkExternal.svg';
 
 const pages = [
-  { title: ' Обо мне ', url: '/' },
-  { title: ' Заметки ', url: '/notes/' },
-  { title: ' Доклады ', url: '/presentations/' },
-  { title: ' Желания ', url: 'https://www.notion.so/96248504c9234191ad037b66f02fafbd', external: true },
+  { title: 'Обо мне', url: '/' },
+  { title: 'Заметки', url: '/notes/' },
+  { title: 'Доклады', url: '/presentations/' },
+  { title: 'Желания', url: 'https://notion.so/96248504c9234191ad037b66f02fafbd', external: true },
 ];
 
 export default function Navigation() {
@@ -26,7 +25,7 @@ export default function Navigation() {
                 rel="noopener noreferrer nofollow"
                 className="link link--not-visited link--external"
               >
-                {title}
+                {` ${title} `}
 
                 <img src={linkExternal} alt="" aria-label="Ссылка будет открыта в отдельной вкладке" />
               </a>
@@ -36,14 +35,12 @@ export default function Navigation() {
                 className="link link--not-visited"
                 activeClassName="link--active"
               >
-                {title}
+                {` ${title} `}
               </Link>
             )}
           </li>
         ))}
       </ul>
-
-      <ThemeToggler />
     </div>
   );
 }

@@ -1,9 +1,0 @@
-body:not([data-theme]),
-body[data-theme=light] {
-  --text-color: #000;
-  --background-color: #fff;
-
-  --blue-color: rgb(1, 81, 186);
-  --blue-lite-color: rgb(126, 241, 249);
-  --blue-dark-color: #6e00fe;
-}

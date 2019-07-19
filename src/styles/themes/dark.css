@@ -1,8 +1,0 @@
-body[data-theme=dark] {
-  --text-color: #fff;
-  --background-color: #282a36;
-
-  --blue-color: #00a1fe;
-  --blue-lite-color: rgb(126, 241, 249);
-  --blue-dark-color: #b41eff;
-}
