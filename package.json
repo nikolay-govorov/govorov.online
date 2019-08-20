@@ -7,6 +7,10 @@
     "url": "https://govorov.online",
     "email": "nikolay_govorov@bk.ru"
   },
+  "os": [
+    "darwin",
+    "linux"
+  ],
   "repository": "nikolay-govorov/govorov.online",
   "scripts": {
     "lint": "eslint src/ --ext .js --fix",
