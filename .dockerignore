@@ -1,0 +1,7 @@
+# Dependencies
+node_modules/
+.cache/
+public
+
+# private settings
+.env

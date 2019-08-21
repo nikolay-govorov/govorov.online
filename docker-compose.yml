@@ -1,8 +1,5 @@
 static:
-  image: nginx:alpine
-
-  volumes:
-    - ./public:/usr/share/nginx/html:ro
+  build: .
 
   ports:
     - "$PORT:80"
