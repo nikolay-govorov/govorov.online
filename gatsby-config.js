@@ -51,34 +51,6 @@ module.exports = {
     'gatsby-plugin-feed',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
-    // 'gatsby-plugin-csp',
-
-    {
-      resolve: 'gatsby-plugin-netlify',
-      options: {
-        allPageHeaders: [
-          `Strict-Transport-Security: max-age=${CACHE_MAX_AGE}; includeSubDomains; preload`,
-          'X-Content-Type-Options: nosniff',
-        ],
-        headers: (() => {
-          const cacheAll = (type, paths) => paths.reduce((acc, url) => ({
-            ...acc,
-
-            [url]: [`Cache-Control: ${type}`],
-          }), {});
-
-          return {
-            // Long-term cache by default.
-            ...cacheAll(`max-age=${CACHE_MAX_AGE}`, [ // To cache for 10 years
-              '/*.js', '/*.css', '/*.png', '/*.jpg', '/*.webp', '/*.woff2',
-            ]),
-
-            // And here are the exceptions:
-            ...cacheAll('must-revalidate, max-age=3600', ['/', '/manifest.json', '/robots.txt', '/rss.xml, /sitemap.xml']),
-          };
-        })(),
-      },
-    },
 
     {
       resolve: 'gatsby-plugin-eslint',
@@ -94,13 +66,6 @@ module.exports = {
       resolve: 'gatsby-plugin-webpack-bundle-analyzer',
       options: {
         production: analyze,
-      },
-    },
-
-    {
-      resolve: 'gatsby-plugin-netlify-cms',
-      options: {
-        modulePath: `${__dirname}/src/cms/index.js`,
       },
     },
   ],
