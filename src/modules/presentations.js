@@ -41,6 +41,7 @@ Presentation.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       id: PropTypes.string.isRequired,
+      html: PropTypes.string.isRequired,
 
       frontmatter: PropTypes.shape({
         name: PropTypes.string.isRequired,
