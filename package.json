@@ -20,22 +20,9 @@
     "serve": "gatsby serve",
     "test": "yarn lint && yarn build"
   },
-  "devDependencies": {
+  "dependencies": {
     "babel-eslint": "^10.0.1",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.20",
-    "eslint": "^6.0.1",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-loader": "^2.1.1",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1",
-    "gatsby-plugin-eslint": "^2.0.1",
-    "postcss": "^7.0.17",
-    "postcss-assets": "^5.0.0",
-    "postcss-easy-import": "^3.0.0",
-    "postcss-preset-env": "^6.7.0"
-  },
-  "dependencies": {
     "classnames": "^2.2.6",
     "gatsby": "^2.0.48",
     "gatsby-plugin-feed": "^2.0.9",
@@ -54,6 +41,18 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
-    "universal-url": "^2.0.0"
+    "universal-url": "^2.0.0",
+    "postcss": "^7.0.17",
+    "postcss-assets": "^5.0.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-preset-env": "^6.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1"
   }
 }

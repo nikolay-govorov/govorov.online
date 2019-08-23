@@ -1,13 +1,6 @@
-# Temp
-.sass-cache
-.jekyll-metadata
-
-# Dependencies
+# dependencies
 node_modules/
 
-# gatsby files
+# build, settings
 .cache/
-public
-
-# private settings
-.env
+public/*

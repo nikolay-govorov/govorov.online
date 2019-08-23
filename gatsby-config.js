@@ -53,16 +53,6 @@ module.exports = {
     'gatsby-plugin-robots-txt',
 
     {
-      resolve: 'gatsby-plugin-eslint',
-      options: {
-        test: /\.js$/,
-        exclude: /(node_modules|\.cache|public)/,
-        options: {
-          emitWarning: true,
-        },
-      },
-    },
-    {
       resolve: 'gatsby-plugin-webpack-bundle-analyzer',
       options: {
         production: analyze,

@@ -1,5 +1,0 @@
-static:
-  build: .
-
-  ports:
-    - "$PORT:80"

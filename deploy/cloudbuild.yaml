@@ -1,0 +1,21 @@
+steps:
+  - name: node:12
+    entrypoint: yarn
+    args: ['install']
+
+  - name: node:12
+    entrypoint: yarn
+    args: ['test']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/govorov-online-250720/govorov-online', '-f', 'deploy/Dockerfile', '.']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/govorov-online-250720/govorov-online']
+
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args: ['beta', 'run', 'deploy', 'govorov-online', '--image', 'gcr.io/govorov-online-250720/govorov-online', '--region', 'us-east1', '--platform', 'managed', '--quiet']
+
+images:
+  - gcr.io/govorov-online-250720/govorov-online
+  
