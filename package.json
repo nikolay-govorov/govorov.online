@@ -2,6 +2,7 @@
   "name": "govorov.online",
   "version": "2.0.0",
   "homepage": "https://govorov.online",
+  "license": "unlicensed",
   "author": {
     "name": "Nikolay Govorov",
     "url": "https://govorov.online",
@@ -13,12 +14,11 @@
   ],
   "repository": "nikolay-govorov/govorov.online",
   "scripts": {
-    "lint": "eslint src/ --ext .js --fix",
     "clean": "rm -rf .cache public",
     "start": "NODE_ENV=development gatsby develop",
     "build": "NODE_ENV=production gatsby build",
-    "serve": "gatsby serve",
-    "test": "yarn lint && yarn build"
+    "lint:js": "eslint src/ --ext .js --fix",
+    "test": "yarn lint:js"
   },
   "dependencies": {
     "babel-eslint": "^10.0.1",
