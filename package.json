@@ -54,5 +54,40 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1"
+  },
+  "babel": {
+    "presets": ["babel-preset-gatsby"],
+    "plugins": ["transform-react-remove-prop-types"]
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie 11",
+    "not ie_mob 11",
+    "not op_mini all",
+    "not op_mob > 0",
+    "not and_qq > 0",
+    "not android > 0"
+  ],
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "rules": {
+        "react/jsx-filename-extension": [1, { "extensions": [".js"] }]
+    },
+    "env": {
+        "browser": true
+    }
+  },
+  "postcss": {
+    "map": "inline",
+  
+    "plugins": {
+      "postcss-import": {},
+      "postcss-preset-env": { "stage": 0 },
+      "postcss-assets": {
+        "loadPaths": ["./src/assets"]
+      }
+    }
   }
 }
