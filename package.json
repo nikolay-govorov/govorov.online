@@ -35,17 +35,17 @@
     "gatsby-remark-prismjs": "^3.2.9",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-transformer-remark": "^2.1.12",
+    "postcss": "^7.0.17",
+    "postcss-assets": "^5.0.0",
+    "postcss-easy-import": "^3.0.0",
     "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.7.0",
     "prismjs": "^1.16.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
-    "universal-url": "^2.0.0",
-    "postcss": "^7.0.17",
-    "postcss-assets": "^5.0.0",
-    "postcss-easy-import": "^3.0.0",
-    "postcss-preset-env": "^6.7.0"
+    "universal-url": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "^6.0.1",
@@ -56,8 +56,12 @@
     "eslint-plugin-react": "^7.11.1"
   },
   "babel": {
-    "presets": ["babel-preset-gatsby"],
-    "plugins": ["transform-react-remove-prop-types"]
+    "presets": [
+      "babel-preset-gatsby"
+    ],
+    "plugins": [
+      "transform-react-remove-prop-types"
+    ]
   },
   "browserslist": [
     "last 2 versions",
@@ -73,20 +77,30 @@
     "parser": "babel-eslint",
     "extends": "airbnb",
     "rules": {
-        "react/jsx-filename-extension": [1, { "extensions": [".js"] }]
+      "react/jsx-filename-extension": [
+        1,
+        {
+          "extensions": [
+            ".js"
+          ]
+        }
+      ]
     },
     "env": {
-        "browser": true
+      "browser": true
     }
   },
   "postcss": {
     "map": "inline",
-  
     "plugins": {
       "postcss-import": {},
-      "postcss-preset-env": { "stage": 0 },
+      "postcss-preset-env": {
+        "stage": 0
+      },
       "postcss-assets": {
-        "loadPaths": ["./src/assets"]
+        "loadPaths": [
+          "./src/assets"
+        ]
       }
     }
   }

@@ -2,7 +2,6 @@
 FROM node:alpine
 
 WORKDIR /app/
-RUN npm install --global yarn
 
 COPY ./package.json ./yarn.lock /app/
 RUN yarn
