@@ -8,7 +8,7 @@ steps:
     args: ['test']
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/govorov-online-250720/govorov-online', '-f', 'deploy/Dockerfile', '.']
+    args: ['build', '-t', 'gcr.io/govorov-online-250720/govorov-online', '-f', 'Dockerfile', '.']
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/govorov-online-250720/govorov-online']
