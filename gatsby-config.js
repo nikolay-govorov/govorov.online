@@ -1,10 +1,6 @@
 const path = require('path');
 const meta = require('./data/meta.json');
 
-const { ANALYZE: analyze } = process.env;
-
-const CACHE_MAX_AGE = 10 * 365.25 * 24 * 60 * 60;
-
 function getLast(list) {
   return list[list.length - 1];
 }
@@ -51,12 +47,5 @@ module.exports = {
     'gatsby-plugin-feed',
     'gatsby-plugin-sitemap',
     'gatsby-plugin-robots-txt',
-
-    {
-      resolve: 'gatsby-plugin-webpack-bundle-analyzer',
-      options: {
-        production: analyze,
-      },
-    },
   ],
 };
