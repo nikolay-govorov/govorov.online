@@ -1,13 +1,13 @@
 @import '../../../styles/config/media.css';
 
-.post p + ul {
-  margin-top: -.75em;
-}
-
 .post ul {
   max-width: var(--readable-text-width);
   margin: 0;
   padding-left: 1em;
+}
+
+.post p + ul {
+  margin-top: -0.75em;
 }
 
 @media (--screen-tablet) {
@@ -17,6 +17,6 @@
 }
 
 .post ul li {
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   list-style: none;
 }

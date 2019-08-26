@@ -18,7 +18,8 @@
     "start": "NODE_ENV=development gatsby develop",
     "build": "NODE_ENV=production gatsby build",
     "lint:js": "eslint src/ --ext .js --fix",
-    "test": "yarn lint:js"
+    "lint:css": "stylelint \"src/**/*.css\" --fix",
+    "test": "yarn lint:js && yarn lint:css"
   },
   "dependencies": {
     "babel-eslint": "^10.0.1",
@@ -52,7 +53,9 @@
     "eslint-loader": "^2.1.1",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-react": "^7.11.1",
+    "stylelint": "^10.1.0",
+    "stylelint-config-standard": "^18.3.0"
   },
   "babel": {
     "presets": [
@@ -88,6 +91,9 @@
     "env": {
       "browser": true
     }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
   },
   "postcss": {
     "map": "inline",

@@ -11,7 +11,7 @@
 @import 'modules/ul.css';
 
 .post {
-  font-size: calc(1em + .1vw);
+  font-size: calc(1em + 0.1vw);
 }
 
 .title {

@@ -8,9 +8,9 @@
   grid-row-gap: 1.5rem;
   grid-column-gap: calc(1rem + 1vw);
   grid-template-areas:
-  "header"
-  "content"
-  "footer";
+    "header"
+    "content"
+    "footer";
   grid-template-columns: minmax(0%, 100%);
   grid-template-rows: min-content 1fr auto;
 }

@@ -2,9 +2,6 @@
   font-size: calc(1em + 1vw);
 }
 
-.link {}
-
 .link:not(:last-child) {
   display: inline-block;
 }
-

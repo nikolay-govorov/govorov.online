@@ -5,11 +5,11 @@
 
 .list {
   list-style: none;
-  margin-right: .75em;
+  margin-right: 0.75em;
 }
 
 .list__item {
   display: inline-block;
-  padding-right: .75em;
-  padding-bottom: .25em;
+  padding-right: 0.75em;
+  padding-bottom: 0.25em;
 }

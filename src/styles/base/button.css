@@ -15,6 +15,6 @@
   background-color: #a03000;
 }
 
-.button:before {
+.button::before {
   display: none;
 }
