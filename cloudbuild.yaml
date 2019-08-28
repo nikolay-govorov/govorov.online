@@ -8,13 +8,19 @@ steps:
     args: ['test']
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/govorov-online-250720/govorov-online', '-f', 'Dockerfile', '.']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/govorov-online', '.']
 
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/govorov-online-250720/govorov-online']
+    args: ['push', 'gcr.io/$PROJECT_ID/govorov-online']
 
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['beta', '--project', 'govorov-online-250720', 'run', 'deploy', 'govorov-online', '--image', 'gcr.io/govorov-online-250720/govorov-online', '--region', 'europe-west1', '--platform', 'managed', '--quiet']
+    args: [
+      'beta', 'run', 'deploy', 'govorov-online',
+        '--image', 'gcr.io/$PROJECT_ID/govorov-online',
+        '--region', 'europe-west1',
+        '--platform', 'managed',
+        '--quiet'
+    ]
 
 images:
-  - gcr.io/govorov-online-250720/govorov-online
+  - gcr.io/$PROJECT_ID/govorov-online
