@@ -118,7 +118,7 @@ export default function Introduction() {
       <p className="paragraph">
         Выступаю на
         {' '}
-        <Link to="/presentations">митапах</Link>
+        <Link to="/talks">митапах</Link>
 ,
         веду
         {' '}

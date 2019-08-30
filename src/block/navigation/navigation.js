@@ -7,7 +7,7 @@ import linkExternal from '../../assets/images/linkExternal.svg';
 const pages = [
   { title: 'Обо мне', url: '/' },
   { title: 'Заметки', url: '/notes/' },
-  { title: 'Доклады', url: '/presentations/' },
+  { title: 'Доклады', url: '/talks/' },
   { title: 'Желания', url: 'https://notion.so/96248504c9234191ad037b66f02fafbd', external: true },
   { title: 'Резюме', url: 'https://www.notion.so/Frontend-engineer-0d0ebccf2eb040d8b8360ddde1796983', external: true },
 ];

@@ -6,13 +6,13 @@ import Post from '../partials/post/post';
 import Video from '../partials/video/video';
 import Layout from '../partials/layout/layout';
 
-export default function Presentation({
+export default function Talk({
   data: {
     markdownRemark: { frontmatter: meta, html },
   },
   ...props
 }) {
-  const slides = `https://nikolay-govorov.github.io/presentation__${meta.name}/#`;
+  const slides = `https://nikolay-govorov.github.io/talk__${meta.name}/#`;
 
   return (
     <Layout {...props} title={meta.title}>
@@ -37,7 +37,7 @@ export default function Presentation({
   );
 }
 
-Presentation.propTypes = {
+Talk.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       id: PropTypes.string.isRequired,
@@ -54,7 +54,7 @@ Presentation.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query PresentationBySlug($slug: String!) {
+  query TalkBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
