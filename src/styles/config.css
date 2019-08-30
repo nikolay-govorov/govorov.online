@@ -1,0 +1,35 @@
+@custom-media --screen-tablet (width >= 768px);
+@custom-media --screen-laptop (width >= 1024px);
+@custom-media --screen-pc (width >= 1280px);
+@custom-media --screen-extra-large-pc (width >= 2048px);
+
+:root {
+  /* typography */
+  --max-screen-width: 2048px;
+  --base-font-family: "avenir next", avenir, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --base-font-size: 16px;
+  --base-line-height: 1.5;
+  --readable-heading-width: 36em;
+  --readable-text-width: 30em;
+  --h1-size: calc(1.5em + 1vw);
+  --h2-size: calc(1.15em + 1vw);
+  --h3-size: calc(1em);
+
+  /* colors */
+  --gray-color: #9caec0;
+  --text-color: #000;
+  --background-color: #fff;
+  --blue-color: rgb(1, 81, 186);
+  --blue-lite-color: rgb(126, 241, 249);
+  --blue-dark-color: #6e00fe;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #fff;
+    --background-color: #282a36;
+    --blue-color: #00a1fe;
+    --blue-lite-color: rgb(126, 241, 249);
+    --blue-dark-color: #b41eff;
+  }
+}

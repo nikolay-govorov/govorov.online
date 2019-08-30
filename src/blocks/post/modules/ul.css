@@ -1,4 +1,4 @@
-@import '../../../styles/config/media.css';
+@import '../../../styles/config.css';
 
 .post ul {
   max-width: var(--readable-text-width);
