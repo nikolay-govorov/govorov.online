@@ -1,9 +1,11 @@
 import React from 'react';
 
 import styles from './contacts.module.css';
-import contacts from '../../../data/contacts.json';
+import metadata from '../../../metadata.json';
 
 export default function Contacts() {
+  const { author: { contacts } } = metadata;
+
   return (
     <div className={styles.container}>
       <ul className={styles.list}>

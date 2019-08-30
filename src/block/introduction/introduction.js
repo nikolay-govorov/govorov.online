@@ -6,9 +6,7 @@ import { Link } from 'gatsby';
 import avatar from '../../assets/images/avatar.jpg';
 import styles from './introduction.module.css';
 
-import meta from '../../../data/meta.json';
-import contacts from '../../../data/contacts.json';
-import projects from '../../../data/projects.json';
+import meta from '../../../metadata.json';
 
 const getCurrentAge = (date) => {
   const secs = 24 * 3600 * 365.25 * 1000;
@@ -76,7 +74,7 @@ export default function Introduction() {
       <meta itemProp="gender" content="male" />
       <meta itemProp="birthDate" content={meta.author.birthDate} />
 
-      {contacts.filter(({ itemprop }) => itemprop).map(contact => (
+      {meta.author.contacts.filter(({ itemprop }) => itemprop).map(contact => (
         <meta key={contact.url} itemProp={contact.itemprop} content={contact.url} />
       ))}
 
@@ -104,14 +102,14 @@ export default function Introduction() {
       <p className="paragraph">
         С 2014 года разрабатывал интерфейсы на фрилансе, в том числе для
         {' '}
-        <ProjectsList list={projects} type="job" />
+        <ProjectsList list={meta.author.projects} type="job" />
 .
       </p>
 
       <p className="paragraph">
         Разрабатываю open-source проекты, поддерживаю
         {' '}
-        <ProjectsList list={projects} type="opensource" />
+        <ProjectsList list={meta.author.projects} type="opensource" />
 .
       </p>
 

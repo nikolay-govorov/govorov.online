@@ -7,7 +7,7 @@ import Footer from '../../block/footer/footer';
 import logo from '../../assets/images/logo.png';
 import avatar from '../../assets/images/nikolay_govorov.jpg';
 
-import meta from '../../../data/meta';
+import meta from '../../../metadata.json';
 
 import '../../styles/main.css';
 import styles from './layout.module.css';

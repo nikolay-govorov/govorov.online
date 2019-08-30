@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { withPrefix } from 'gatsby';
 
 import styles from './header.module.css';
-import meta from '../../../data/meta';
+import meta from '../../../metadata.json';
 
 import Logo from '../logo/logo';
 import Navigation from '../navigation/navigation';

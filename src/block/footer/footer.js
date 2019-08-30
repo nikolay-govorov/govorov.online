@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 
 import styles from './footer.module.css';
 
-import meta from '../../../data/meta';
+import meta from '../../../metadata.json';
 
 import Contacts from '../contacts/contacts';
 

@@ -1,5 +1,5 @@
 const path = require('path');
-const meta = require('./data/meta.json');
+const meta = require('./metadata.json');
 
 function getLast(list) {
   return list[list.length - 1];
