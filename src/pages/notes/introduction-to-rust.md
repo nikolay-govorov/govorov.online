@@ -1,5 +1,4 @@
 ---
-name: introduction-to-rust
 title: "Приправляем наши web проекты Rust'ом"
 date: 2017-10-02
 ---

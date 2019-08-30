@@ -1,8 +1,8 @@
 ---
-name: react-ssr
 title: Серверный рендеринг React
 date: 2019-04-26
 event: PiterJS
+slides_id: react-ssr
 video: 'https://www.youtube.com/embed/MueYSY2ZO4Y?rel=0&t=849'
 ---
 React — библиотека построения интерфейсов, которую чаще всего используют для создания SPA, но можно больше.

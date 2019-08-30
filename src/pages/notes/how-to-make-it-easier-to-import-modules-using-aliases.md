@@ -1,5 +1,4 @@
 ---
-name: how-to-make-it-easier-to-import-modules-using-aliases
 title: Как упростить подключение модулей используя алиасы в Webpack
 date: 2018-07-12
 ---

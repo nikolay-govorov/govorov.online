@@ -1,8 +1,8 @@
 ---
-name: vue-ssr
 title: Изоморфные приложения на Vue
 date: 2018-05-10
 event: PiterJS
+slides_id: vue-ssr
 video: https://www.youtube.com/embed/UhPuIahns18?rel=0
 ---
 

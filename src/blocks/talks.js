@@ -12,7 +12,7 @@ export default function Talk({
   },
   ...props
 }) {
-  const slides = `https://nikolay-govorov.github.io/talk__${meta.name}/#`;
+  const slides = `https://nikolay-govorov.github.io/talk__${meta.slides_id}/#`;
 
   return (
     <Layout {...props} title={meta.title}>
@@ -59,9 +59,9 @@ export const pageQuery = graphql`
       id
       html
       frontmatter {
-        name
         title
         video
+        slides_id
         date(formatString: "YYYY-MM-DD")
       }
     }
