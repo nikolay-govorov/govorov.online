@@ -2,7 +2,7 @@
   "site": {
     "lang": "ru",
     "url": "https://govorov.online",
-    "description": "Живу в Питере, разрабатываю фронтенд в SEMrush",
+    "description": "Живу в Питере, разрабатываю фронтенд в BIOCad",
     "name": "Николай Говоров",
     "themes": {
       "light": "#fff",
@@ -16,7 +16,7 @@
 
   "author": {
     "name": "Николай Говоров",
-    "email": "nikolay_govorov@bk.ru",
+    "email": "me@govorov.online",
     "birthDate": "1999-09-24",
 
     "jobs": [
