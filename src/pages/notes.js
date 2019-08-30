@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Layout from '../partials/layout/layout';
-import ContentList from '../partials/content-list/content-list';
+import Layout from '../blocks/layout/layout';
+import ContentList from '../blocks/content-list/content-list';
 
 export default function NotesPage(props) {
   return (

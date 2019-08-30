@@ -2,8 +2,8 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 
-import Header from '../../block/header/header';
-import Footer from '../../block/footer/footer';
+import Header from '../header/header';
+import Footer from '../footer/footer';
 import logo from '../../assets/images/logo.png';
 import avatar from '../../assets/images/nikolay_govorov.jpg';
 

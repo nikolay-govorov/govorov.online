@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Layout from '../partials/layout/layout';
+import Layout from '../blocks/layout/layout';
 
 export default function NotFoundPage(props) {
   return (

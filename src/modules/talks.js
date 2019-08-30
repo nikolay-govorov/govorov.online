@@ -2,9 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import Post from '../partials/post/post';
-import Video from '../partials/video/video';
-import Layout from '../partials/layout/layout';
+import Post from '../blocks/post/post';
+import Video from '../blocks/video/video';
+import Layout from '../blocks/layout/layout';
 
 export default function Talk({
   data: {

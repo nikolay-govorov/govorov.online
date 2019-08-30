@@ -4,8 +4,8 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import Layout from '../partials/layout/layout';
-import Post from '../partials/post/post';
+import Layout from '../blocks/layout/layout';
+import Post from '../blocks/post/post';
 
 export default function Note({
   data: {
