@@ -25,10 +25,12 @@ export default function Talk({
               <a target="_blank" rel="noopener noreferrer" href={slides}>Слайды</a>
             </div>
 
-            <Video
-              url={meta.video}
-              title={meta.title}
-            />
+            {meta.video ? (
+              <Video
+                url={meta.video}
+                title={meta.title}
+              />
+            ) : null}
           </>
         )}
         content={html}
