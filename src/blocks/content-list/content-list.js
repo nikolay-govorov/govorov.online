@@ -7,7 +7,7 @@ import styles from './content-list.module.css';
 
 function prepareNotesList(list) {
   const postsByYears = list.reduce((acc, note) => {
-    const year = note.date;
+    const year = new Date(note.date).getFullYear();
 
     if (!acc[year]) {
       acc[year] = [];
@@ -38,8 +38,12 @@ function formatQuery(data, section) {
     }, []);
 }
 
+function filterFuture(items) {
+  return items.filter(item => new Date(item.date).getTime() < Date.now());
+}
+
 function ContentList({ items }) {
-  const itemsByYear = prepareNotesList(items);
+  const itemsByYear = prepareNotesList(filterFuture(items));
 
   return (
     <div>
@@ -89,7 +93,7 @@ export default function List({ title, section }) {
                 fields { slug }
                 frontmatter {
                   title
-                  date(formatString: "YYYY")
+                  date(formatString: "YYYY-MM-DD")
                 }
               }
             }
