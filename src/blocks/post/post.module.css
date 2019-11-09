@@ -11,10 +11,10 @@
 @import 'modules/ul.css';
 
 .post {
-  font-size: calc(1em + 0.1vw);
+  font-size: calc(1em + 0.1vw) !important;
 }
 
 .title {
-  margin-top: 0;
-  max-width: 20em;
+  margin-top: 0 !important;
+  max-width: 20em !important;
 }
