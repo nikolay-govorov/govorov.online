@@ -19,6 +19,7 @@ steps:
         '--image', 'gcr.io/$PROJECT_ID/govorov-online',
         '--region', 'europe-west1',
         '--platform', 'managed',
+        '--allow-unauthenticated',
         '--quiet'
     ]
 
