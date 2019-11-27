@@ -17,6 +17,7 @@
     "clean": "rm -rf .cache public",
     "start": "NODE_ENV=development gatsby develop",
     "build": "NODE_ENV=production gatsby build",
+    "deploy": "echo 'govorov.online' > ./public/CNAME && gh-pages -d public",
     "lint:js": "eslint src/ --ext .js --fix",
     "lint:css": "stylelint \"src/**/*.css\" --fix",
     "test": "yarn lint:js && yarn lint:css"
@@ -54,6 +55,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
+    "gh-pages": "^2.1.1",
     "stylelint": "^10.1.0",
     "stylelint-config-standard": "^18.3.0"
   },
