@@ -1,0 +1,32 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+      with:
+          fetch-depth: 1
+    - name: Install Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: '>=13.2'
+    - name: Get Yarn cache
+      id: yarn-cache
+      run: echo "::set-output name=dir::$(yarn cache dir)"
+    - name: Cache Yarn
+      uses: actions/cache@v1
+      with:
+        path: ${{ steps.yarn-cache.outputs.dir }}
+        key: yarn-all-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          yarn-all-
+    - name: Install all dependencies
+      run: yarn install
+    - name: npm install, build, and test
+      run: npm test
+      env:
+        CI: true
