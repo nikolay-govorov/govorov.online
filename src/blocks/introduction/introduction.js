@@ -100,10 +100,7 @@ export default function Introduction() {
       </p>
 
       <p className="paragraph">
-        С 2014 года разрабатывал интерфейсы на фрилансе, в том числе для
-        {' '}
-        <ProjectsList list={meta.author.projects} type="job" />
-.
+        С 2014 года разрабатывал интерфейсы на фрилансе.
       </p>
 
       <p className="paragraph">
