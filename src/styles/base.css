@@ -1,4 +1,4 @@
-@import-normalize; /* stylelint-disable-line at-rule-no-unknown */
+@import-normalize;
 
 html,
 body {
@@ -28,7 +28,7 @@ body {
   margin: 0;
   padding: 0;
 
-  @media (prefers-reduced-motion: reduce) { /* stylelint-disable-line media-feature-name-no-unknown */
+  @media (prefers-reduced-motion: reduce) {
     animation: none !important;
     transition: none !important;
   }
@@ -98,7 +98,7 @@ sup {
 
 [href]:not([href^="#"])::after {
   @media print {
-    content: ' ('attr(href) ') '; /* stylelint-disable-line function-whitespace-after */
+    content: ' ('attr(href) ') ';
   }
 }
 
