@@ -106,7 +106,7 @@
       },
       "postcss-assets": {
         "loadPaths": [
-          "./src/assets"
+          "./src/images"
         ]
       }
     }

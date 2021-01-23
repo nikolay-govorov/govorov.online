@@ -29,8 +29,12 @@
         "url": "https://semrush.com"
       },
       {
-        "name": "BioCAD",
+        "name": "BIOCAD",
         "url": "https://biocad.ru"
+      },
+      {
+        "name": "Yandex SDC",
+        "url": "https://sdc.yandex.com"
       }
     ],
 

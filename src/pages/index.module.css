@@ -1,7 +1,7 @@
-.container {
+.intro_container {
   font-size: calc(1em + 1vw);
 }
 
-.link:not(:last-child) {
+.intro_link:not(:last-child) {
   display: inline-block;
 }

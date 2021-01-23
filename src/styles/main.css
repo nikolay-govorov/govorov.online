@@ -1,6 +1,5 @@
 @import './config.css';
-@import './base/index.css';
-@import './base/typography.css';
-@import './base/button.css';
-@import './base/links.css';
-@import './base/lists.css';
+@import './base.css';
+@import './typography.css';
+@import './links.css';
+@import './lists.css';
