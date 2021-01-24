@@ -41,23 +41,19 @@
     "projects": [
       {
         "url": "https://github.com/nikolay-govorov/nanomerge",
-        "name": "nanomerge",
-        "type": "opensource"
+        "name": "nanomerge"
       },
       {
         "url": "https://github.com/nikolay-govorov/nanoid",
-        "name": "nanoid.rs",
-        "type": "opensource"
+        "name": "nanoid.rs"
       },
       {
         "url": "https://github.com/nikolay-govorov/logux-vuex",
-        "name": "logux-vuex",
-        "type": "opensource"
+        "name": "logux-vuex"
       },
       {
         "url": "https://github.com/shower/cli",
-        "name": "shower-cli",
-        "type": "opensource"
+        "name": "shower-cli"
       }
     ],    
 

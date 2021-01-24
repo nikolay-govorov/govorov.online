@@ -3,3 +3,7 @@
 @import './typography.css';
 @import './links.css';
 @import './lists.css';
+
+/* Components */
+@import './components/layout.css';
+@import './components/introduction.css';

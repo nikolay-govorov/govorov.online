@@ -15,33 +15,22 @@
   "repository": "nikolay-govorov/govorov.online",
   "scripts": {
     "clean": "rm -rf .cache public",
-    "start": "NODE_ENV=development gatsby develop",
-    "build": "NODE_ENV=production gatsby build",
+    "start": "eleventy --serve",
+    "build": "eleventy && postcss src/styles/main.css -d ./public/styles/",
     "deploy": "echo 'govorov.online' > ./public/CNAME && gh-pages -d public"
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "gatsby": "^2.0.48",
-    "gatsby-plugin-postcss": "^2.0.1",
-    "gatsby-plugin-react-helmet": "^3.0.2",
-    "gatsby-remark-copy-linked-files": "^2.0.6",
-    "gatsby-source-filesystem": "^2.0.8",
-    "postcss": "^7.0.17",
+    "postcss": "^8.2.4",
     "postcss-assets": "^5.0.0",
+    "postcss-cli": "^8.3.1",
     "postcss-easy-import": "^3.0.0",
     "postcss-import": "^12.0.1",
-    "postcss-preset-env": "^6.7.0",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-helmet": "^5.2.0"
+    "postcss-preset-env": "^6.7.0"
   },
   "devDependencies": {
+    "@11ty/eleventy": "^0.11.1",
     "gh-pages": "^2.1.1"
-  },
-  "babel": {
-    "presets": [
-      "babel-preset-gatsby"
-    ]
   },
   "browserslist": [
     "last 2 versions",
