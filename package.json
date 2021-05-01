@@ -16,7 +16,7 @@
   "scripts": {
     "clean": "rm -rf .cache _site",
     "start": "eleventy --serve",
-    "build": "eleventy && postcss src/styles/main.css -d ./_site/styles/"
+    "build": "eleventy"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -39,19 +39,5 @@
     "not op_mob > 0",
     "not and_qq > 0",
     "not android > 0"
-  ],
-  "postcss": {
-    "map": "inline",
-    "plugins": {
-      "postcss-import": {},
-      "postcss-preset-env": {
-        "stage": 0
-      },
-      "postcss-assets": {
-        "loadPaths": [
-          "./src/images"
-        ]
-      }
-    }
-  }
+  ]
 }
