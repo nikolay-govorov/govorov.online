@@ -13,7 +13,12 @@ function postcssPlugin(eleventyConfig, options = {}) {
         postcss(options.plugins)
             .process(css, { from: options.from, to: options.to })
             .then(result => {
-                fs.mkdirSync(path.dirname(options.to));
+                const dir = path.dirname(options.to);
+
+                if (!fs.existsSync(dir)) {
+                    fs.mkdirSync(path.dirname(options.to));
+                }
+
                 fs.writeFileSync(options.to, result.css)
 
                 if (result.map) {
