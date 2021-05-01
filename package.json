@@ -14,10 +14,9 @@
   ],
   "repository": "nikolay-govorov/govorov.online",
   "scripts": {
-    "clean": "rm -rf .cache public",
+    "clean": "rm -rf .cache _site",
     "start": "eleventy --serve",
-    "build": "eleventy && postcss src/styles/main.css -d ./public/styles/",
-    "deploy": "echo 'govorov.online' > ./public/CNAME && gh-pages -d public"
+    "build": "eleventy && postcss src/styles/main.css -d ./_site/styles/"
   },
   "dependencies": {
     "classnames": "^2.2.6",
@@ -29,8 +28,7 @@
     "postcss-preset-env": "^6.7.0"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1",
-    "gh-pages": "^2.1.1"
+    "@11ty/eleventy": "^0.11.1"
   },
   "browserslist": [
     "last 2 versions",
