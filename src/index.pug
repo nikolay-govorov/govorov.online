@@ -1,0 +1,39 @@
+---
+layout: 'layout.11ty.js'
+title: 'Обо мне'
+---
+
+- var currentCompany = meta.author.jobs[meta.author.jobs.length - 1]
+
+div.intro_container(itemScope itemType="https://schema.org/Person")
+  link(itemProp="url" href=meta.site.url)
+
+  meta(itemProp="image" content="/images/avatar.jpg")
+  meta(itemProp="gender" content="male")
+  meta(itemProp="birthDate" content=meta.author.birthDate)
+
+  each contact in meta.author.contacts
+    if contact.itemprop
+      meta(itemProp=contact.itemprop content=contact.url)
+
+  p.paragraph
+    | Привет. Меня зовут&#32;
+    span(itemProp="givenName") Николай&#32;
+    span(itemProp="familyName") Говоров
+    | .
+
+    | Живу в&#32;
+    span.nobr(itemProp="address" itemScope itemType="https://schema.org/PostalAddress")
+      meta(itemProp="addressCountry" content="Россия")
+      span(itemProp="addressLocality") Санкт-Петербурге
+      | , разрабатываю фронтенд в&#32;
+      a(href=currentCompany.url)=currentCompany.name
+      |.
+
+  p.paragraph
+    | Разрабатываю open-source, поддерживаю&#32;
+    for project, index in meta.author.projects
+      span.nobr
+        a.intro_link(href="${project.url}")=project.name
+      =index !== meta.author.projects.length - 1 ? ", " : ""
+    | .

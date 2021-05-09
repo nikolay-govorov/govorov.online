@@ -1,4 +1,4 @@
-const meta = require('../../metadata.json');
+const meta = require('../_data/meta.json');
 
 const pages = [
   { title: 'Обо мне', url: '/' },
@@ -26,10 +26,10 @@ exports.render = (data) => {
       <head>
         <meta name="yandex-verification" content="${meta.access.yandex}" />
 
-        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        <title>"${pageTitle}"</title>
+        <title>${pageTitle}</title>
         <meta charset="utf-8" />
         <meta name="theme-color" content="${meta.site.themes.light}" />
         <meta name="description" content="${meta.site.description}" />
@@ -50,7 +50,7 @@ exports.render = (data) => {
 
         <!-- Disable auto detected phone links for Safari and BlackBerry -->
         <meta name="format-detection" content="telephone=no" />
-        <meta httpEquiv="x-rim-auto-match" content="none" />
+        <meta http-equiv="x-rim-auto-match" content="none" />
 
         <link rel="stylesheet" href="/styles/main.css">
       </head>
@@ -111,9 +111,8 @@ exports.render = (data) => {
                           <a
                             href="${url}"
                             class="link link--not-visited"
-                            activeclass="link--active"
                           >
-                            ${title} 
+                            ${title}
                           </a>
                         `)}
                       </li>
@@ -133,7 +132,7 @@ exports.render = (data) => {
               <div class="contacts_container">
                 <ul class="contacts_list">
                   ${contacts.map(contact => `
-                    <li class="contacts_list__item" key=$"{contact.url}">
+                    <li class="contacts_list__item">
                       <a rel="me" href="${contact.url}">${contact.title}</a>
                     </li>
                   `).join("")}
