@@ -44,8 +44,6 @@ exports.render = () => {
       </p>
 
       <p class="paragraph">Разрабатываю open-source, поддерживаю ${LinksList({ list: meta.author.projects, separator: ", " })}.</p>
-
-      <p class="paragraph">Выступаю на митапах, пишу в <a href="https://twitter.com/govorov_n" rel="me">Твитер</a>.</p>
     </div>
   `;
 }

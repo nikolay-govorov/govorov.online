@@ -55,7 +55,7 @@
         "url": "https://github.com/shower/cli",
         "name": "shower-cli"
       }
-    ],    
+    ],
 
     "contacts": [
       {
@@ -63,32 +63,27 @@
         "url": "tel:89602605986",
         "itemprop": "telephone"
       },
-    
+
       {
         "title": "me@govorov.online",
         "url": "mailto:me@govorov.online",
         "itemprop": "email"
       },
-    
+
       {
         "title": "Телеграм",
         "url": "https://t.me/nikolay_govorov"
       },
-    
-      {
-        "title": "Твитер",
-        "url": "https://twitter.com/govorov_n"
-      },
-    
+
       {
         "title": "ГитХаб",
         "url": "https://github.com/nikolay-govorov"
       },
-    
+
       {
         "title": "GPG 43B7 47C2 9A02 58AC",
         "url": "https://keybase.io/nikolay_govorov"
       }
-    ]   
+    ]
   }
 }
